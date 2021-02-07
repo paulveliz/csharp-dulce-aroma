@@ -2,6 +2,7 @@
 using modelos.Context;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,64 +11,166 @@ namespace controladores
 {
     public class ProductoController : IProductoProvider
     {
-        public Task<Productos> Actualizar(Productos producto)
+        public async Task<Productos> Actualizar(Productos producto)
         {
-            throw new NotImplementedException();
+            using (var db = new dulce_aroma_db())
+            {
+                var result = await db.Productos
+                                    .Include(p => p.cProductoEstatus)
+                                    .Include(p => p.Proveedores)
+                                    .FirstOrDefaultAsync(p => p.id == producto.id);
+                result.idEstatus = producto.idEstatus;
+                result.idProveedor = producto.idProveedor;
+                result.nombre = producto.nombre;
+                result.precio = producto.precio;
+                result.costo = producto.costo;
+                result.codigo = producto.codigo;
+                await db.SaveChangesAsync();
+                return result;
+            }
         }
 
-        public Task<Productos> CambiarEstatus(int idProducto, int nuevoEstatus)
+        public async Task<Productos> CambiarEstatus(int idProducto, int nuevoEstatus)
         {
-            throw new NotImplementedException();
+            using (var db = new dulce_aroma_db())
+            {
+                var result = await db.Productos
+                                    .Include(p => p.cProductoEstatus)
+                                    .Include(p => p.Proveedores)
+                                    .FirstOrDefaultAsync(p => p.id == idProducto);
+                result.idEstatus = nuevoEstatus;
+                await db.SaveChangesAsync();
+                return result;
+            }
         }
 
-        public Task<Productos> CrearNuevo(Productos producto)
+        public async Task<Productos> CrearNuevo(Productos producto)
         {
-            throw new NotImplementedException();
+            using (var db = new dulce_aroma_db())
+            {
+                var newProduct = db.Productos.Add(producto);
+                await db.SaveChangesAsync();
+                return newProduct;
+            }
         }
 
-        public Task<IEnumerable<Productos>> ObtenerAgotados()
+        public async Task<IEnumerable<Productos>> ObtenerAgotados()
         {
-            throw new NotImplementedException();
+            using (var db = new dulce_aroma_db())
+            {
+                var agotados = await db.Productos
+                                        .Include(p => p.cProductoEstatus)
+                                        .Include(p => p.Proveedores)
+                                        .Where(p =>
+                                            p.idEstatus != 2 &&
+                                            p.existencias == 0)
+                                        .ToListAsync();
+                return agotados;
+            }
         }
 
-        public Task<IEnumerable<Productos>> ObtenerExistentes()
+        public async Task<IEnumerable<Productos>> ObtenerExistentes()
         {
-            throw new NotImplementedException();
+            using (var db = new dulce_aroma_db())
+            {
+                var res = await db.Productos
+                                        .Include(p => p.cProductoEstatus)
+                                        .Include(p => p.Proveedores)
+                                        .Where(p =>
+                                            p.idEstatus != 2 &&
+                                            p.existencias > 0)
+                                        .ToListAsync();
+                return res;
+            }
         }
 
-        public Task<IEnumerable<Productos>> ObtenerPorAgotarse()
+        public async Task<IEnumerable<Productos>> ObtenerPorAgotarse()
         {
-            throw new NotImplementedException();
+            using (var db = new dulce_aroma_db())
+            {
+                var res = await db.Productos
+                                        .Include(p => p.cProductoEstatus)
+                                        .Include(p => p.Proveedores)
+                                        .Where(p =>
+                                            p.idEstatus != 2 &&
+                                            p.existencias <= 3)
+                                        .ToListAsync();
+                return res;
+            }
         }
 
-        public Task<Productos> ObtenerPorCodigo(string codigoProducto)
+        public async Task<Productos> ObtenerPorCodigo(string codigoProducto)
         {
-            throw new NotImplementedException();
+            using (var db = new dulce_aroma_db())
+            {
+                var res = await db.Productos
+                                        .Include(p => p.cProductoEstatus)
+                                        .Include(p => p.Proveedores)
+                                        .FirstOrDefaultAsync(p => p.codigo == codigoProducto);
+                return res;
+            }
         }
 
-        public Task<Productos> ObtenerPorId(int idProducto)
+        public async Task<Productos> ObtenerPorId(int idProducto)
         {
-            throw new NotImplementedException();
+            using (var db = new dulce_aroma_db())
+            {
+                var res = await db.Productos
+                                        .Include(p => p.cProductoEstatus)
+                                        .Include(p => p.Proveedores)
+                                        .FirstOrDefaultAsync(p => p.id == idProducto);
+                return res;
+            }
         }
 
-        public Task<IEnumerable<Productos>> ObtenerPorNombreMatch(string nombreProducto)
+        public async Task<IEnumerable<Productos>> ObtenerPorNombreMatch(string nombreProducto)
         {
-            throw new NotImplementedException();
+            using (var db = new dulce_aroma_db())
+            {
+                var res = await db.Productos
+                                        .Include(p => p.cProductoEstatus)
+                                        .Include(p => p.Proveedores)
+                                        .Where(p => p.nombre.Contains(nombreProducto) && p.idEstatus != 2)
+                                        .ToListAsync();
+                return res;
+            }
         }
 
-        public Task<IEnumerable<Productos>> ObtenerProductos(DateTime from, DateTime to)
+        public async Task<IEnumerable<Productos>> ObtenerProductos(DateTime from, DateTime to)
         {
-            throw new NotImplementedException();
+            using (var db = new dulce_aroma_db())
+            {
+                var res = await db.Productos
+                                        .Include(p => p.cProductoEstatus)
+                                        .Include(p => p.Proveedores)
+                                        .Where(p => p.idEstatus != 2)
+                                        .ToListAsync();
+                return res;
+            }
         }
 
-        public Task<(bool exists, Productos producto)> VerificarCodigo(string codigoProducto)
+        public async Task<(bool exists, Productos producto)> VerificarCodigo(string codigoProducto)
         {
-            throw new NotImplementedException();
+            using (var db = new dulce_aroma_db())
+            {
+                var res = await db.Productos
+                                        .Include(p => p.cProductoEstatus)
+                                        .Include(p => p.Proveedores)
+                                        .FirstOrDefaultAsync(p => p.codigo == codigoProducto);
+                return res != null ? (true, res) : (false, res);
+            }
         }
 
-        public Task<(bool exists, Productos producto)> VerificarNombre(string nombreProducto)
+        public async Task<(bool exists, Productos producto)> VerificarNombre(string nombreProducto)
         {
-            throw new NotImplementedException();
+            using (var db = new dulce_aroma_db())
+            {
+                var res = await db.Productos
+                                        .Include(p => p.cProductoEstatus)
+                                        .Include(p => p.Proveedores)
+                                        .FirstOrDefaultAsync(p => p.nombre == nombreProducto);
+                return res != null ? (true, res) : (false, res);
+            }
         }
     }
 }
