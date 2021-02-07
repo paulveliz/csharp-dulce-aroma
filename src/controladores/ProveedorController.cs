@@ -2,6 +2,7 @@
 using modelos.Context;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,39 +11,94 @@ namespace controladores
 {
     public class ProveedorController : IProveeedorProvider
     {
-        public Task<Proveedores> Actualizar(Proveedores proveedor)
+        public async Task<Proveedores> Actualizar(Proveedores proveedor)
         {
-            throw new NotImplementedException();
+            using (var db = new dulce_aroma_db())
+            {
+                var result = await db.Proveedores
+                                    .Include(p => p.cProveedorEstatus)
+                                    .FirstOrDefaultAsync(p => p.id == proveedor.id);
+                result.idEstatus = proveedor.id;
+                result.nombre = proveedor.nombre;
+                await db.SaveChangesAsync();
+                return result;
+            }
         }
 
-        public Task<Proveedores> CambiarEstatus(int idProveedor, int nuevoEstatus)
+        public async Task<Proveedores> CambiarEstatus(int idProveedor, int nuevoEstatus)
         {
-            throw new NotImplementedException();
+            using (var db = new dulce_aroma_db())
+            {
+                var result = await db.Proveedores
+                                    .Include(p => p.cProveedorEstatus)
+                                    .FirstOrDefaultAsync(p => p.id == idProveedor);
+                result.idEstatus = nuevoEstatus;
+                await db.SaveChangesAsync();
+                return result;
+            }
         }
 
-        public Task<Proveedores> CrearNuevo(Proveedores proveedor)
+        public async Task<Proveedores> CrearNuevo(Proveedores proveedor)
         {
-            throw new NotImplementedException();
+            using (var db = new dulce_aroma_db())
+            {
+                var newProveedor = db.Proveedores.Add(proveedor);
+                await db.SaveChangesAsync();
+                return newProveedor;
+            }
         }
 
-        public Task<Proveedores> ObtenerPorId(int idProveedor)
+        public async Task<Proveedores> ObtenerPorId(int idProveedor)
         {
-            throw new NotImplementedException();
+            using (var db = new dulce_aroma_db())
+            {
+                var result = await db.Proveedores
+                        .Include(p => p.cProveedorEstatus)
+                        .FirstOrDefaultAsync(p => p.id == idProveedor && p.idEstatus == 1);
+                await db.SaveChangesAsync();
+                return result;
+            }
         }
 
-        public Task<IEnumerable<Proveedores>> ObtenerPorNombreMatch(string nombreProveedor)
+        public async Task<IEnumerable<Proveedores>> ObtenerPorNombreMatch(string nombreProveedor)
         {
-            throw new NotImplementedException();
+            using (var db = new dulce_aroma_db())
+            {
+                var proveedores = await db.Proveedores
+                                            .Include(p => p.cProveedorEstatus)
+                                            .Where(p =>
+                                                p.nombre.Contains(nombreProveedor) &&
+                                                p.idEstatus == 1)
+                                            .OrderByDescending(p => p.id)
+                                            .ToListAsync();
+                return proveedores;
+            }
         }
 
-        public Task<IEnumerable<Proveedores>> ObtenerTodos()
+        public async Task<IEnumerable<Proveedores>> ObtenerTodos()
         {
-            throw new NotImplementedException();
+            using (var db = new dulce_aroma_db())
+            {
+                var proveedores = await db.Proveedores
+                                            .Include(p => p.cProveedorEstatus)
+                                            .Where(p => p.idEstatus == 1)
+                                            .OrderByDescending(p => p.id)
+                                            .ToListAsync();
+                return proveedores;
+            }
         }
 
-        public Task<(bool exists, Proveedores proveedor)> VerificarNombre(string nombre)
+        public async Task<(bool exists, Proveedores proveedor)> VerificarNombre(string nombre)
         {
-            throw new NotImplementedException();
+            using (var db = new dulce_aroma_db())
+            {
+                var result = await db.Proveedores
+                                            .Include(p => p.cProveedorEstatus)
+                                            .FirstOrDefaultAsync(p => 
+                                                p.nombre == nombre &&
+                                                p.idEstatus == 1);
+                return result != null ? (true, result) : (false, null);
+            }
         }
     }
 }

@@ -63,7 +63,9 @@ namespace controladores
                 var empleados = await db.Empleados
                     .Include(e => e.cEmpleadoEstatus)
                     .Include(e => e.cEmpleadoNivel)
-                    .Where(e => e.nombre_completo == @nombreEmpleado && e.idEstatus == 1)
+                    .Where(e => 
+                        e.nombre_completo.Contains(nombreEmpleado) && 
+                        e.idEstatus == 1)
                     .OrderByDescending(e => e.id)
                     .ToListAsync();
                 return empleados;

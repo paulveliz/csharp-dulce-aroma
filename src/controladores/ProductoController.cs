@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace controladores
 {
-    public class ProductoProvider : IProductoProvider
+    public class ProductoController : IProductoProvider
     {
         public Task<Productos> Actualizar(Productos producto)
         {
