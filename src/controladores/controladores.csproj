@@ -51,11 +51,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EmpleadoController.cs" />
+    <Compile Include="EntradaController.cs" />
+    <Compile Include="Interfaces\IEmpleadoProvider.cs" />
+    <Compile Include="Interfaces\IEntradaProvider.cs" />
+    <Compile Include="Interfaces\IGeneralLogic.cs" />
+    <Compile Include="Interfaces\IProductoProvider.cs" />
+    <Compile Include="Interfaces\IProveeedorProvider.cs" />
+    <Compile Include="Interfaces\IVentasProvider.cs" />
+    <Compile Include="ProductoProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ProveedorController.cs" />
+    <Compile Include="VentasController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\modelos\modelos.csproj">
+      <Project>{739b7141-c95e-4255-a3d7-b85cf112a576}</Project>
+      <Name>modelos</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -57,6 +57,8 @@ CREATE TABLE Productos(
     precio numeric(7,2) not null,
     costo numeric(7,2) not null,
     existencias int not null,
+    fecha date not null,
+    hora  time(7) not null,
     idProveedor int not null,
     idEstatus int not null,
     FOREIGN KEY (idEstatus) REFERENCES cProductoEstatus(id),
@@ -72,5 +74,34 @@ CREATE TABLE Detalle_Ventas(
     costo numeric(7,2) not null,
     importe numeric(10,2) not null,
     FOREIGN KEY (idVenta) REFERENCES Ventas(id),
+    FOREIGN KEY (idProducto) REFERENCES Productos(id)
+)
+
+CREATE TABLE cEntradaEstatus(
+    id int primary key identity(1,1),
+    descripcion varchar(10) not null
+)
+
+CREATE TABLE Entradas(
+    id int primary key identity(1,1),
+    idEmpleado int not null,
+    fecha date not null,
+    hora  time(7) not null,
+    importe  numeric(10,2) not null,
+    idProveedor int not null,
+    idEstatus int not null,
+    FOREIGN KEY (idEstatus) REFERENCES cEntradaEstatus(id),
+    FOREIGN KEY (idProveedor) REFERENCES Proveedores(id)
+)
+
+CREATE TABLE Detalle_Entradas(
+    id int primary key identity(1,1),
+    idEntrada int not null,
+    idProducto int not null,
+    cantidad int not null,
+    precio numeric(7,2) not null,
+    costo numeric(7,2) not null,
+    importe numeric(10,2) not null,
+    FOREIGN KEY (idEntrada) REFERENCES Entradas(id),
     FOREIGN KEY (idProducto) REFERENCES Productos(id)
 )

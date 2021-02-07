@@ -12,23 +12,25 @@ namespace modelos.Context
     using System;
     using System.Collections.Generic;
     
-    public partial class Proveedores
+    public partial class Entradas
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Proveedores()
+        public Entradas()
         {
-            this.Entradas = new HashSet<Entradas>();
-            this.Productos = new HashSet<Productos>();
+            this.Detalle_Entradas = new HashSet<Detalle_Entradas>();
         }
     
         public int id { get; set; }
-        public string nombre { get; set; }
+        public int idEmpleado { get; set; }
+        public System.DateTime fecha { get; set; }
+        public System.TimeSpan hora { get; set; }
+        public decimal importe { get; set; }
+        public int idProveedor { get; set; }
         public int idEstatus { get; set; }
     
-        public virtual cProveedorEstatus cProveedorEstatus { get; set; }
+        public virtual cEntradaEstatus cEntradaEstatus { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Entradas> Entradas { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Productos> Productos { get; set; }
+        public virtual ICollection<Detalle_Entradas> Detalle_Entradas { get; set; }
+        public virtual Proveedores Proveedores { get; set; }
     }
 }

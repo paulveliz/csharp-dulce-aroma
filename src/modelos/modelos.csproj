@@ -59,6 +59,9 @@
     <Compile Include="Context\cEmpleadoNivel.cs">
       <DependentUpon>dbcontext.tt</DependentUpon>
     </Compile>
+    <Compile Include="Context\cEntradaEstatus.cs">
+      <DependentUpon>dbcontext.tt</DependentUpon>
+    </Compile>
     <Compile Include="Context\cProductoEstatus.cs">
       <DependentUpon>dbcontext.tt</DependentUpon>
     </Compile>
@@ -83,10 +86,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dbcontext.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Context\Detalle_Entradas.cs">
+      <DependentUpon>dbcontext.tt</DependentUpon>
+    </Compile>
     <Compile Include="Context\Detalle_Ventas.cs">
       <DependentUpon>dbcontext.tt</DependentUpon>
     </Compile>
     <Compile Include="Context\Empleados.cs">
+      <DependentUpon>dbcontext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\Entradas.cs">
       <DependentUpon>dbcontext.tt</DependentUpon>
     </Compile>
     <Compile Include="Context\Productos.cs">
@@ -95,12 +104,11 @@
     <Compile Include="Context\Proveedores.cs">
       <DependentUpon>dbcontext.tt</DependentUpon>
     </Compile>
-    <Compile Include="Context\sysdiagrams.cs">
-      <DependentUpon>dbcontext.tt</DependentUpon>
-    </Compile>
     <Compile Include="Context\Ventas.cs">
       <DependentUpon>dbcontext.tt</DependentUpon>
     </Compile>
+    <Compile Include="FullEntrada.cs" />
+    <Compile Include="FullVenta.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

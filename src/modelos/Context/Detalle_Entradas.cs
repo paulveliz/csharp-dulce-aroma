@@ -12,12 +12,17 @@ namespace modelos.Context
     using System;
     using System.Collections.Generic;
     
-    public partial class sysdiagrams
+    public partial class Detalle_Entradas
     {
-        public string name { get; set; }
-        public int principal_id { get; set; }
-        public int diagram_id { get; set; }
-        public Nullable<int> version { get; set; }
-        public byte[] definition { get; set; }
+        public int id { get; set; }
+        public int idEntrada { get; set; }
+        public int idProducto { get; set; }
+        public int cantidad { get; set; }
+        public decimal precio { get; set; }
+        public decimal costo { get; set; }
+        public decimal importe { get; set; }
+    
+        public virtual Entradas Entradas { get; set; }
+        public virtual Productos Productos { get; set; }
     }
 }

@@ -4,25 +4,31 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="c74675d116cf4bf59cafccae0a20602f" Name="Diagram1">
-        <EntityTypeShape EntityType="dulce_aromaModel.cEmpleadoEstatus" Width="1.5" PointX="7.75" PointY="5.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="dulce_aromaModel.cEmpleadoNivel" Width="1.5" PointX="7.75" PointY="8.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="dulce_aromaModel.cProductoEstatus" Width="1.5" PointX="3" PointY="5.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="dulce_aromaModel.cProveedorEstatus" Width="1.5" PointX="0.75" PointY="1.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="dulce_aromaModel.cVentaEstatus" Width="1.5" PointX="3" PointY="8.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="dulce_aromaModel.Detalle_Ventas" Width="1.5" PointX="7.5" PointY="1.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="dulce_aromaModel.Empleados" Width="1.5" PointX="10" PointY="5" IsExpanded="true" />
-        <EntityTypeShape EntityType="dulce_aromaModel.Productos" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="dulce_aromaModel.Proveedores" Width="1.5" PointX="3" PointY="1.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="dulce_aromaModel.sysdiagrams" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="dulce_aromaModel.Ventas" Width="1.5" PointX="5.25" PointY="8.25" IsExpanded="true" />
+      <Diagram DiagramId="561824464c6d4cd7bb408251a08f796d" Name="Diagram1">
+        <EntityTypeShape EntityType="dulce_aromaModel.cEmpleadoEstatus" Width="1.5" PointX="0.75" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="dulce_aromaModel.cEmpleadoNivel" Width="1.5" PointX="0.75" PointY="12.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="dulce_aromaModel.cEntradaEstatus" Width="1.5" PointX="3" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="dulce_aromaModel.cProductoEstatus" Width="1.5" PointX="6" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="dulce_aromaModel.cProveedorEstatus" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="dulce_aromaModel.cVentaEstatus" Width="1.5" PointX="9" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="dulce_aromaModel.Detalle_Entradas" Width="1.5" PointX="10.5" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="dulce_aromaModel.Detalle_Ventas" Width="1.5" PointX="13.5" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="dulce_aromaModel.Empleados" Width="1.5" PointX="3" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="dulce_aromaModel.Entradas" Width="1.5" PointX="5.25" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="dulce_aromaModel.Productos" Width="1.5" PointX="8.25" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="dulce_aromaModel.Proveedores" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="dulce_aromaModel.Ventas" Width="1.5" PointX="11.25" PointY="0.75" IsExpanded="true" />
         <AssociationConnector Association="dulce_aromaModel.FK__Empleados__idEst__3B75D760" ManuallyRouted="false" />
         <AssociationConnector Association="dulce_aromaModel.FK__Empleados__idNiv__3A81B327" ManuallyRouted="false" />
+        <AssociationConnector Association="dulce_aromaModel.FK__Entradas__idEsta__534D60F1" ManuallyRouted="false" />
         <AssociationConnector Association="dulce_aromaModel.FK__Productos__idEst__49C3F6B7" ManuallyRouted="false" />
         <AssociationConnector Association="dulce_aromaModel.FK__Proveedor__idEst__44FF419A" ManuallyRouted="false" />
         <AssociationConnector Association="dulce_aromaModel.FK__Ventas__idEstatu__403A8C7D" ManuallyRouted="false" />
+        <AssociationConnector Association="dulce_aromaModel.FK__Detalle_E__idEnt__571DF1D5" ManuallyRouted="false" />
+        <AssociationConnector Association="dulce_aromaModel.FK__Detalle_E__idPro__5812160E" ManuallyRouted="false" />
         <AssociationConnector Association="dulce_aromaModel.FK__Detalle_V__idPro__4E88ABD4" ManuallyRouted="false" />
         <AssociationConnector Association="dulce_aromaModel.FK__Detalle_V__idVen__4D94879B" ManuallyRouted="false" />
+        <AssociationConnector Association="dulce_aromaModel.FK__Entradas__idProv__5441852A" ManuallyRouted="false" />
         <AssociationConnector Association="dulce_aromaModel.FK__Productos__idPro__4AB81AF0" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>

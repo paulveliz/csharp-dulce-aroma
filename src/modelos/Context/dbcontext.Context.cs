@@ -27,14 +27,16 @@ namespace modelos.Context
     
         public virtual DbSet<cEmpleadoEstatus> cEmpleadoEstatus { get; set; }
         public virtual DbSet<cEmpleadoNivel> cEmpleadoNivel { get; set; }
+        public virtual DbSet<cEntradaEstatus> cEntradaEstatus { get; set; }
         public virtual DbSet<cProductoEstatus> cProductoEstatus { get; set; }
         public virtual DbSet<cProveedorEstatus> cProveedorEstatus { get; set; }
         public virtual DbSet<cVentaEstatus> cVentaEstatus { get; set; }
+        public virtual DbSet<Detalle_Entradas> Detalle_Entradas { get; set; }
         public virtual DbSet<Detalle_Ventas> Detalle_Ventas { get; set; }
         public virtual DbSet<Empleados> Empleados { get; set; }
+        public virtual DbSet<Entradas> Entradas { get; set; }
         public virtual DbSet<Productos> Productos { get; set; }
         public virtual DbSet<Proveedores> Proveedores { get; set; }
-        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Ventas> Ventas { get; set; }
     }
 }
