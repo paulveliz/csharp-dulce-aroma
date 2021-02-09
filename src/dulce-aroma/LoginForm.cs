@@ -1,4 +1,5 @@
 ﻿using controladores;
+using dulce_aroma.Forms.menu;
 using modelos.Context;
 using System;
 using System.Collections.Generic;
@@ -49,6 +50,8 @@ namespace dulce_aroma
             if (validAccess.IsSucess)
             {
                 // Acceder al menu y enviar al empleado para validar panel administrativo.
+                var frm = new MenuForm(empleado);
+                frm.Show();
             }
             else
             {
