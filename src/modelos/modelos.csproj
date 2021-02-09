@@ -113,8 +113,6 @@
     <Compile Include="Context\Ventas.cs">
       <DependentUpon>dbcontext.tt</DependentUpon>
     </Compile>
-    <Compile Include="FullEntrada.cs" />
-    <Compile Include="FullVenta.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
