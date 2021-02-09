@@ -63,6 +63,7 @@
     <Compile Include="ProductoController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ProveedorController.cs" />
+    <Compile Include="TurnoController.cs" />
     <Compile Include="VentasController.cs" />
   </ItemGroup>
   <ItemGroup>

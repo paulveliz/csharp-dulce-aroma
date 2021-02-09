@@ -1,7 +1,9 @@
 ﻿using controladores.Interfaces;
 using modelos;
+using modelos.Context;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,39 +12,113 @@ namespace controladores
 {
     public class EntradaController : IEntradaProvider
     {
-        public Task<(bool IsSucess, FullEntrada venta)> CambiarEstatus(int idVenta, int nuevoEstatus)
+        public async Task<(bool IsSucess, Entradas entrada)> CambiarEstatus(int idVenta, int nuevoEstatus)
+        {
+            using (var db = new dulce_aroma_db())
+            {
+                var result = await db.Entradas.FirstOrDefaultAsync(e => 
+                    e.id == idVenta
+                );
+
+                result.idEstatus = nuevoEstatus;
+                var aff = await db.SaveChangesAsync();
+                return aff > 0 ? (true, result) : (false, result);
+            }
+        }
+
+        public async Task<(bool IsSucess, Entradas entrada)> CrearNueva(Entradas entrada, IEnumerable<Detalle_Entradas> detalle)
+        {
+            using (var db = new dulce_aroma_db())
+            {
+                // Crear nueva entrada
+                var newEntrada = db.Entradas.Add(entrada);
+                // Guardar cambios
+                await db.SaveChangesAsync();
+                var entradaActual = await db.Entradas
+                    .Include(e => e.Detalle_Entradas)
+                    .FirstOrDefaultAsync(e => e.id == newEntrada.id);
+                // Guardar detalles
+                foreach (var d in detalle)
+                {
+                    entradaActual.Detalle_Entradas.Add(d);
+                }
+                // Guardar cambios
+                var aff = await db.SaveChangesAsync();
+
+                return aff > 0 ? (true, entradaActual) : (false, entradaActual);
+            }
+        }
+
+        public Task<(bool IsSucess, Entradas entrada)> Devolver(int idVenta, int nuevoEstatus)
         {
             throw new NotImplementedException();
         }
 
-        public Task<(bool IsSucess, FullEntrada venta)> CrearNueva(FullEntrada entrada)
+        public async Task<IEnumerable<Entradas>> ObtenerConBaja(DateTime from, DateTime to)
         {
-            throw new NotImplementedException();
+            using (var db = new dulce_aroma_db())
+            {
+                var bajas = await db.Entradas
+                                .Include(e => e.cEntradaEstatus)
+                                .Include(e => e.Detalle_Entradas)
+                                .Include(e => e.Proveedores)
+                                .Where(e =>
+                                    e.idEstatus == 2 &&
+                                    e.fecha >= from &&
+                                    e.fecha <= to)
+                                .OrderByDescending(e => e.id)
+                                .ToListAsync();
+                return bajas;
+            }
         }
 
-        public Task<(bool IsSucess, FullEntrada venta)> Devolver(int idVenta, int nuevoEstatus)
+        public async Task<IEnumerable<Entradas>> ObtenerPorEmpleado(DateTime from, DateTime to, int idEmpleado)
         {
-            throw new NotImplementedException();
+            using (var db = new dulce_aroma_db())
+            {
+                var bajas = await db.Entradas
+                                .Include(e => e.cEntradaEstatus)
+                                .Include(e => e.Detalle_Entradas)
+                                .Include(e => e.Proveedores)
+                                .Where(e =>
+                                    e.idEmpleado == idEmpleado &&
+                                    e.fecha >= from &&
+                                    e.fecha <= to)
+                                .OrderByDescending(e => e.id)
+                                .ToListAsync();
+                return bajas;
+            }
         }
 
-        public Task<IEnumerable<FullEntrada>> ObtenerConBaja(DateTime from, DateTime to)
+        public async Task<IEnumerable<Entradas>> ObtenerPorFechas(DateTime from, DateTime to)
         {
-            throw new NotImplementedException();
+            using (var db = new dulce_aroma_db())
+            {
+                var bajas = await db.Entradas
+                                .Include(e => e.cEntradaEstatus)
+                                .Include(e => e.Detalle_Entradas)
+                                .Include(e => e.Proveedores)
+                                .Where(e =>
+                                    e.idEstatus == 2 &&
+                                    e.fecha >= from &&
+                                    e.fecha <= to)
+                                .OrderByDescending(e => e.id)
+                                .ToListAsync();
+                return bajas;
+            }
         }
 
-        public Task<IEnumerable<FullEntrada>> ObtenerPorEmpleado(DateTime from, DateTime to)
+        public async Task<Entradas> ObtenerPorId(int idEntrada)
         {
-            throw new NotImplementedException();
-        }
-
-        public Task<IEnumerable<FullEntrada>> ObtenerPorFechas(DateTime from, DateTime to)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<FullEntrada> ObtenerPorId(int idEntrada)
-        {
-            throw new NotImplementedException();
+            using (var db = new dulce_aroma_db())
+            {
+                var entrada = await db.Entradas
+                        .Include(e => e.cEntradaEstatus)
+                        .Include(e => e.Detalle_Entradas)
+                        .Include(e => e.Proveedores)
+                        .FirstOrDefaultAsync(e => e.id == idEntrada);
+                return entrada;
+            }
         }
     }
 }
