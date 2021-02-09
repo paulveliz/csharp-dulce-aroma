@@ -68,6 +68,9 @@
     <Compile Include="Context\cProveedorEstatus.cs">
       <DependentUpon>dbcontext.tt</DependentUpon>
     </Compile>
+    <Compile Include="Context\cTurnoEstatus.cs">
+      <DependentUpon>dbcontext.tt</DependentUpon>
+    </Compile>
     <Compile Include="Context\cVentaEstatus.cs">
       <DependentUpon>dbcontext.tt</DependentUpon>
     </Compile>
@@ -102,6 +105,9 @@
       <DependentUpon>dbcontext.tt</DependentUpon>
     </Compile>
     <Compile Include="Context\Proveedores.cs">
+      <DependentUpon>dbcontext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\Turnos.cs">
       <DependentUpon>dbcontext.tt</DependentUpon>
     </Compile>
     <Compile Include="Context\Ventas.cs">

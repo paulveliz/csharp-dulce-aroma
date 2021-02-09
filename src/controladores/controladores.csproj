@@ -58,8 +58,9 @@
     <Compile Include="Interfaces\IGeneralLogic.cs" />
     <Compile Include="Interfaces\IProductoProvider.cs" />
     <Compile Include="Interfaces\IProveeedorProvider.cs" />
+    <Compile Include="Interfaces\ITurnoProvider.cs" />
     <Compile Include="Interfaces\IVentasProvider.cs" />
-    <Compile Include="ProductoProvider.cs" />
+    <Compile Include="ProductoController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ProveedorController.cs" />
     <Compile Include="VentasController.cs" />

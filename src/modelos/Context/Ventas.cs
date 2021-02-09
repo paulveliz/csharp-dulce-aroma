@@ -21,6 +21,7 @@ namespace modelos.Context
         }
     
         public int id { get; set; }
+        public int idTurno { get; set; }
         public int idEmpleado { get; set; }
         public System.DateTime fecha { get; set; }
         public System.TimeSpan hora { get; set; }
@@ -30,5 +31,7 @@ namespace modelos.Context
         public virtual cVentaEstatus cVentaEstatus { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Detalle_Ventas> Detalle_Ventas { get; set; }
+        public virtual Empleados Empleados { get; set; }
+        public virtual Turnos Turnos { get; set; }
     }
 }

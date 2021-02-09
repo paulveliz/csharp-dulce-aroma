@@ -12,27 +12,18 @@ namespace modelos.Context
     using System;
     using System.Collections.Generic;
     
-    public partial class Empleados
+    public partial class cTurnoEstatus
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Empleados()
+        public cTurnoEstatus()
         {
             this.Turnos = new HashSet<Turnos>();
-            this.Ventas = new HashSet<Ventas>();
         }
     
         public int id { get; set; }
-        public string nombre_completo { get; set; }
-        public string nombre_usuario { get; set; }
-        public string pass { get; set; }
-        public int idNivel { get; set; }
-        public int idEstatus { get; set; }
+        public string descripcion { get; set; }
     
-        public virtual cEmpleadoEstatus cEmpleadoEstatus { get; set; }
-        public virtual cEmpleadoNivel cEmpleadoNivel { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Turnos> Turnos { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Ventas> Ventas { get; set; }
     }
 }

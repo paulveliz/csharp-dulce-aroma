@@ -40,6 +40,13 @@
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="descripcion" Type="varchar" MaxLength="10" Nullable="false" />
         </EntityType>
+        <EntityType Name="cTurnoEstatus">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="descripcion" Type="varchar" MaxLength="10" Nullable="false" />
+        </EntityType>
         <EntityType Name="cVentaEstatus">
           <Key>
             <PropertyRef Name="id" />
@@ -117,7 +124,7 @@
           <Property Name="nombre" Type="varchar" MaxLength="35" Nullable="false" />
           <Property Name="idEstatus" Type="int" Nullable="false" />
         </EntityType>
-        <EntityType Name="Ventas">
+        <EntityType Name="Turnos">
           <Key>
             <PropertyRef Name="id" />
           </Key>
@@ -125,10 +132,21 @@
           <Property Name="idEmpleado" Type="int" Nullable="false" />
           <Property Name="fecha" Type="date" Nullable="false" />
           <Property Name="hora" Type="time" Precision="7" Nullable="false" />
+          <Property Name="idEstatus" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Ventas">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idTurno" Type="int" Nullable="false" />
+          <Property Name="idEmpleado" Type="int" Nullable="false" />
+          <Property Name="fecha" Type="date" Nullable="false" />
+          <Property Name="hora" Type="time" Precision="7" Nullable="false" />
           <Property Name="importe" Type="numeric" Precision="10" Scale="2" Nullable="false" />
           <Property Name="idEstatus" Type="int" Nullable="false" />
         </EntityType>
-        <Association Name="FK__Detalle_E__idEnt__571DF1D5">
+        <Association Name="FK__Detalle_E__idEnt__4CA06362">
           <End Role="Entradas" Type="Self.Entradas" Multiplicity="1" />
           <End Role="Detalle_Entradas" Type="Self.Detalle_Entradas" Multiplicity="*" />
           <ReferentialConstraint>
@@ -140,7 +158,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Detalle_E__idPro__5812160E">
+        <Association Name="FK__Detalle_E__idPro__4D94879B">
           <End Role="Productos" Type="Self.Productos" Multiplicity="1" />
           <End Role="Detalle_Entradas" Type="Self.Detalle_Entradas" Multiplicity="*" />
           <ReferentialConstraint>
@@ -152,7 +170,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Detalle_V__idPro__4E88ABD4">
+        <Association Name="FK__Detalle_V__idPro__440B1D61">
           <End Role="Productos" Type="Self.Productos" Multiplicity="1" />
           <End Role="Detalle_Ventas" Type="Self.Detalle_Ventas" Multiplicity="*" />
           <ReferentialConstraint>
@@ -164,7 +182,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Detalle_V__idVen__4D94879B">
+        <Association Name="FK__Detalle_V__idVen__4316F928">
           <End Role="Ventas" Type="Self.Ventas" Multiplicity="1" />
           <End Role="Detalle_Ventas" Type="Self.Detalle_Ventas" Multiplicity="*" />
           <ReferentialConstraint>
@@ -176,7 +194,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Empleados__idEst__3B75D760">
+        <Association Name="FK__Empleados__idEst__29572725">
           <End Role="cEmpleadoEstatus" Type="Self.cEmpleadoEstatus" Multiplicity="1" />
           <End Role="Empleados" Type="Self.Empleados" Multiplicity="*" />
           <ReferentialConstraint>
@@ -188,7 +206,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Empleados__idNiv__3A81B327">
+        <Association Name="FK__Empleados__idNiv__286302EC">
           <End Role="cEmpleadoNivel" Type="Self.cEmpleadoNivel" Multiplicity="1" />
           <End Role="Empleados" Type="Self.Empleados" Multiplicity="*" />
           <ReferentialConstraint>
@@ -200,7 +218,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Entradas__idEsta__534D60F1">
+        <Association Name="FK__Entradas__idEsta__48CFD27E">
           <End Role="cEntradaEstatus" Type="Self.cEntradaEstatus" Multiplicity="1" />
           <End Role="Entradas" Type="Self.Entradas" Multiplicity="*" />
           <ReferentialConstraint>
@@ -212,7 +230,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Entradas__idProv__5441852A">
+        <Association Name="FK__Entradas__idProv__49C3F6B7">
           <End Role="Proveedores" Type="Self.Proveedores" Multiplicity="1" />
           <End Role="Entradas" Type="Self.Entradas" Multiplicity="*" />
           <ReferentialConstraint>
@@ -224,7 +242,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Productos__idEst__49C3F6B7">
+        <Association Name="FK__Productos__idEst__3F466844">
           <End Role="cProductoEstatus" Type="Self.cProductoEstatus" Multiplicity="1" />
           <End Role="Productos" Type="Self.Productos" Multiplicity="*" />
           <ReferentialConstraint>
@@ -236,7 +254,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Productos__idPro__4AB81AF0">
+        <Association Name="FK__Productos__idPro__403A8C7D">
           <End Role="Proveedores" Type="Self.Proveedores" Multiplicity="1" />
           <End Role="Productos" Type="Self.Productos" Multiplicity="*" />
           <ReferentialConstraint>
@@ -248,7 +266,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Proveedor__idEst__44FF419A">
+        <Association Name="FK__Proveedor__idEst__3A81B327">
           <End Role="cProveedorEstatus" Type="Self.cProveedorEstatus" Multiplicity="1" />
           <End Role="Proveedores" Type="Self.Proveedores" Multiplicity="*" />
           <ReferentialConstraint>
@@ -260,7 +278,43 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Ventas__idEstatu__403A8C7D">
+        <Association Name="FK__Turnos__idEmplea__2F10007B">
+          <End Role="Empleados" Type="Self.Empleados" Multiplicity="1" />
+          <End Role="Turnos" Type="Self.Turnos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empleados">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Turnos">
+              <PropertyRef Name="idEmpleado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Turnos__idEstatu__2E1BDC42">
+          <End Role="cTurnoEstatus" Type="Self.cTurnoEstatus" Multiplicity="1" />
+          <End Role="Turnos" Type="Self.Turnos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cTurnoEstatus">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Turnos">
+              <PropertyRef Name="idEstatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Ventas__idEmplea__35BCFE0A">
+          <End Role="Empleados" Type="Self.Empleados" Multiplicity="1" />
+          <End Role="Ventas" Type="Self.Ventas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empleados">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Ventas">
+              <PropertyRef Name="idEmpleado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Ventas__idEstatu__33D4B598">
           <End Role="cVentaEstatus" Type="Self.cVentaEstatus" Multiplicity="1" />
           <End Role="Ventas" Type="Self.Ventas" Multiplicity="*" />
           <ReferentialConstraint>
@@ -272,12 +326,25 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK__Ventas__idTurno__34C8D9D1">
+          <End Role="Turnos" Type="Self.Turnos" Multiplicity="1" />
+          <End Role="Ventas" Type="Self.Ventas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Turnos">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Ventas">
+              <PropertyRef Name="idTurno" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="dulce_aromaModelStoreContainer">
           <EntitySet Name="cEmpleadoEstatus" EntityType="Self.cEmpleadoEstatus" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="cEmpleadoNivel" EntityType="Self.cEmpleadoNivel" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="cEntradaEstatus" EntityType="Self.cEntradaEstatus" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="cProductoEstatus" EntityType="Self.cProductoEstatus" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="cProveedorEstatus" EntityType="Self.cProveedorEstatus" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="cTurnoEstatus" EntityType="Self.cTurnoEstatus" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="cVentaEstatus" EntityType="Self.cVentaEstatus" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Detalle_Entradas" EntityType="Self.Detalle_Entradas" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Detalle_Ventas" EntityType="Self.Detalle_Ventas" Schema="dbo" store:Type="Tables" />
@@ -285,53 +352,70 @@
           <EntitySet Name="Entradas" EntityType="Self.Entradas" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Productos" EntityType="Self.Productos" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Proveedores" EntityType="Self.Proveedores" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Turnos" EntityType="Self.Turnos" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Ventas" EntityType="Self.Ventas" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__Detalle_E__idEnt__571DF1D5" Association="Self.FK__Detalle_E__idEnt__571DF1D5">
+          <AssociationSet Name="FK__Detalle_E__idEnt__4CA06362" Association="Self.FK__Detalle_E__idEnt__4CA06362">
             <End Role="Entradas" EntitySet="Entradas" />
             <End Role="Detalle_Entradas" EntitySet="Detalle_Entradas" />
           </AssociationSet>
-          <AssociationSet Name="FK__Detalle_E__idPro__5812160E" Association="Self.FK__Detalle_E__idPro__5812160E">
+          <AssociationSet Name="FK__Detalle_E__idPro__4D94879B" Association="Self.FK__Detalle_E__idPro__4D94879B">
             <End Role="Productos" EntitySet="Productos" />
             <End Role="Detalle_Entradas" EntitySet="Detalle_Entradas" />
           </AssociationSet>
-          <AssociationSet Name="FK__Detalle_V__idPro__4E88ABD4" Association="Self.FK__Detalle_V__idPro__4E88ABD4">
+          <AssociationSet Name="FK__Detalle_V__idPro__440B1D61" Association="Self.FK__Detalle_V__idPro__440B1D61">
             <End Role="Productos" EntitySet="Productos" />
             <End Role="Detalle_Ventas" EntitySet="Detalle_Ventas" />
           </AssociationSet>
-          <AssociationSet Name="FK__Detalle_V__idVen__4D94879B" Association="Self.FK__Detalle_V__idVen__4D94879B">
+          <AssociationSet Name="FK__Detalle_V__idVen__4316F928" Association="Self.FK__Detalle_V__idVen__4316F928">
             <End Role="Ventas" EntitySet="Ventas" />
             <End Role="Detalle_Ventas" EntitySet="Detalle_Ventas" />
           </AssociationSet>
-          <AssociationSet Name="FK__Empleados__idEst__3B75D760" Association="Self.FK__Empleados__idEst__3B75D760">
+          <AssociationSet Name="FK__Empleados__idEst__29572725" Association="Self.FK__Empleados__idEst__29572725">
             <End Role="cEmpleadoEstatus" EntitySet="cEmpleadoEstatus" />
             <End Role="Empleados" EntitySet="Empleados" />
           </AssociationSet>
-          <AssociationSet Name="FK__Empleados__idNiv__3A81B327" Association="Self.FK__Empleados__idNiv__3A81B327">
+          <AssociationSet Name="FK__Empleados__idNiv__286302EC" Association="Self.FK__Empleados__idNiv__286302EC">
             <End Role="cEmpleadoNivel" EntitySet="cEmpleadoNivel" />
             <End Role="Empleados" EntitySet="Empleados" />
           </AssociationSet>
-          <AssociationSet Name="FK__Entradas__idEsta__534D60F1" Association="Self.FK__Entradas__idEsta__534D60F1">
+          <AssociationSet Name="FK__Entradas__idEsta__48CFD27E" Association="Self.FK__Entradas__idEsta__48CFD27E">
             <End Role="cEntradaEstatus" EntitySet="cEntradaEstatus" />
             <End Role="Entradas" EntitySet="Entradas" />
           </AssociationSet>
-          <AssociationSet Name="FK__Entradas__idProv__5441852A" Association="Self.FK__Entradas__idProv__5441852A">
+          <AssociationSet Name="FK__Entradas__idProv__49C3F6B7" Association="Self.FK__Entradas__idProv__49C3F6B7">
             <End Role="Proveedores" EntitySet="Proveedores" />
             <End Role="Entradas" EntitySet="Entradas" />
           </AssociationSet>
-          <AssociationSet Name="FK__Productos__idEst__49C3F6B7" Association="Self.FK__Productos__idEst__49C3F6B7">
+          <AssociationSet Name="FK__Productos__idEst__3F466844" Association="Self.FK__Productos__idEst__3F466844">
             <End Role="cProductoEstatus" EntitySet="cProductoEstatus" />
             <End Role="Productos" EntitySet="Productos" />
           </AssociationSet>
-          <AssociationSet Name="FK__Productos__idPro__4AB81AF0" Association="Self.FK__Productos__idPro__4AB81AF0">
+          <AssociationSet Name="FK__Productos__idPro__403A8C7D" Association="Self.FK__Productos__idPro__403A8C7D">
             <End Role="Proveedores" EntitySet="Proveedores" />
             <End Role="Productos" EntitySet="Productos" />
           </AssociationSet>
-          <AssociationSet Name="FK__Proveedor__idEst__44FF419A" Association="Self.FK__Proveedor__idEst__44FF419A">
+          <AssociationSet Name="FK__Proveedor__idEst__3A81B327" Association="Self.FK__Proveedor__idEst__3A81B327">
             <End Role="cProveedorEstatus" EntitySet="cProveedorEstatus" />
             <End Role="Proveedores" EntitySet="Proveedores" />
           </AssociationSet>
-          <AssociationSet Name="FK__Ventas__idEstatu__403A8C7D" Association="Self.FK__Ventas__idEstatu__403A8C7D">
+          <AssociationSet Name="FK__Turnos__idEmplea__2F10007B" Association="Self.FK__Turnos__idEmplea__2F10007B">
+            <End Role="Empleados" EntitySet="Empleados" />
+            <End Role="Turnos" EntitySet="Turnos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Turnos__idEstatu__2E1BDC42" Association="Self.FK__Turnos__idEstatu__2E1BDC42">
+            <End Role="cTurnoEstatus" EntitySet="cTurnoEstatus" />
+            <End Role="Turnos" EntitySet="Turnos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Ventas__idEmplea__35BCFE0A" Association="Self.FK__Ventas__idEmplea__35BCFE0A">
+            <End Role="Empleados" EntitySet="Empleados" />
+            <End Role="Ventas" EntitySet="Ventas" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Ventas__idEstatu__33D4B598" Association="Self.FK__Ventas__idEstatu__33D4B598">
             <End Role="cVentaEstatus" EntitySet="cVentaEstatus" />
+            <End Role="Ventas" EntitySet="Ventas" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Ventas__idTurno__34C8D9D1" Association="Self.FK__Ventas__idTurno__34C8D9D1">
+            <End Role="Turnos" EntitySet="Turnos" />
             <End Role="Ventas" EntitySet="Ventas" />
           </AssociationSet>
         </EntityContainer>
@@ -346,7 +430,7 @@
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="descripcion" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Empleados" Relationship="Self.FK__Empleados__idEst__3B75D760" FromRole="cEmpleadoEstatus" ToRole="Empleados" />
+          <NavigationProperty Name="Empleados" Relationship="Self.FK__Empleados__idEst__29572725" FromRole="cEmpleadoEstatus" ToRole="Empleados" />
         </EntityType>
         <EntityType Name="cEmpleadoNivel">
           <Key>
@@ -354,7 +438,7 @@
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="descripcion" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Empleados" Relationship="Self.FK__Empleados__idNiv__3A81B327" FromRole="cEmpleadoNivel" ToRole="Empleados" />
+          <NavigationProperty Name="Empleados" Relationship="Self.FK__Empleados__idNiv__286302EC" FromRole="cEmpleadoNivel" ToRole="Empleados" />
         </EntityType>
         <EntityType Name="cEntradaEstatus">
           <Key>
@@ -362,7 +446,7 @@
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="descripcion" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Entradas" Relationship="Self.FK__Entradas__idEsta__534D60F1" FromRole="cEntradaEstatus" ToRole="Entradas" />
+          <NavigationProperty Name="Entradas" Relationship="Self.FK__Entradas__idEsta__48CFD27E" FromRole="cEntradaEstatus" ToRole="Entradas" />
         </EntityType>
         <EntityType Name="cProductoEstatus">
           <Key>
@@ -370,7 +454,7 @@
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="descripcion" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Productos" Relationship="Self.FK__Productos__idEst__49C3F6B7" FromRole="cProductoEstatus" ToRole="Productos" />
+          <NavigationProperty Name="Productos" Relationship="Self.FK__Productos__idEst__3F466844" FromRole="cProductoEstatus" ToRole="Productos" />
         </EntityType>
         <EntityType Name="cProveedorEstatus">
           <Key>
@@ -378,7 +462,15 @@
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="descripcion" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Proveedores" Relationship="Self.FK__Proveedor__idEst__44FF419A" FromRole="cProveedorEstatus" ToRole="Proveedores" />
+          <NavigationProperty Name="Proveedores" Relationship="Self.FK__Proveedor__idEst__3A81B327" FromRole="cProveedorEstatus" ToRole="Proveedores" />
+        </EntityType>
+        <EntityType Name="cTurnoEstatus">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="descripcion" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Turnos" Relationship="Self.FK__Turnos__idEstatu__2E1BDC42" FromRole="cTurnoEstatus" ToRole="Turnos" />
         </EntityType>
         <EntityType Name="cVentaEstatus">
           <Key>
@@ -386,7 +478,7 @@
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="descripcion" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Ventas" Relationship="Self.FK__Ventas__idEstatu__403A8C7D" FromRole="cVentaEstatus" ToRole="Ventas" />
+          <NavigationProperty Name="Ventas" Relationship="Self.FK__Ventas__idEstatu__33D4B598" FromRole="cVentaEstatus" ToRole="Ventas" />
         </EntityType>
         <EntityType Name="Detalle_Entradas">
           <Key>
@@ -399,8 +491,8 @@
           <Property Name="precio" Type="Decimal" Precision="7" Scale="2" Nullable="false" />
           <Property Name="costo" Type="Decimal" Precision="7" Scale="2" Nullable="false" />
           <Property Name="importe" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
-          <NavigationProperty Name="Entradas" Relationship="Self.FK__Detalle_E__idEnt__571DF1D5" FromRole="Detalle_Entradas" ToRole="Entradas" />
-          <NavigationProperty Name="Productos" Relationship="Self.FK__Detalle_E__idPro__5812160E" FromRole="Detalle_Entradas" ToRole="Productos" />
+          <NavigationProperty Name="Entradas" Relationship="Self.FK__Detalle_E__idEnt__4CA06362" FromRole="Detalle_Entradas" ToRole="Entradas" />
+          <NavigationProperty Name="Productos" Relationship="Self.FK__Detalle_E__idPro__4D94879B" FromRole="Detalle_Entradas" ToRole="Productos" />
         </EntityType>
         <EntityType Name="Detalle_Ventas">
           <Key>
@@ -413,8 +505,8 @@
           <Property Name="precio" Type="Decimal" Precision="7" Scale="2" Nullable="false" />
           <Property Name="costo" Type="Decimal" Precision="7" Scale="2" Nullable="false" />
           <Property Name="importe" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
-          <NavigationProperty Name="Productos" Relationship="Self.FK__Detalle_V__idPro__4E88ABD4" FromRole="Detalle_Ventas" ToRole="Productos" />
-          <NavigationProperty Name="Ventas" Relationship="Self.FK__Detalle_V__idVen__4D94879B" FromRole="Detalle_Ventas" ToRole="Ventas" />
+          <NavigationProperty Name="Productos" Relationship="Self.FK__Detalle_V__idPro__440B1D61" FromRole="Detalle_Ventas" ToRole="Productos" />
+          <NavigationProperty Name="Ventas" Relationship="Self.FK__Detalle_V__idVen__4316F928" FromRole="Detalle_Ventas" ToRole="Ventas" />
         </EntityType>
         <EntityType Name="Empleados">
           <Key>
@@ -426,8 +518,10 @@
           <Property Name="pass" Type="String" MaxLength="18" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="idNivel" Type="Int32" Nullable="false" />
           <Property Name="idEstatus" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="cEmpleadoEstatus" Relationship="Self.FK__Empleados__idEst__3B75D760" FromRole="Empleados" ToRole="cEmpleadoEstatus" />
-          <NavigationProperty Name="cEmpleadoNivel" Relationship="Self.FK__Empleados__idNiv__3A81B327" FromRole="Empleados" ToRole="cEmpleadoNivel" />
+          <NavigationProperty Name="cEmpleadoEstatus" Relationship="Self.FK__Empleados__idEst__29572725" FromRole="Empleados" ToRole="cEmpleadoEstatus" />
+          <NavigationProperty Name="cEmpleadoNivel" Relationship="Self.FK__Empleados__idNiv__286302EC" FromRole="Empleados" ToRole="cEmpleadoNivel" />
+          <NavigationProperty Name="Turnos" Relationship="Self.FK__Turnos__idEmplea__2F10007B" FromRole="Empleados" ToRole="Turnos" />
+          <NavigationProperty Name="Ventas" Relationship="Self.FK__Ventas__idEmplea__35BCFE0A" FromRole="Empleados" ToRole="Ventas" />
         </EntityType>
         <EntityType Name="Entradas">
           <Key>
@@ -440,9 +534,9 @@
           <Property Name="importe" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
           <Property Name="idProveedor" Type="Int32" Nullable="false" />
           <Property Name="idEstatus" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="cEntradaEstatus" Relationship="Self.FK__Entradas__idEsta__534D60F1" FromRole="Entradas" ToRole="cEntradaEstatus" />
-          <NavigationProperty Name="Detalle_Entradas" Relationship="Self.FK__Detalle_E__idEnt__571DF1D5" FromRole="Entradas" ToRole="Detalle_Entradas" />
-          <NavigationProperty Name="Proveedores" Relationship="Self.FK__Entradas__idProv__5441852A" FromRole="Entradas" ToRole="Proveedores" />
+          <NavigationProperty Name="cEntradaEstatus" Relationship="Self.FK__Entradas__idEsta__48CFD27E" FromRole="Entradas" ToRole="cEntradaEstatus" />
+          <NavigationProperty Name="Detalle_Entradas" Relationship="Self.FK__Detalle_E__idEnt__4CA06362" FromRole="Entradas" ToRole="Detalle_Entradas" />
+          <NavigationProperty Name="Proveedores" Relationship="Self.FK__Entradas__idProv__49C3F6B7" FromRole="Entradas" ToRole="Proveedores" />
         </EntityType>
         <EntityType Name="Productos">
           <Key>
@@ -458,10 +552,10 @@
           <Property Name="hora" Type="Time" Nullable="false" Precision="7" />
           <Property Name="idProveedor" Type="Int32" Nullable="false" />
           <Property Name="idEstatus" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="cProductoEstatus" Relationship="Self.FK__Productos__idEst__49C3F6B7" FromRole="Productos" ToRole="cProductoEstatus" />
-          <NavigationProperty Name="Detalle_Entradas" Relationship="Self.FK__Detalle_E__idPro__5812160E" FromRole="Productos" ToRole="Detalle_Entradas" />
-          <NavigationProperty Name="Detalle_Ventas" Relationship="Self.FK__Detalle_V__idPro__4E88ABD4" FromRole="Productos" ToRole="Detalle_Ventas" />
-          <NavigationProperty Name="Proveedores" Relationship="Self.FK__Productos__idPro__4AB81AF0" FromRole="Productos" ToRole="Proveedores" />
+          <NavigationProperty Name="cProductoEstatus" Relationship="Self.FK__Productos__idEst__3F466844" FromRole="Productos" ToRole="cProductoEstatus" />
+          <NavigationProperty Name="Detalle_Entradas" Relationship="Self.FK__Detalle_E__idPro__4D94879B" FromRole="Productos" ToRole="Detalle_Entradas" />
+          <NavigationProperty Name="Detalle_Ventas" Relationship="Self.FK__Detalle_V__idPro__440B1D61" FromRole="Productos" ToRole="Detalle_Ventas" />
+          <NavigationProperty Name="Proveedores" Relationship="Self.FK__Productos__idPro__403A8C7D" FromRole="Productos" ToRole="Proveedores" />
         </EntityType>
         <EntityType Name="Proveedores">
           <Key>
@@ -470,11 +564,11 @@
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="nombre" Type="String" MaxLength="35" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="idEstatus" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="cProveedorEstatus" Relationship="Self.FK__Proveedor__idEst__44FF419A" FromRole="Proveedores" ToRole="cProveedorEstatus" />
-          <NavigationProperty Name="Entradas" Relationship="Self.FK__Entradas__idProv__5441852A" FromRole="Proveedores" ToRole="Entradas" />
-          <NavigationProperty Name="Productos" Relationship="Self.FK__Productos__idPro__4AB81AF0" FromRole="Proveedores" ToRole="Productos" />
+          <NavigationProperty Name="cProveedorEstatus" Relationship="Self.FK__Proveedor__idEst__3A81B327" FromRole="Proveedores" ToRole="cProveedorEstatus" />
+          <NavigationProperty Name="Entradas" Relationship="Self.FK__Entradas__idProv__49C3F6B7" FromRole="Proveedores" ToRole="Entradas" />
+          <NavigationProperty Name="Productos" Relationship="Self.FK__Productos__idPro__403A8C7D" FromRole="Proveedores" ToRole="Productos" />
         </EntityType>
-        <EntityType Name="Ventas">
+        <EntityType Name="Turnos">
           <Key>
             <PropertyRef Name="id" />
           </Key>
@@ -482,12 +576,28 @@
           <Property Name="idEmpleado" Type="Int32" Nullable="false" />
           <Property Name="fecha" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="hora" Type="Time" Nullable="false" Precision="7" />
+          <Property Name="idEstatus" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="cTurnoEstatus" Relationship="Self.FK__Turnos__idEstatu__2E1BDC42" FromRole="Turnos" ToRole="cTurnoEstatus" />
+          <NavigationProperty Name="Empleados" Relationship="Self.FK__Turnos__idEmplea__2F10007B" FromRole="Turnos" ToRole="Empleados" />
+          <NavigationProperty Name="Ventas" Relationship="Self.FK__Ventas__idTurno__34C8D9D1" FromRole="Turnos" ToRole="Ventas" />
+        </EntityType>
+        <EntityType Name="Ventas">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idTurno" Type="Int32" Nullable="false" />
+          <Property Name="idEmpleado" Type="Int32" Nullable="false" />
+          <Property Name="fecha" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="hora" Type="Time" Nullable="false" Precision="7" />
           <Property Name="importe" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
           <Property Name="idEstatus" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="cVentaEstatus" Relationship="Self.FK__Ventas__idEstatu__403A8C7D" FromRole="Ventas" ToRole="cVentaEstatus" />
-          <NavigationProperty Name="Detalle_Ventas" Relationship="Self.FK__Detalle_V__idVen__4D94879B" FromRole="Ventas" ToRole="Detalle_Ventas" />
+          <NavigationProperty Name="cVentaEstatus" Relationship="Self.FK__Ventas__idEstatu__33D4B598" FromRole="Ventas" ToRole="cVentaEstatus" />
+          <NavigationProperty Name="Detalle_Ventas" Relationship="Self.FK__Detalle_V__idVen__4316F928" FromRole="Ventas" ToRole="Detalle_Ventas" />
+          <NavigationProperty Name="Empleados" Relationship="Self.FK__Ventas__idEmplea__35BCFE0A" FromRole="Ventas" ToRole="Empleados" />
+          <NavigationProperty Name="Turnos" Relationship="Self.FK__Ventas__idTurno__34C8D9D1" FromRole="Ventas" ToRole="Turnos" />
         </EntityType>
-        <Association Name="FK__Empleados__idEst__3B75D760">
+        <Association Name="FK__Empleados__idEst__29572725">
           <End Role="cEmpleadoEstatus" Type="Self.cEmpleadoEstatus" Multiplicity="1" />
           <End Role="Empleados" Type="Self.Empleados" Multiplicity="*" />
           <ReferentialConstraint>
@@ -499,7 +609,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Empleados__idNiv__3A81B327">
+        <Association Name="FK__Empleados__idNiv__286302EC">
           <End Role="cEmpleadoNivel" Type="Self.cEmpleadoNivel" Multiplicity="1" />
           <End Role="Empleados" Type="Self.Empleados" Multiplicity="*" />
           <ReferentialConstraint>
@@ -511,7 +621,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Entradas__idEsta__534D60F1">
+        <Association Name="FK__Entradas__idEsta__48CFD27E">
           <End Role="cEntradaEstatus" Type="Self.cEntradaEstatus" Multiplicity="1" />
           <End Role="Entradas" Type="Self.Entradas" Multiplicity="*" />
           <ReferentialConstraint>
@@ -523,7 +633,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Productos__idEst__49C3F6B7">
+        <Association Name="FK__Productos__idEst__3F466844">
           <End Role="cProductoEstatus" Type="Self.cProductoEstatus" Multiplicity="1" />
           <End Role="Productos" Type="Self.Productos" Multiplicity="*" />
           <ReferentialConstraint>
@@ -535,7 +645,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Proveedor__idEst__44FF419A">
+        <Association Name="FK__Proveedor__idEst__3A81B327">
           <End Role="cProveedorEstatus" Type="Self.cProveedorEstatus" Multiplicity="1" />
           <End Role="Proveedores" Type="Self.Proveedores" Multiplicity="*" />
           <ReferentialConstraint>
@@ -547,7 +657,19 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Ventas__idEstatu__403A8C7D">
+        <Association Name="FK__Turnos__idEstatu__2E1BDC42">
+          <End Role="cTurnoEstatus" Type="Self.cTurnoEstatus" Multiplicity="1" />
+          <End Role="Turnos" Type="Self.Turnos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cTurnoEstatus">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Turnos">
+              <PropertyRef Name="idEstatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Ventas__idEstatu__33D4B598">
           <End Role="cVentaEstatus" Type="Self.cVentaEstatus" Multiplicity="1" />
           <End Role="Ventas" Type="Self.Ventas" Multiplicity="*" />
           <ReferentialConstraint>
@@ -559,7 +681,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Detalle_E__idEnt__571DF1D5">
+        <Association Name="FK__Detalle_E__idEnt__4CA06362">
           <End Role="Entradas" Type="Self.Entradas" Multiplicity="1" />
           <End Role="Detalle_Entradas" Type="Self.Detalle_Entradas" Multiplicity="*" />
           <ReferentialConstraint>
@@ -571,7 +693,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Detalle_E__idPro__5812160E">
+        <Association Name="FK__Detalle_E__idPro__4D94879B">
           <End Role="Productos" Type="Self.Productos" Multiplicity="1" />
           <End Role="Detalle_Entradas" Type="Self.Detalle_Entradas" Multiplicity="*" />
           <ReferentialConstraint>
@@ -583,7 +705,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Detalle_V__idPro__4E88ABD4">
+        <Association Name="FK__Detalle_V__idPro__440B1D61">
           <End Role="Productos" Type="Self.Productos" Multiplicity="1" />
           <End Role="Detalle_Ventas" Type="Self.Detalle_Ventas" Multiplicity="*" />
           <ReferentialConstraint>
@@ -595,7 +717,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Detalle_V__idVen__4D94879B">
+        <Association Name="FK__Detalle_V__idVen__4316F928">
           <End Role="Ventas" Type="Self.Ventas" Multiplicity="1" />
           <End Role="Detalle_Ventas" Type="Self.Detalle_Ventas" Multiplicity="*" />
           <ReferentialConstraint>
@@ -607,7 +729,31 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Entradas__idProv__5441852A">
+        <Association Name="FK__Turnos__idEmplea__2F10007B">
+          <End Role="Empleados" Type="Self.Empleados" Multiplicity="1" />
+          <End Role="Turnos" Type="Self.Turnos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empleados">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Turnos">
+              <PropertyRef Name="idEmpleado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Ventas__idEmplea__35BCFE0A">
+          <End Role="Empleados" Type="Self.Empleados" Multiplicity="1" />
+          <End Role="Ventas" Type="Self.Ventas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empleados">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Ventas">
+              <PropertyRef Name="idEmpleado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Entradas__idProv__49C3F6B7">
           <End Role="Proveedores" Type="Self.Proveedores" Multiplicity="1" />
           <End Role="Entradas" Type="Self.Entradas" Multiplicity="*" />
           <ReferentialConstraint>
@@ -619,7 +765,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Productos__idPro__4AB81AF0">
+        <Association Name="FK__Productos__idPro__403A8C7D">
           <End Role="Proveedores" Type="Self.Proveedores" Multiplicity="1" />
           <End Role="Productos" Type="Self.Productos" Multiplicity="*" />
           <ReferentialConstraint>
@@ -631,12 +777,25 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK__Ventas__idTurno__34C8D9D1">
+          <End Role="Turnos" Type="Self.Turnos" Multiplicity="1" />
+          <End Role="Ventas" Type="Self.Ventas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Turnos">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Ventas">
+              <PropertyRef Name="idTurno" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="dulce_aroma_db" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="cEmpleadoEstatus" EntityType="Self.cEmpleadoEstatus" />
           <EntitySet Name="cEmpleadoNivel" EntityType="Self.cEmpleadoNivel" />
           <EntitySet Name="cEntradaEstatus" EntityType="Self.cEntradaEstatus" />
           <EntitySet Name="cProductoEstatus" EntityType="Self.cProductoEstatus" />
           <EntitySet Name="cProveedorEstatus" EntityType="Self.cProveedorEstatus" />
+          <EntitySet Name="cTurnoEstatus" EntityType="Self.cTurnoEstatus" />
           <EntitySet Name="cVentaEstatus" EntityType="Self.cVentaEstatus" />
           <EntitySet Name="Detalle_Entradas" EntityType="Self.Detalle_Entradas" />
           <EntitySet Name="Detalle_Ventas" EntityType="Self.Detalle_Ventas" />
@@ -644,54 +803,71 @@
           <EntitySet Name="Entradas" EntityType="Self.Entradas" />
           <EntitySet Name="Productos" EntityType="Self.Productos" />
           <EntitySet Name="Proveedores" EntityType="Self.Proveedores" />
+          <EntitySet Name="Turnos" EntityType="Self.Turnos" />
           <EntitySet Name="Ventas" EntityType="Self.Ventas" />
-          <AssociationSet Name="FK__Empleados__idEst__3B75D760" Association="Self.FK__Empleados__idEst__3B75D760">
+          <AssociationSet Name="FK__Empleados__idEst__29572725" Association="Self.FK__Empleados__idEst__29572725">
             <End Role="cEmpleadoEstatus" EntitySet="cEmpleadoEstatus" />
             <End Role="Empleados" EntitySet="Empleados" />
           </AssociationSet>
-          <AssociationSet Name="FK__Empleados__idNiv__3A81B327" Association="Self.FK__Empleados__idNiv__3A81B327">
+          <AssociationSet Name="FK__Empleados__idNiv__286302EC" Association="Self.FK__Empleados__idNiv__286302EC">
             <End Role="cEmpleadoNivel" EntitySet="cEmpleadoNivel" />
             <End Role="Empleados" EntitySet="Empleados" />
           </AssociationSet>
-          <AssociationSet Name="FK__Entradas__idEsta__534D60F1" Association="Self.FK__Entradas__idEsta__534D60F1">
+          <AssociationSet Name="FK__Entradas__idEsta__48CFD27E" Association="Self.FK__Entradas__idEsta__48CFD27E">
             <End Role="cEntradaEstatus" EntitySet="cEntradaEstatus" />
             <End Role="Entradas" EntitySet="Entradas" />
           </AssociationSet>
-          <AssociationSet Name="FK__Productos__idEst__49C3F6B7" Association="Self.FK__Productos__idEst__49C3F6B7">
+          <AssociationSet Name="FK__Productos__idEst__3F466844" Association="Self.FK__Productos__idEst__3F466844">
             <End Role="cProductoEstatus" EntitySet="cProductoEstatus" />
             <End Role="Productos" EntitySet="Productos" />
           </AssociationSet>
-          <AssociationSet Name="FK__Proveedor__idEst__44FF419A" Association="Self.FK__Proveedor__idEst__44FF419A">
+          <AssociationSet Name="FK__Proveedor__idEst__3A81B327" Association="Self.FK__Proveedor__idEst__3A81B327">
             <End Role="cProveedorEstatus" EntitySet="cProveedorEstatus" />
             <End Role="Proveedores" EntitySet="Proveedores" />
           </AssociationSet>
-          <AssociationSet Name="FK__Ventas__idEstatu__403A8C7D" Association="Self.FK__Ventas__idEstatu__403A8C7D">
+          <AssociationSet Name="FK__Turnos__idEstatu__2E1BDC42" Association="Self.FK__Turnos__idEstatu__2E1BDC42">
+            <End Role="cTurnoEstatus" EntitySet="cTurnoEstatus" />
+            <End Role="Turnos" EntitySet="Turnos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Ventas__idEstatu__33D4B598" Association="Self.FK__Ventas__idEstatu__33D4B598">
             <End Role="cVentaEstatus" EntitySet="cVentaEstatus" />
             <End Role="Ventas" EntitySet="Ventas" />
           </AssociationSet>
-          <AssociationSet Name="FK__Detalle_E__idEnt__571DF1D5" Association="Self.FK__Detalle_E__idEnt__571DF1D5">
+          <AssociationSet Name="FK__Detalle_E__idEnt__4CA06362" Association="Self.FK__Detalle_E__idEnt__4CA06362">
             <End Role="Entradas" EntitySet="Entradas" />
             <End Role="Detalle_Entradas" EntitySet="Detalle_Entradas" />
           </AssociationSet>
-          <AssociationSet Name="FK__Detalle_E__idPro__5812160E" Association="Self.FK__Detalle_E__idPro__5812160E">
+          <AssociationSet Name="FK__Detalle_E__idPro__4D94879B" Association="Self.FK__Detalle_E__idPro__4D94879B">
             <End Role="Productos" EntitySet="Productos" />
             <End Role="Detalle_Entradas" EntitySet="Detalle_Entradas" />
           </AssociationSet>
-          <AssociationSet Name="FK__Detalle_V__idPro__4E88ABD4" Association="Self.FK__Detalle_V__idPro__4E88ABD4">
+          <AssociationSet Name="FK__Detalle_V__idPro__440B1D61" Association="Self.FK__Detalle_V__idPro__440B1D61">
             <End Role="Productos" EntitySet="Productos" />
             <End Role="Detalle_Ventas" EntitySet="Detalle_Ventas" />
           </AssociationSet>
-          <AssociationSet Name="FK__Detalle_V__idVen__4D94879B" Association="Self.FK__Detalle_V__idVen__4D94879B">
+          <AssociationSet Name="FK__Detalle_V__idVen__4316F928" Association="Self.FK__Detalle_V__idVen__4316F928">
             <End Role="Ventas" EntitySet="Ventas" />
             <End Role="Detalle_Ventas" EntitySet="Detalle_Ventas" />
           </AssociationSet>
-          <AssociationSet Name="FK__Entradas__idProv__5441852A" Association="Self.FK__Entradas__idProv__5441852A">
+          <AssociationSet Name="FK__Turnos__idEmplea__2F10007B" Association="Self.FK__Turnos__idEmplea__2F10007B">
+            <End Role="Empleados" EntitySet="Empleados" />
+            <End Role="Turnos" EntitySet="Turnos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Ventas__idEmplea__35BCFE0A" Association="Self.FK__Ventas__idEmplea__35BCFE0A">
+            <End Role="Empleados" EntitySet="Empleados" />
+            <End Role="Ventas" EntitySet="Ventas" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Entradas__idProv__49C3F6B7" Association="Self.FK__Entradas__idProv__49C3F6B7">
             <End Role="Proveedores" EntitySet="Proveedores" />
             <End Role="Entradas" EntitySet="Entradas" />
           </AssociationSet>
-          <AssociationSet Name="FK__Productos__idPro__4AB81AF0" Association="Self.FK__Productos__idPro__4AB81AF0">
+          <AssociationSet Name="FK__Productos__idPro__403A8C7D" Association="Self.FK__Productos__idPro__403A8C7D">
             <End Role="Proveedores" EntitySet="Proveedores" />
             <End Role="Productos" EntitySet="Productos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Ventas__idTurno__34C8D9D1" Association="Self.FK__Ventas__idTurno__34C8D9D1">
+            <End Role="Turnos" EntitySet="Turnos" />
+            <End Role="Ventas" EntitySet="Ventas" />
           </AssociationSet>
         </EntityContainer>
       </Schema>
@@ -735,6 +911,14 @@
           <EntitySetMapping Name="cProveedorEstatus">
             <EntityTypeMapping TypeName="dulce_aromaModel.cProveedorEstatus">
               <MappingFragment StoreEntitySet="cProveedorEstatus">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cTurnoEstatus">
+            <EntityTypeMapping TypeName="dulce_aromaModel.cTurnoEstatus">
+              <MappingFragment StoreEntitySet="cTurnoEstatus">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="descripcion" ColumnName="descripcion" />
               </MappingFragment>
@@ -824,10 +1008,22 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="Turnos">
+            <EntityTypeMapping TypeName="dulce_aromaModel.Turnos">
+              <MappingFragment StoreEntitySet="Turnos">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="idEmpleado" ColumnName="idEmpleado" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="hora" ColumnName="hora" />
+                <ScalarProperty Name="idEstatus" ColumnName="idEstatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Ventas">
             <EntityTypeMapping TypeName="dulce_aromaModel.Ventas">
               <MappingFragment StoreEntitySet="Ventas">
                 <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="idTurno" ColumnName="idTurno" />
                 <ScalarProperty Name="idEmpleado" ColumnName="idEmpleado" />
                 <ScalarProperty Name="fecha" ColumnName="fecha" />
                 <ScalarProperty Name="hora" ColumnName="hora" />

@@ -18,6 +18,22 @@ CREATE TABLE Empleados(
     FOREIGN KEY (idestatus) REFERENCES cEmpleadoEstatus(id)
 )
 
+--- Turnos implementados
+CREATE TABLE cTurnoEstatus(
+    id int primary key identity(1,1),
+    descripcion varchar(10) not null
+)
+
+CREATE TABLE Turnos(
+    id int primary key identity(1,1),
+    idEmpleado int not null,
+    fecha date not null,
+    hora  time(7) not null,
+    idEstatus int not null,
+    FOREIGN KEY (idEstatus) REFERENCES cTurnoEstatus(id),
+    FOREIGN KEY (idEmpleado) REFERENCES Empleados(id)
+)
+
 CREATE TABLE cVentaEstatus(
     id int primary key identity(1,1),
     descripcion varchar(10) not null
@@ -25,12 +41,15 @@ CREATE TABLE cVentaEstatus(
 
 CREATE TABLE Ventas(
     id int primary key identity(1,1),
+    idTurno int not null, -- added 08/02
     idEmpleado int not null,
     fecha date not null,
     hora  time(7) not null,
     importe  numeric(10,2) not null,
     idEstatus int not null,
-    FOREIGN KEY (idEstatus) REFERENCES cVentaEstatus(id)
+    FOREIGN KEY (idEstatus) REFERENCES cVentaEstatus(id),
+    FOREIGN KEY (idTurno) REFERENCES Turnos(id),
+    FOREIGN KEY (idEmpleado) REFERENCES Empleados(id)
 )
 
 CREATE TABLE cProveedorEstatus(

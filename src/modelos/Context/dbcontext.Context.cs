@@ -30,6 +30,7 @@ namespace modelos.Context
         public virtual DbSet<cEntradaEstatus> cEntradaEstatus { get; set; }
         public virtual DbSet<cProductoEstatus> cProductoEstatus { get; set; }
         public virtual DbSet<cProveedorEstatus> cProveedorEstatus { get; set; }
+        public virtual DbSet<cTurnoEstatus> cTurnoEstatus { get; set; }
         public virtual DbSet<cVentaEstatus> cVentaEstatus { get; set; }
         public virtual DbSet<Detalle_Entradas> Detalle_Entradas { get; set; }
         public virtual DbSet<Detalle_Ventas> Detalle_Ventas { get; set; }
@@ -37,6 +38,7 @@ namespace modelos.Context
         public virtual DbSet<Entradas> Entradas { get; set; }
         public virtual DbSet<Productos> Productos { get; set; }
         public virtual DbSet<Proveedores> Proveedores { get; set; }
+        public virtual DbSet<Turnos> Turnos { get; set; }
         public virtual DbSet<Ventas> Ventas { get; set; }
     }
 }
