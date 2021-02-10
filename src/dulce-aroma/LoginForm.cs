@@ -20,15 +20,23 @@ namespace dulce_aroma
         {
             InitializeComponent();
         }
-
+        private void makeControls(bool t)
+        {
+            this.cboxempleados.Enabled = t;
+            this.txtpass.Enabled = t;
+            this.btnacceso.Enabled = t;
+        }
         private async void LoginForm_Load(object sender, EventArgs e)
         {
             this.Cursor = Cursors.WaitCursor;
+            makeControls(false);
             var empleados = await empleadoController.ObtenerTodos();
             cboxempleados.DataSource = empleados;
             cboxempleados.DisplayMember = "nombre_completo";
             cboxempleados.ValueMember = "id";
             this.Cursor = Cursors.Default;
+            makeControls(true);
+            txtpass.Focus();
         }
 
         private async void btnacceso_Click(object sender, EventArgs e)

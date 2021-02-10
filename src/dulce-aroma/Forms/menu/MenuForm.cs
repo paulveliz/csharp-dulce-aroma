@@ -25,6 +25,7 @@ namespace dulce_aroma.Forms.menu
         {
             this.Text = $"Bienvenida al sistema dulce aroma - {this.Empleado.nombre_completo}";
         }
+
         private void MenuForm_Load(object sender, EventArgs e)
         {
             bienvenida();

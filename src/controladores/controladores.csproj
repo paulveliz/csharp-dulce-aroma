@@ -53,6 +53,7 @@
   <ItemGroup>
     <Compile Include="EmpleadoController.cs" />
     <Compile Include="EntradaController.cs" />
+    <Compile Include="GeneralController.cs" />
     <Compile Include="Interfaces\IEmpleadoProvider.cs" />
     <Compile Include="Interfaces\IEntradaProvider.cs" />
     <Compile Include="Interfaces\IGeneralLogic.cs" />
