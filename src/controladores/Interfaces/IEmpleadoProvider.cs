@@ -13,5 +13,6 @@ namespace controladores.Interfaces
         Task<IEnumerable<Empleados>> ObtenerTodos();
         Task<Empleados> CrearNuevo(Empleados empleado);
         Task<Empleados> Actualizar(Empleados empleado);
+        Task<(bool updated, Empleados empleado)> CambiarEstatus(int idEmpelado, int nuevoEstatus);
     }
 }

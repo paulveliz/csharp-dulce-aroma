@@ -167,15 +167,46 @@ namespace dulce_aroma.Forms.empleados
             this.Cursor = Cursors.Default;
         }
 
-        private void dgvbase_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private async void dgvbase_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
-                // Implementar baja para empleados.
+                string nombreEmpleado = this.dgvbase.SelectedRows[0].Cells[1].Value.ToString();
+                int idEmpleado = Convert.ToInt32(this.dgvbase.SelectedRows[0].Cells[0].Value);
+                var confirm = MessageBox.Show($"¿Desea dar de baja al empleado \"{nombreEmpleado}\" ", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (confirm != DialogResult.Yes) return;
+                var bajaEmpleado = await empCtrl.CambiarEstatus(idEmpleado, 2);
+                if (bajaEmpleado.updated)
+                {
+                    MessageBox.Show("El empleado fue dado de baja.", "Resultados", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    await ObtenerEmpleadosToDgv();
+                }
+                else
+                {
+                    MessageBox.Show("Ocurrió un error intentando dar de baja un empleado, contacte con el administrador e intente de nuevo.", "Resultados", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                }
             }
             catch (Exception)
             {
                 return;
+            }
+        }
+
+        private void EmpleadosForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Escape)
+            {
+                ClearControls();
+            }
+
+            if(e.KeyCode == Keys.F2)
+            {
+                txtbuscar.Focus();
+            }
+
+            if(e.KeyCode == Keys.F1)
+            {
+                btnadd.Focus();
             }
         }
     }

@@ -32,6 +32,17 @@ namespace controladores
             }
         }
 
+        public async Task<(bool updated, Empleados empleado)> CambiarEstatus(int idEmpelado, int nuevoEstatus)
+        {
+            using (var db = new dulce_aroma_db())
+            {
+                var emp = await db.Empleados.FirstOrDefaultAsync(e => e.id == idEmpelado);
+                emp.idEstatus = nuevoEstatus;
+                var aff = await db.SaveChangesAsync();
+                return aff > 0 ? (true, emp) : (false, emp);
+            }
+        }
+
         public async Task<Empleados> CrearNuevo(Empleados empleado)
         {
             using (var db = new dulce_aroma_db())

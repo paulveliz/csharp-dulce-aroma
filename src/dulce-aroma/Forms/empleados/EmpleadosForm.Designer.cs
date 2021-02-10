@@ -348,12 +348,14 @@ namespace dulce_aroma.Forms.empleados
             this.ClientSize = new System.Drawing.Size(1237, 650);
             this.Controls.Add(this.splitContainer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.KeyPreview = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "EmpleadosForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sistema dulce aroma - Empleados";
             this.Load += new System.EventHandler(this.EmpleadosForm_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.EmpleadosForm_KeyDown);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
