@@ -175,6 +175,11 @@ namespace dulce_aroma.Forms.empleados
                 int idEmpleado = Convert.ToInt32(this.dgvbase.SelectedRows[0].Cells[0].Value);
                 var confirm = MessageBox.Show($"¿Desea dar de baja al empleado \"{nombreEmpleado}\" ", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (confirm != DialogResult.Yes) return;
+                if(idEmpleado == 1)
+                {
+                    MessageBox.Show("No puede dar de baja al dueño del sistema.", "No procede", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                    return;
+                }
                 var bajaEmpleado = await empCtrl.CambiarEstatus(idEmpleado, 2);
                 if (bajaEmpleado.updated)
                 {

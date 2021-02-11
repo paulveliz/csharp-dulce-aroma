@@ -30,5 +30,11 @@ namespace dulce_aroma.Forms.menu
         {
             bienvenida();
         }
+
+        private void empleadosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var empFrm = new empleados.EmpleadosForm();
+            empFrm.ShowDialog();
+        }
     }
 }
