@@ -14,6 +14,7 @@ namespace controladores.Interfaces
         Task<IEnumerable<Productos>> ObtenerPorNombreMatch(string nombreProducto);
         Task<IEnumerable<Productos>> ObtenerProductos(DateTime @from, DateTime @to);
         Task<IEnumerable<Productos>> ObtenerExistentes();
+        Task<IEnumerable<Productos>> ObtenerTodos();
         Task<IEnumerable<Productos>> ObtenerAgotados();
         Task<IEnumerable<Productos>> ObtenerPorAgotarse();
         Task<(bool exists, Productos producto)> VerificarNombre(string nombreProducto);

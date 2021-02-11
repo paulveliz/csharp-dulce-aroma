@@ -77,6 +77,12 @@
     <Compile Include="Forms\empleados\EmpleadosForm.Designer.cs">
       <DependentUpon>EmpleadosForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\inventarios\InventarioForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\inventarios\InventarioForm.Designer.cs">
+      <DependentUpon>InventarioForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\menu\MenuForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +105,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\empleados\EmpleadosForm.resx">
       <DependentUpon>EmpleadosForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\inventarios\InventarioForm.resx">
+      <DependentUpon>InventarioForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\menu\MenuForm.resx">
       <DependentUpon>MenuForm.cs</DependentUpon>

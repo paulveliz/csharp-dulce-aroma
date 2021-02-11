@@ -149,6 +149,20 @@ namespace controladores
             }
         }
 
+        public async Task<IEnumerable<Productos>> ObtenerTodos()
+        {
+            using (var db = new dulce_aroma_db())
+            {
+                var res = await db.Productos
+                                        .Include(p => p.cProductoEstatus)
+                                        .Include(p => p.Proveedores)
+                                        .Where(p => p.idEstatus != 2)
+                                        .Take(1000)
+                                        .ToListAsync();
+                return res;
+            }
+        }
+
         public async Task<(bool exists, Productos producto)> VerificarCodigo(string codigoProducto)
         {
             using (var db = new dulce_aroma_db())

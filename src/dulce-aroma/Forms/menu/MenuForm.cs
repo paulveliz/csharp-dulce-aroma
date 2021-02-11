@@ -36,5 +36,17 @@ namespace dulce_aroma.Forms.menu
             var empFrm = new empleados.EmpleadosForm();
             empFrm.ShowDialog();
         }
+
+        private void nuevoProductoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var frm = new inventarios.InventarioForm();
+            frm.ShowDialog();
+        }
+
+        private void nuevoProveedorToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            var provFrm = new proveedores.ProveedorForm();
+            provFrm.ShowDialog();
+        }
     }
 }
