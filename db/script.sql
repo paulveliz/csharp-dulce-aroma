@@ -111,6 +111,7 @@ CREATE TABLE Entradas(
     idEstatus int not null,
     FOREIGN KEY (idEstatus) REFERENCES cEntradaEstatus(id),
     FOREIGN KEY (idProveedor) REFERENCES Proveedores(id)
+    FOREIGN KEY (idEmpleado) REFERENCES Empleados(id)
 )
 
 CREATE TABLE Detalle_Entradas(

@@ -12,6 +12,7 @@ namespace controladores.Interfaces
     {
         Task<Entradas> ObtenerPorId(int @idEntrada);
         Task<IEnumerable<Entradas>> ObtenerPorFechas(DateTime from, DateTime to);
+        Task<IEnumerable<Entradas>> ObtenerTodas();
         Task<IEnumerable<Entradas>> ObtenerPorEmpleado(DateTime from, DateTime to, int idEmpleado);
         Task<IEnumerable<Entradas>> ObtenerConBaja(DateTime from, DateTime to);
         Task<(bool IsSucess, Entradas entrada)> CrearNueva(Entradas entrada, IEnumerable<Detalle_Entradas> detalle);

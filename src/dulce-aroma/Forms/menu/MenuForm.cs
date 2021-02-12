@@ -48,5 +48,11 @@ namespace dulce_aroma.Forms.menu
             var provFrm = new proveedores.ProveedorForm();
             provFrm.ShowDialog();
         }
+
+        private void nuevaEntradaToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            var frm = new entradas.EntradasForm();
+            frm.ShowDialog();
+        }
     }
 }

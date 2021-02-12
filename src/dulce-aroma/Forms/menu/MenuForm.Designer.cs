@@ -44,38 +44,38 @@ namespace dulce_aroma.Forms.menu
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripDropDownButton();
             this.puntoDeVentaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.informesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.informeDeVentasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.informeDeVentaEspecificaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.informeDeDevolucionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel3 = new System.Windows.Forms.ToolStripDropDownButton();
             this.nuevaEntradaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nuevaEntradaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.informeDeEntradasPorProveedorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.informeDeEntradasPorEmpleadoYProveedorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.informeDeEntradasPorFechasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nuevoProveedorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nuevoProveedorToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.inventarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nuevoProductoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.informePorAgotarseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.informeAgotadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel4 = new System.Windows.Forms.ToolStripDropDownButton();
             this.turnoActualToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.informeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripLabel5 = new System.Windows.Forms.ToolStripDropDownButton();
-            this.respaldarSistemaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.informesToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.nuevoProductoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.informePorAgotarseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.informeAgotadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.nuevoProveedorToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.nuevaEntradaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.informeDeTurnoActualToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.informeDeTurnosPorFechaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.informeDeTurnosPorEmpleadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.informeDeTurnoEspecificoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripLabel5 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.respaldarSistemaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.informesToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.informeDeRespaldosPorFechaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.informeDeRespaldosPorEmpleadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.informeDeEntradasPorProveedorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.informeDeEntradasPorEmpleadoYProveedorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.informeDeEntradasPorFechasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.informeDeVentasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.informeDeVentaEspecificaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.informeDeDevolucionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -126,13 +126,13 @@ namespace dulce_aroma.Forms.menu
             // movimientosDeEmpleadoToolStripMenuItem
             // 
             this.movimientosDeEmpleadoToolStripMenuItem.Name = "movimientosDeEmpleadoToolStripMenuItem";
-            this.movimientosDeEmpleadoToolStripMenuItem.Size = new System.Drawing.Size(288, 28);
+            this.movimientosDeEmpleadoToolStripMenuItem.Size = new System.Drawing.Size(271, 26);
             this.movimientosDeEmpleadoToolStripMenuItem.Text = "Movimientos de empleado";
             // 
             // depurarAuditoriasToolStripMenuItem
             // 
             this.depurarAuditoriasToolStripMenuItem.Name = "depurarAuditoriasToolStripMenuItem";
-            this.depurarAuditoriasToolStripMenuItem.Size = new System.Drawing.Size(288, 28);
+            this.depurarAuditoriasToolStripMenuItem.Size = new System.Drawing.Size(271, 26);
             this.depurarAuditoriasToolStripMenuItem.Text = "Depurar auditorias";
             // 
             // reportesToolStripMenuItem
@@ -168,7 +168,7 @@ namespace dulce_aroma.Forms.menu
             // 
             this.empleadosToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("empleadosToolStripMenuItem.Image")));
             this.empleadosToolStripMenuItem.Name = "empleadosToolStripMenuItem";
-            this.empleadosToolStripMenuItem.Size = new System.Drawing.Size(180, 28);
+            this.empleadosToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.empleadosToolStripMenuItem.Text = "Empleados";
             this.empleadosToolStripMenuItem.Click += new System.EventHandler(this.empleadosToolStripMenuItem_Click);
             // 
@@ -208,6 +208,24 @@ namespace dulce_aroma.Forms.menu
             this.informesToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.informesToolStripMenuItem.Text = "Informes";
             // 
+            // informeDeVentasToolStripMenuItem
+            // 
+            this.informeDeVentasToolStripMenuItem.Name = "informeDeVentasToolStripMenuItem";
+            this.informeDeVentasToolStripMenuItem.Size = new System.Drawing.Size(275, 26);
+            this.informeDeVentasToolStripMenuItem.Text = "Informe de ventas";
+            // 
+            // informeDeVentaEspecificaToolStripMenuItem
+            // 
+            this.informeDeVentaEspecificaToolStripMenuItem.Name = "informeDeVentaEspecificaToolStripMenuItem";
+            this.informeDeVentaEspecificaToolStripMenuItem.Size = new System.Drawing.Size(275, 26);
+            this.informeDeVentaEspecificaToolStripMenuItem.Text = "Informe de venta especifica";
+            // 
+            // informeDeDevolucionesToolStripMenuItem
+            // 
+            this.informeDeDevolucionesToolStripMenuItem.Name = "informeDeDevolucionesToolStripMenuItem";
+            this.informeDeDevolucionesToolStripMenuItem.Size = new System.Drawing.Size(275, 26);
+            this.informeDeDevolucionesToolStripMenuItem.Text = "Informe de devoluciones";
+            // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
@@ -238,6 +256,31 @@ namespace dulce_aroma.Forms.menu
             this.nuevaEntradaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.nuevaEntradaToolStripMenuItem.Text = "Entradas";
             // 
+            // nuevaEntradaToolStripMenuItem1
+            // 
+            this.nuevaEntradaToolStripMenuItem1.Name = "nuevaEntradaToolStripMenuItem1";
+            this.nuevaEntradaToolStripMenuItem1.Size = new System.Drawing.Size(409, 26);
+            this.nuevaEntradaToolStripMenuItem1.Text = "Nueva entrada";
+            this.nuevaEntradaToolStripMenuItem1.Click += new System.EventHandler(this.nuevaEntradaToolStripMenuItem1_Click);
+            // 
+            // informeDeEntradasPorProveedorToolStripMenuItem
+            // 
+            this.informeDeEntradasPorProveedorToolStripMenuItem.Name = "informeDeEntradasPorProveedorToolStripMenuItem";
+            this.informeDeEntradasPorProveedorToolStripMenuItem.Size = new System.Drawing.Size(409, 26);
+            this.informeDeEntradasPorProveedorToolStripMenuItem.Text = "Informe de entradas por proveedor";
+            // 
+            // informeDeEntradasPorEmpleadoYProveedorToolStripMenuItem
+            // 
+            this.informeDeEntradasPorEmpleadoYProveedorToolStripMenuItem.Name = "informeDeEntradasPorEmpleadoYProveedorToolStripMenuItem";
+            this.informeDeEntradasPorEmpleadoYProveedorToolStripMenuItem.Size = new System.Drawing.Size(409, 26);
+            this.informeDeEntradasPorEmpleadoYProveedorToolStripMenuItem.Text = "Informe de entradas por empleado y proveedor";
+            // 
+            // informeDeEntradasPorFechasToolStripMenuItem
+            // 
+            this.informeDeEntradasPorFechasToolStripMenuItem.Name = "informeDeEntradasPorFechasToolStripMenuItem";
+            this.informeDeEntradasPorFechasToolStripMenuItem.Size = new System.Drawing.Size(409, 26);
+            this.informeDeEntradasPorFechasToolStripMenuItem.Text = "Informe de entradas por fechas";
+            // 
             // nuevoProveedorToolStripMenuItem
             // 
             this.nuevoProveedorToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -246,6 +289,13 @@ namespace dulce_aroma.Forms.menu
             this.nuevoProveedorToolStripMenuItem.Name = "nuevoProveedorToolStripMenuItem";
             this.nuevoProveedorToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.nuevoProveedorToolStripMenuItem.Text = "Proveedores";
+            // 
+            // nuevoProveedorToolStripMenuItem1
+            // 
+            this.nuevoProveedorToolStripMenuItem1.Name = "nuevoProveedorToolStripMenuItem1";
+            this.nuevoProveedorToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.nuevoProveedorToolStripMenuItem1.Text = "Nuevo proveedor";
+            this.nuevoProveedorToolStripMenuItem1.Click += new System.EventHandler(this.nuevoProveedorToolStripMenuItem1_Click);
             // 
             // inventarioToolStripMenuItem
             // 
@@ -257,6 +307,25 @@ namespace dulce_aroma.Forms.menu
             this.inventarioToolStripMenuItem.Name = "inventarioToolStripMenuItem";
             this.inventarioToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.inventarioToolStripMenuItem.Text = "Productos";
+            // 
+            // nuevoProductoToolStripMenuItem
+            // 
+            this.nuevoProductoToolStripMenuItem.Name = "nuevoProductoToolStripMenuItem";
+            this.nuevoProductoToolStripMenuItem.Size = new System.Drawing.Size(325, 26);
+            this.nuevoProductoToolStripMenuItem.Text = "Nuevo producto";
+            this.nuevoProductoToolStripMenuItem.Click += new System.EventHandler(this.nuevoProductoToolStripMenuItem_Click);
+            // 
+            // informePorAgotarseToolStripMenuItem
+            // 
+            this.informePorAgotarseToolStripMenuItem.Name = "informePorAgotarseToolStripMenuItem";
+            this.informePorAgotarseToolStripMenuItem.Size = new System.Drawing.Size(325, 26);
+            this.informePorAgotarseToolStripMenuItem.Text = "Informe de productos por agotarse";
+            // 
+            // informeAgotadosToolStripMenuItem
+            // 
+            this.informeAgotadosToolStripMenuItem.Name = "informeAgotadosToolStripMenuItem";
+            this.informeAgotadosToolStripMenuItem.Size = new System.Drawing.Size(325, 26);
+            this.informeAgotadosToolStripMenuItem.Text = "Informe de productos agotados";
             // 
             // toolStripSeparator3
             // 
@@ -278,7 +347,7 @@ namespace dulce_aroma.Forms.menu
             // 
             this.turnoActualToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("turnoActualToolStripMenuItem.Image")));
             this.turnoActualToolStripMenuItem.Name = "turnoActualToolStripMenuItem";
-            this.turnoActualToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.turnoActualToolStripMenuItem.Size = new System.Drawing.Size(184, 28);
             this.turnoActualToolStripMenuItem.Text = "Turno actual";
             // 
             // informeToolStripMenuItem
@@ -290,8 +359,32 @@ namespace dulce_aroma.Forms.menu
             this.informeDeTurnoEspecificoToolStripMenuItem});
             this.informeToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("informeToolStripMenuItem.Image")));
             this.informeToolStripMenuItem.Name = "informeToolStripMenuItem";
-            this.informeToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.informeToolStripMenuItem.Size = new System.Drawing.Size(184, 28);
             this.informeToolStripMenuItem.Text = "Informes";
+            // 
+            // informeDeTurnoActualToolStripMenuItem
+            // 
+            this.informeDeTurnoActualToolStripMenuItem.Name = "informeDeTurnoActualToolStripMenuItem";
+            this.informeDeTurnoActualToolStripMenuItem.Size = new System.Drawing.Size(329, 28);
+            this.informeDeTurnoActualToolStripMenuItem.Text = "Informe de turno actual";
+            // 
+            // informeDeTurnosPorFechaToolStripMenuItem
+            // 
+            this.informeDeTurnosPorFechaToolStripMenuItem.Name = "informeDeTurnosPorFechaToolStripMenuItem";
+            this.informeDeTurnosPorFechaToolStripMenuItem.Size = new System.Drawing.Size(329, 28);
+            this.informeDeTurnosPorFechaToolStripMenuItem.Text = "Informe de turnos por fecha";
+            // 
+            // informeDeTurnosPorEmpleadoToolStripMenuItem
+            // 
+            this.informeDeTurnosPorEmpleadoToolStripMenuItem.Name = "informeDeTurnosPorEmpleadoToolStripMenuItem";
+            this.informeDeTurnosPorEmpleadoToolStripMenuItem.Size = new System.Drawing.Size(329, 28);
+            this.informeDeTurnosPorEmpleadoToolStripMenuItem.Text = "Informe de turnos por empleado";
+            // 
+            // informeDeTurnoEspecificoToolStripMenuItem
+            // 
+            this.informeDeTurnoEspecificoToolStripMenuItem.Name = "informeDeTurnoEspecificoToolStripMenuItem";
+            this.informeDeTurnoEspecificoToolStripMenuItem.Size = new System.Drawing.Size(329, 28);
+            this.informeDeTurnoEspecificoToolStripMenuItem.Text = "Informe de turno especifico";
             // 
             // toolStripSeparator4
             // 
@@ -313,7 +406,7 @@ namespace dulce_aroma.Forms.menu
             // 
             this.respaldarSistemaToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("respaldarSistemaToolStripMenuItem.Image")));
             this.respaldarSistemaToolStripMenuItem.Name = "respaldarSistemaToolStripMenuItem";
-            this.respaldarSistemaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.respaldarSistemaToolStripMenuItem.Size = new System.Drawing.Size(229, 28);
             this.respaldarSistemaToolStripMenuItem.Text = "Respaldar sistema";
             // 
             // informesToolStripMenuItem2
@@ -323,8 +416,20 @@ namespace dulce_aroma.Forms.menu
             this.informeDeRespaldosPorEmpleadoToolStripMenuItem});
             this.informesToolStripMenuItem2.Image = ((System.Drawing.Image)(resources.GetObject("informesToolStripMenuItem2.Image")));
             this.informesToolStripMenuItem2.Name = "informesToolStripMenuItem2";
-            this.informesToolStripMenuItem2.Size = new System.Drawing.Size(224, 26);
+            this.informesToolStripMenuItem2.Size = new System.Drawing.Size(229, 28);
             this.informesToolStripMenuItem2.Text = "Informes";
+            // 
+            // informeDeRespaldosPorFechaToolStripMenuItem
+            // 
+            this.informeDeRespaldosPorFechaToolStripMenuItem.Name = "informeDeRespaldosPorFechaToolStripMenuItem";
+            this.informeDeRespaldosPorFechaToolStripMenuItem.Size = new System.Drawing.Size(353, 28);
+            this.informeDeRespaldosPorFechaToolStripMenuItem.Text = "Informe de respaldos por fecha";
+            // 
+            // informeDeRespaldosPorEmpleadoToolStripMenuItem
+            // 
+            this.informeDeRespaldosPorEmpleadoToolStripMenuItem.Name = "informeDeRespaldosPorEmpleadoToolStripMenuItem";
+            this.informeDeRespaldosPorEmpleadoToolStripMenuItem.Size = new System.Drawing.Size(353, 28);
+            this.informeDeRespaldosPorEmpleadoToolStripMenuItem.Text = "Informe de respaldos por empleado";
             // 
             // toolStripSeparator5
             // 
@@ -341,110 +446,6 @@ namespace dulce_aroma.Forms.menu
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1402, 751);
             this.panel1.TabIndex = 1;
-            // 
-            // nuevoProductoToolStripMenuItem
-            // 
-            this.nuevoProductoToolStripMenuItem.Name = "nuevoProductoToolStripMenuItem";
-            this.nuevoProductoToolStripMenuItem.Size = new System.Drawing.Size(325, 26);
-            this.nuevoProductoToolStripMenuItem.Text = "Nuevo producto";
-            this.nuevoProductoToolStripMenuItem.Click += new System.EventHandler(this.nuevoProductoToolStripMenuItem_Click);
-            // 
-            // informePorAgotarseToolStripMenuItem
-            // 
-            this.informePorAgotarseToolStripMenuItem.Name = "informePorAgotarseToolStripMenuItem";
-            this.informePorAgotarseToolStripMenuItem.Size = new System.Drawing.Size(325, 26);
-            this.informePorAgotarseToolStripMenuItem.Text = "Informe de productos por agotarse";
-            // 
-            // informeAgotadosToolStripMenuItem
-            // 
-            this.informeAgotadosToolStripMenuItem.Name = "informeAgotadosToolStripMenuItem";
-            this.informeAgotadosToolStripMenuItem.Size = new System.Drawing.Size(325, 26);
-            this.informeAgotadosToolStripMenuItem.Text = "Informe de productos agotados";
-            // 
-            // nuevoProveedorToolStripMenuItem1
-            // 
-            this.nuevoProveedorToolStripMenuItem1.Name = "nuevoProveedorToolStripMenuItem1";
-            this.nuevoProveedorToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
-            this.nuevoProveedorToolStripMenuItem1.Text = "Nuevo proveedor";
-            this.nuevoProveedorToolStripMenuItem1.Click += new System.EventHandler(this.nuevoProveedorToolStripMenuItem1_Click);
-            // 
-            // nuevaEntradaToolStripMenuItem1
-            // 
-            this.nuevaEntradaToolStripMenuItem1.Name = "nuevaEntradaToolStripMenuItem1";
-            this.nuevaEntradaToolStripMenuItem1.Size = new System.Drawing.Size(409, 26);
-            this.nuevaEntradaToolStripMenuItem1.Text = "Nueva entrada";
-            // 
-            // informeDeTurnoActualToolStripMenuItem
-            // 
-            this.informeDeTurnoActualToolStripMenuItem.Name = "informeDeTurnoActualToolStripMenuItem";
-            this.informeDeTurnoActualToolStripMenuItem.Size = new System.Drawing.Size(309, 26);
-            this.informeDeTurnoActualToolStripMenuItem.Text = "Informe de turno actual";
-            // 
-            // informeDeTurnosPorFechaToolStripMenuItem
-            // 
-            this.informeDeTurnosPorFechaToolStripMenuItem.Name = "informeDeTurnosPorFechaToolStripMenuItem";
-            this.informeDeTurnosPorFechaToolStripMenuItem.Size = new System.Drawing.Size(309, 26);
-            this.informeDeTurnosPorFechaToolStripMenuItem.Text = "Informe de turnos por fecha";
-            // 
-            // informeDeTurnosPorEmpleadoToolStripMenuItem
-            // 
-            this.informeDeTurnosPorEmpleadoToolStripMenuItem.Name = "informeDeTurnosPorEmpleadoToolStripMenuItem";
-            this.informeDeTurnosPorEmpleadoToolStripMenuItem.Size = new System.Drawing.Size(309, 26);
-            this.informeDeTurnosPorEmpleadoToolStripMenuItem.Text = "Informe de turnos por empleado";
-            // 
-            // informeDeTurnoEspecificoToolStripMenuItem
-            // 
-            this.informeDeTurnoEspecificoToolStripMenuItem.Name = "informeDeTurnoEspecificoToolStripMenuItem";
-            this.informeDeTurnoEspecificoToolStripMenuItem.Size = new System.Drawing.Size(309, 26);
-            this.informeDeTurnoEspecificoToolStripMenuItem.Text = "Informe de turno especifico";
-            // 
-            // informeDeRespaldosPorFechaToolStripMenuItem
-            // 
-            this.informeDeRespaldosPorFechaToolStripMenuItem.Name = "informeDeRespaldosPorFechaToolStripMenuItem";
-            this.informeDeRespaldosPorFechaToolStripMenuItem.Size = new System.Drawing.Size(332, 26);
-            this.informeDeRespaldosPorFechaToolStripMenuItem.Text = "Informe de respaldos por fecha";
-            // 
-            // informeDeRespaldosPorEmpleadoToolStripMenuItem
-            // 
-            this.informeDeRespaldosPorEmpleadoToolStripMenuItem.Name = "informeDeRespaldosPorEmpleadoToolStripMenuItem";
-            this.informeDeRespaldosPorEmpleadoToolStripMenuItem.Size = new System.Drawing.Size(332, 26);
-            this.informeDeRespaldosPorEmpleadoToolStripMenuItem.Text = "Informe de respaldos por empleado";
-            // 
-            // informeDeEntradasPorProveedorToolStripMenuItem
-            // 
-            this.informeDeEntradasPorProveedorToolStripMenuItem.Name = "informeDeEntradasPorProveedorToolStripMenuItem";
-            this.informeDeEntradasPorProveedorToolStripMenuItem.Size = new System.Drawing.Size(409, 26);
-            this.informeDeEntradasPorProveedorToolStripMenuItem.Text = "Informe de entradas por proveedor";
-            // 
-            // informeDeEntradasPorEmpleadoYProveedorToolStripMenuItem
-            // 
-            this.informeDeEntradasPorEmpleadoYProveedorToolStripMenuItem.Name = "informeDeEntradasPorEmpleadoYProveedorToolStripMenuItem";
-            this.informeDeEntradasPorEmpleadoYProveedorToolStripMenuItem.Size = new System.Drawing.Size(409, 26);
-            this.informeDeEntradasPorEmpleadoYProveedorToolStripMenuItem.Text = "Informe de entradas por empleado y proveedor";
-            // 
-            // informeDeEntradasPorFechasToolStripMenuItem
-            // 
-            this.informeDeEntradasPorFechasToolStripMenuItem.Name = "informeDeEntradasPorFechasToolStripMenuItem";
-            this.informeDeEntradasPorFechasToolStripMenuItem.Size = new System.Drawing.Size(409, 26);
-            this.informeDeEntradasPorFechasToolStripMenuItem.Text = "Informe de entradas por fechas";
-            // 
-            // informeDeVentasToolStripMenuItem
-            // 
-            this.informeDeVentasToolStripMenuItem.Name = "informeDeVentasToolStripMenuItem";
-            this.informeDeVentasToolStripMenuItem.Size = new System.Drawing.Size(275, 26);
-            this.informeDeVentasToolStripMenuItem.Text = "Informe de ventas";
-            // 
-            // informeDeVentaEspecificaToolStripMenuItem
-            // 
-            this.informeDeVentaEspecificaToolStripMenuItem.Name = "informeDeVentaEspecificaToolStripMenuItem";
-            this.informeDeVentaEspecificaToolStripMenuItem.Size = new System.Drawing.Size(275, 26);
-            this.informeDeVentaEspecificaToolStripMenuItem.Text = "Informe de venta especifica";
-            // 
-            // informeDeDevolucionesToolStripMenuItem
-            // 
-            this.informeDeDevolucionesToolStripMenuItem.Name = "informeDeDevolucionesToolStripMenuItem";
-            this.informeDeDevolucionesToolStripMenuItem.Size = new System.Drawing.Size(275, 26);
-            this.informeDeDevolucionesToolStripMenuItem.Text = "Informe de devoluciones";
             // 
             // MenuForm
             // 

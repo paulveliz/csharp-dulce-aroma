@@ -186,5 +186,21 @@ namespace controladores
                 return res != null ? (true, res) : (false, res);
             }
         }
+
+        public async Task<(bool actualizado, Productos producto)> AgregarExistencias(int idProducto, int nuevaCantidad, decimal nuevoPrecio, decimal nuevoCosto)
+        {
+            using (var db = new dulce_aroma_db())
+            {
+                var res = await db.Productos
+                                        .Include(p => p.cProductoEstatus)
+                                        .Include(p => p.Proveedores)
+                                        .FirstOrDefaultAsync(p => p.id == idProducto);
+                res.existencias += nuevaCantidad;
+                res.precio = nuevoPrecio;
+                res.costo = nuevoCosto;
+                var aff = await db.SaveChangesAsync();
+                return aff > 0 ? (true, res) : (false, null);
+            }
+        }
     }
 }

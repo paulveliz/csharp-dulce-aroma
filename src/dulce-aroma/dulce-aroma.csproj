@@ -77,6 +77,12 @@
     <Compile Include="Forms\empleados\EmpleadosForm.Designer.cs">
       <DependentUpon>EmpleadosForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\entradas\EntradasForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\entradas\EntradasForm.Designer.cs">
+      <DependentUpon>EntradasForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\inventarios\InventarioForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +101,18 @@
     <Compile Include="Forms\proveedores\ProveedorForm.Designer.cs">
       <DependentUpon>ProveedorForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\selectores\ProductoSelectorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\selectores\ProductoSelectorForm.Designer.cs">
+      <DependentUpon>ProductoSelectorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\selectores\ProveedorSelectorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\selectores\ProveedorSelectorForm.Designer.cs">
+      <DependentUpon>ProveedorSelectorForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,6 +124,9 @@
     <EmbeddedResource Include="Forms\empleados\EmpleadosForm.resx">
       <DependentUpon>EmpleadosForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\entradas\EntradasForm.resx">
+      <DependentUpon>EntradasForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\inventarios\InventarioForm.resx">
       <DependentUpon>InventarioForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -114,6 +135,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\proveedores\ProveedorForm.resx">
       <DependentUpon>ProveedorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\selectores\ProductoSelectorForm.resx">
+      <DependentUpon>ProductoSelectorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\selectores\ProveedorSelectorForm.resx">
+      <DependentUpon>ProveedorSelectorForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>

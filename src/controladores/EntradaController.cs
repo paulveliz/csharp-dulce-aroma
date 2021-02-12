@@ -38,13 +38,15 @@ namespace controladores
                     .Include(e => e.Detalle_Entradas)
                     .FirstOrDefaultAsync(e => e.id == newEntrada.id);
                 // Guardar detalles
+                ProductoController pCtrl = new ProductoController();
                 foreach (var d in detalle)
                 {
                     entradaActual.Detalle_Entradas.Add(d);
+                    // Agregamos existencias acorde el producto del detalle en curso.
+                    await pCtrl.AgregarExistencias(d.idProducto, d.cantidad, d.precio, d.costo);
                 }
                 // Guardar cambios
                 var aff = await db.SaveChangesAsync();
-
                 return aff > 0 ? (true, entradaActual) : (false, entradaActual);
             }
         }
@@ -63,7 +65,7 @@ namespace controladores
                                 .Include(e => e.Detalle_Entradas)
                                 .Include(e => e.Proveedores)
                                 .Where(e =>
-                                    e.idEstatus == 2 &&
+                                    e.idEstatus == 1 &&
                                     e.fecha >= from &&
                                     e.fecha <= to)
                                 .OrderByDescending(e => e.id)
@@ -99,9 +101,25 @@ namespace controladores
                                 .Include(e => e.Detalle_Entradas)
                                 .Include(e => e.Proveedores)
                                 .Where(e =>
-                                    e.idEstatus == 2 &&
+                                    e.idEstatus == 1 &&
                                     e.fecha >= from &&
                                     e.fecha <= to)
+                                .OrderByDescending(e => e.id)
+                                .ToListAsync();
+                return bajas;
+            }
+        }
+        public async Task<IEnumerable<Entradas>> ObtenerTodas()
+        {
+            using (var db = new dulce_aroma_db())
+            {
+                var bajas = await db.Entradas
+                                .Include(e => e.cEntradaEstatus)
+                                .Include(e => e.Detalle_Entradas)
+                                .Include(e => e.Proveedores)
+                                .Where(e =>
+                                    e.idEstatus == 1)
+                                .Take(100)
                                 .OrderByDescending(e => e.id)
                                 .ToListAsync();
                 return bajas;
