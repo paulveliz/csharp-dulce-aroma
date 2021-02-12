@@ -36,6 +36,9 @@ namespace controladores
                 await db.SaveChangesAsync();
                 var entradaActual = await db.Entradas
                     .Include(e => e.Detalle_Entradas)
+                    .Include(e => e.Empleados)
+                    .Include(e => e.cEntradaEstatus)
+                    .Include(e => e.Proveedores)
                     .FirstOrDefaultAsync(e => e.id == newEntrada.id);
                 // Guardar detalles
                 ProductoController pCtrl = new ProductoController();
@@ -61,8 +64,9 @@ namespace controladores
             using (var db = new dulce_aroma_db())
             {
                 var bajas = await db.Entradas
-                                .Include(e => e.cEntradaEstatus)
                                 .Include(e => e.Detalle_Entradas)
+                                .Include(e => e.Empleados)
+                                .Include(e => e.cEntradaEstatus)
                                 .Include(e => e.Proveedores)
                                 .Where(e =>
                                     e.idEstatus == 1 &&
@@ -79,8 +83,9 @@ namespace controladores
             using (var db = new dulce_aroma_db())
             {
                 var bajas = await db.Entradas
-                                .Include(e => e.cEntradaEstatus)
                                 .Include(e => e.Detalle_Entradas)
+                                .Include(e => e.Empleados)
+                                .Include(e => e.cEntradaEstatus)
                                 .Include(e => e.Proveedores)
                                 .Where(e =>
                                     e.idEmpleado == idEmpleado &&
@@ -97,8 +102,9 @@ namespace controladores
             using (var db = new dulce_aroma_db())
             {
                 var bajas = await db.Entradas
-                                .Include(e => e.cEntradaEstatus)
                                 .Include(e => e.Detalle_Entradas)
+                                .Include(e => e.Empleados)
+                                .Include(e => e.cEntradaEstatus)
                                 .Include(e => e.Proveedores)
                                 .Where(e =>
                                     e.idEstatus == 1 &&
@@ -117,6 +123,7 @@ namespace controladores
                                 .Include(e => e.cEntradaEstatus)
                                 .Include(e => e.Detalle_Entradas)
                                 .Include(e => e.Proveedores)
+                                .Include(e => e.Empleados)
                                 .Where(e =>
                                     e.idEstatus == 1)
                                 .Take(100)
@@ -131,8 +138,9 @@ namespace controladores
             using (var db = new dulce_aroma_db())
             {
                 var entrada = await db.Entradas
-                        .Include(e => e.cEntradaEstatus)
                         .Include(e => e.Detalle_Entradas)
+                        .Include(e => e.Empleados)
+                        .Include(e => e.cEntradaEstatus)
                         .Include(e => e.Proveedores)
                         .FirstOrDefaultAsync(e => e.id == idEntrada);
                 return entrada;

@@ -113,6 +113,18 @@
     <Compile Include="Forms\selectores\ProveedorSelectorForm.Designer.cs">
       <DependentUpon>ProveedorSelectorForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\selectores\TurnoSelectorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\selectores\TurnoSelectorForm.Designer.cs">
+      <DependentUpon>TurnoSelectorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\turnos\TurnoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\turnos\TurnoForm.Designer.cs">
+      <DependentUpon>TurnoForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -141,6 +153,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\selectores\ProveedorSelectorForm.resx">
       <DependentUpon>ProveedorSelectorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\selectores\TurnoSelectorForm.resx">
+      <DependentUpon>TurnoSelectorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\turnos\TurnoForm.resx">
+      <DependentUpon>TurnoForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>

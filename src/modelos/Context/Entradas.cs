@@ -31,6 +31,7 @@ namespace modelos.Context
         public virtual cEntradaEstatus cEntradaEstatus { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Detalle_Entradas> Detalle_Entradas { get; set; }
+        public virtual Empleados Empleados { get; set; }
         public virtual Proveedores Proveedores { get; set; }
     }
 }

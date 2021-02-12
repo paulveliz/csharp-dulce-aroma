@@ -27,8 +27,10 @@ CREATE TABLE cTurnoEstatus(
 CREATE TABLE Turnos(
     id int primary key identity(1,1),
     idEmpleado int not null,
-    fecha date not null,
-    hora  time(7) not null,
+    fecha_apertura date not null,
+    hora_apertura  time(7) not null,
+    fecha_cierre date null,
+    hora_cierre  time(7) null,
     idEstatus int not null,
     FOREIGN KEY (idEstatus) REFERENCES cTurnoEstatus(id),
     FOREIGN KEY (idEmpleado) REFERENCES Empleados(id)
@@ -110,7 +112,7 @@ CREATE TABLE Entradas(
     idProveedor int not null,
     idEstatus int not null,
     FOREIGN KEY (idEstatus) REFERENCES cEntradaEstatus(id),
-    FOREIGN KEY (idProveedor) REFERENCES Proveedores(id)
+    FOREIGN KEY (idProveedor) REFERENCES Proveedores(id),
     FOREIGN KEY (idEmpleado) REFERENCES Empleados(id)
 )
 
@@ -125,3 +127,10 @@ CREATE TABLE Detalle_Entradas(
     FOREIGN KEY (idEntrada) REFERENCES Entradas(id),
     FOREIGN KEY (idProducto) REFERENCES Productos(id)
 )
+
+
+/*
+    Se agrego:
+    Empleado en entrada
+    Fechas de cierre en turnos
+*/

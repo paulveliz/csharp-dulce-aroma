@@ -54,5 +54,11 @@ namespace dulce_aroma.Forms.menu
             var frm = new entradas.EntradasForm();
             frm.ShowDialog();
         }
+
+        private void turnoActualToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var frm = new turnos.TurnoForm();
+            frm.ShowDialog();
+        }
     }
 }

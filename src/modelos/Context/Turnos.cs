@@ -22,8 +22,10 @@ namespace modelos.Context
     
         public int id { get; set; }
         public int idEmpleado { get; set; }
-        public System.DateTime fecha { get; set; }
-        public System.TimeSpan hora { get; set; }
+        public System.DateTime fecha_apertura { get; set; }
+        public System.TimeSpan hora_apertura { get; set; }
+        public Nullable<System.DateTime> fecha_cierre { get; set; }
+        public Nullable<System.TimeSpan> hora_cierre { get; set; }
         public int idEstatus { get; set; }
     
         public virtual cTurnoEstatus cTurnoEstatus { get; set; }

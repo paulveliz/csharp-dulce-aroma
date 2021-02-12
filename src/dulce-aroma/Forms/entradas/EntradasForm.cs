@@ -28,7 +28,7 @@ namespace dulce_aroma.Forms.entradas
             var entradas = await eCtrl.ObtenerTodas();
             foreach (var entrada in entradas)
             {
-                this.dgvexistentes.Rows.Add($"{entrada.id}", $"{entrada.idEmpleado}", $"{entrada.Proveedores.nombre}", $"{entrada.fecha}", $"{entrada.importe}", $"{entrada.cEntradaEstatus.descripcion}");
+                this.dgvexistentes.Rows.Add($"{entrada.id}", $"{entrada.Empleados.nombre_completo}", $"{entrada.Proveedores.nombre}", $"{entrada.fecha}", $"{entrada.importe}", $"{entrada.cEntradaEstatus.descripcion}");
             }
         }
 
@@ -266,7 +266,7 @@ namespace dulce_aroma.Forms.entradas
             {
                 fecha =  Convert.ToDateTime( fecha ),
                 hora = hora,
-                idEmpleado = 1 /*TODO: IMPLEMENTAR EMPLEADO*/,
+                idEmpleado = 3 /*TODO: IMPLEMENTAR EMPLEADO*/,
                 idEstatus = 1,
                 idProveedor = this.Proveedor.id,
                 importe = importe

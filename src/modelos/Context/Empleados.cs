@@ -17,6 +17,7 @@ namespace modelos.Context
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Empleados()
         {
+            this.Entradas = new HashSet<Entradas>();
             this.Turnos = new HashSet<Turnos>();
             this.Ventas = new HashSet<Ventas>();
         }
@@ -30,6 +31,8 @@ namespace modelos.Context
     
         public virtual cEmpleadoEstatus cEmpleadoEstatus { get; set; }
         public virtual cEmpleadoNivel cEmpleadoNivel { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Entradas> Entradas { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Turnos> Turnos { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
