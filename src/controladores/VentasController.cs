@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace controladores
 {
-    class VentasController : IVentasProvider
+    public class VentasController : IVentasProvider
     {
 
         public async Task<(bool IsSucess, Ventas venta)> CrearNueva(Ventas venta, IEnumerable<Detalle_Ventas> detalle)
@@ -27,7 +27,7 @@ namespace controladores
                     .Include(v => v.cVentaEstatus)
                     .Include(v => v.Turnos)
                     .FirstOrDefaultAsync(v => v.id == newVenta.id);
-                // Ingresar detalles.
+                // Ingresar detalles.  TODO QUITAR EXISTENCIAS.
                 foreach (var d in detalle)
                 {
                     result.Detalle_Ventas.Add(d);

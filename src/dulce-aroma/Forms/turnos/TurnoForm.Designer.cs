@@ -31,14 +31,14 @@ namespace dulce_aroma.Forms.turnos
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TurnoForm));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.kryptonHeader1 = new ComponentFactory.Krypton.Toolkit.KryptonHeader();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtempleado = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtestatus = new System.Windows.Forms.TextBox();
             this.kryptonHeader2 = new ComponentFactory.Krypton.Toolkit.KryptonHeader();
             this.btnabrir = new ComponentFactory.Krypton.Toolkit.ButtonSpecAny();
             this.btncerrar = new ComponentFactory.Krypton.Toolkit.ButtonSpecAny();
-            this.txtestatus = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtempleado = new System.Windows.Forms.TextBox();
+            this.kryptonHeader1 = new ComponentFactory.Krypton.Toolkit.KryptonHeader();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.masOpcionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verListaDeTurnosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -61,16 +61,50 @@ namespace dulce_aroma.Forms.turnos
             this.panel1.Size = new System.Drawing.Size(666, 524);
             this.panel1.TabIndex = 0;
             // 
-            // kryptonHeader1
+            // label2
             // 
-            this.kryptonHeader1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.kryptonHeader1.Location = new System.Drawing.Point(0, 28);
-            this.kryptonHeader1.Name = "kryptonHeader1";
-            this.kryptonHeader1.Size = new System.Drawing.Size(666, 37);
-            this.kryptonHeader1.TabIndex = 0;
-            this.kryptonHeader1.Values.Description = "";
-            this.kryptonHeader1.Values.Heading = "Turno actual";
-            this.kryptonHeader1.Values.Image = ((System.Drawing.Image)(resources.GetObject("kryptonHeader1.Values.Image")));
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(7, 308);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(163, 25);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Empleado actual:";
+            // 
+            // txtempleado
+            // 
+            this.txtempleado.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtempleado.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtempleado.Location = new System.Drawing.Point(12, 336);
+            this.txtempleado.Name = "txtempleado";
+            this.txtempleado.ReadOnly = true;
+            this.txtempleado.Size = new System.Drawing.Size(642, 30);
+            this.txtempleado.TabIndex = 5;
+            this.txtempleado.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(7, 128);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(136, 25);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Estado actual:";
+            // 
+            // txtestatus
+            // 
+            this.txtestatus.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtestatus.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtestatus.Location = new System.Drawing.Point(12, 156);
+            this.txtestatus.Multiline = true;
+            this.txtestatus.Name = "txtestatus";
+            this.txtestatus.ReadOnly = true;
+            this.txtestatus.Size = new System.Drawing.Size(642, 149);
+            this.txtestatus.TabIndex = 3;
+            this.txtestatus.TabStop = false;
             // 
             // kryptonHeader2
             // 
@@ -93,6 +127,7 @@ namespace dulce_aroma.Forms.turnos
             this.btnabrir.Style = ComponentFactory.Krypton.Toolkit.PaletteButtonStyle.Standalone;
             this.btnabrir.Text = "ABRIR TURNO";
             this.btnabrir.UniqueName = "14B8848278C64CD35CA3E28E5AF46CAF";
+            this.btnabrir.Click += new System.EventHandler(this.btnabrir_Click);
             // 
             // btncerrar
             // 
@@ -102,51 +137,18 @@ namespace dulce_aroma.Forms.turnos
             this.btncerrar.Style = ComponentFactory.Krypton.Toolkit.PaletteButtonStyle.Standalone;
             this.btncerrar.Text = "CERRAR TURNO";
             this.btncerrar.UniqueName = "8EBBF10A71B04413E9958A44566EE6D2";
+            this.btncerrar.Click += new System.EventHandler(this.btncerrar_Click);
             // 
-            // txtestatus
+            // kryptonHeader1
             // 
-            this.txtestatus.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtestatus.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtestatus.Location = new System.Drawing.Point(12, 156);
-            this.txtestatus.Multiline = true;
-            this.txtestatus.Name = "txtestatus";
-            this.txtestatus.ReadOnly = true;
-            this.txtestatus.Size = new System.Drawing.Size(642, 149);
-            this.txtestatus.TabIndex = 3;
-            this.txtestatus.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(7, 128);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(136, 25);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Estado actual:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(7, 308);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(163, 25);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Empleado actual:";
-            // 
-            // txtempleado
-            // 
-            this.txtempleado.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtempleado.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtempleado.Location = new System.Drawing.Point(12, 336);
-            this.txtempleado.Name = "txtempleado";
-            this.txtempleado.ReadOnly = true;
-            this.txtempleado.Size = new System.Drawing.Size(642, 30);
-            this.txtempleado.TabIndex = 5;
-            this.txtempleado.TabStop = false;
+            this.kryptonHeader1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.kryptonHeader1.Location = new System.Drawing.Point(0, 28);
+            this.kryptonHeader1.Name = "kryptonHeader1";
+            this.kryptonHeader1.Size = new System.Drawing.Size(666, 37);
+            this.kryptonHeader1.TabIndex = 0;
+            this.kryptonHeader1.Values.Description = "";
+            this.kryptonHeader1.Values.Heading = "Turno actual";
+            this.kryptonHeader1.Values.Image = ((System.Drawing.Image)(resources.GetObject("kryptonHeader1.Values.Image")));
             // 
             // menuStrip1
             // 

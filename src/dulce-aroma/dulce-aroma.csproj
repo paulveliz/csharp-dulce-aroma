@@ -83,6 +83,12 @@
     <Compile Include="Forms\entradas\EntradasForm.Designer.cs">
       <DependentUpon>EntradasForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\helpers\CambioHelper.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\helpers\CambioHelper.Designer.cs">
+      <DependentUpon>CambioHelper.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\inventarios\InventarioForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,6 +106,18 @@
     </Compile>
     <Compile Include="Forms\proveedores\ProveedorForm.Designer.cs">
       <DependentUpon>ProveedorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\respaldos\RespaldoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\respaldos\RespaldoForm.Designer.cs">
+      <DependentUpon>RespaldoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\selectores\CantidadSelectorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\selectores\CantidadSelectorForm.Designer.cs">
+      <DependentUpon>CantidadSelectorForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\selectores\ProductoSelectorForm.cs">
       <SubType>Form</SubType>
@@ -125,6 +143,12 @@
     <Compile Include="Forms\turnos\TurnoForm.Designer.cs">
       <DependentUpon>TurnoForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ventas\FormVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ventas\FormVenta.Designer.cs">
+      <DependentUpon>FormVenta.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -139,6 +163,9 @@
     <EmbeddedResource Include="Forms\entradas\EntradasForm.resx">
       <DependentUpon>EntradasForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\helpers\CambioHelper.resx">
+      <DependentUpon>CambioHelper.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\inventarios\InventarioForm.resx">
       <DependentUpon>InventarioForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -147,6 +174,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\proveedores\ProveedorForm.resx">
       <DependentUpon>ProveedorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\respaldos\RespaldoForm.resx">
+      <DependentUpon>RespaldoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\selectores\CantidadSelectorForm.resx">
+      <DependentUpon>CantidadSelectorForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\selectores\ProductoSelectorForm.resx">
       <DependentUpon>ProductoSelectorForm.cs</DependentUpon>
@@ -159,6 +192,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\turnos\TurnoForm.resx">
       <DependentUpon>TurnoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ventas\FormVenta.resx">
+      <DependentUpon>FormVenta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>

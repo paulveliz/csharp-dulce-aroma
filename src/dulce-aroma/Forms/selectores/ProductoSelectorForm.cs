@@ -38,7 +38,7 @@ namespace dulce_aroma.Forms.selectores
         {
             try
             {
-                string nombreProduct = this.dgvbase.SelectedRows[0].Cells[2].Value.ToString();
+                string nombreProduct = this.dgvbase.SelectedRows[0].Cells[1].Value.ToString();
                 int idProduct = Convert.ToInt32(this.dgvbase.SelectedRows[0].Cells[0].Value);
                 var confirm = MessageBox.Show($"¿Desea seleccionar \"{nombreProduct}\"?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (confirm != DialogResult.Yes) return;
@@ -61,8 +61,8 @@ namespace dulce_aroma.Forms.selectores
 
         private async void txtbuscar_KeyPress(object sender, KeyPressEventArgs e)
         {
-            var productos = await ctrl.ObtenerPorNombreMatch(this.txtbuscar.Text);
             this.dgvbase.Rows.Clear();
+            var productos = await ctrl.ObtenerPorNombreMatch(this.txtbuscar.Text);
             foreach (var producto in productos)
             {
                 this.dgvbase.Rows.Add($"{producto.id}", $"{producto.nombre}", $"{producto.Proveedores.nombre}", $"{producto.existencias}", $"${producto.precio}");

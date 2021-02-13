@@ -16,7 +16,7 @@ namespace dulce_aroma
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Forms.turnos.TurnoForm());
+            Application.Run(new Forms.ventas.FormVenta());
         }
     }
 }

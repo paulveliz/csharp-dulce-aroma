@@ -41,5 +41,15 @@ namespace dulce_aroma.Forms.turnos
             var frm = new selectores.TurnoSelectorForm();
             frm.ShowDialog();
         }
+
+        private void btnabrir_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btncerrar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
