@@ -29,6 +29,11 @@ namespace dulce_aroma.Forms.selectores
                     this.txtcant.Text = "1";
                 }
                 int nuevaCantidad = Convert.ToInt32( this.txtcant.Text.Trim() );
+                if(nuevaCantidad < 0 || nuevaCantidad == 0)
+                {
+                    nuevaCantidad = 1;
+                    this.txtcant.Text = "1";
+                }
                 if(nuevaCantidad > CantidadMaxima)
                 {
                     nuevaCantidad = CantidadMaxima;

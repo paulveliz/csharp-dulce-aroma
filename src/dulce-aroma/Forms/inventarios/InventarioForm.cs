@@ -61,8 +61,12 @@ namespace dulce_aroma.Forms.inventarios
                 MessageBox.Show("El nombre del producto debe ser igual o mayor a 3 letras de longitud.", "Nombre incompleto", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            // Verificacion de codigo pendiente.
-            //var verifyCode = await productoCon.VerificarCodigo(this.txtcodigo.Text.Trim());.
+            var verifyCode = await productoCon.VerificarCodigo(this.txtcodigo.Text.Trim());
+            if (verifyCode.exists)
+            {
+                MessageBox.Show($"En el sistema ya existe un producto con el mismo código", "Codigo duplicado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             var verifyName = await productoCon.VerificarNombre(this.txtnombre.Text.Trim());
             if (verifyName.exists)
             {
@@ -118,6 +122,7 @@ namespace dulce_aroma.Forms.inventarios
         private async void txtbuscar_KeyPress(object sender, KeyPressEventArgs e)
         {
             this.dgvbase.Rows.Clear();
+            this.dgvbase.Refresh();
             var productos = await productoCon.ObtenerPorNombreMatch(this.txtbuscar.Text);
             foreach (var producto in productos)
             {

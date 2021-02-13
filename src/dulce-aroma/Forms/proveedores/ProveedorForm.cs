@@ -48,7 +48,7 @@ namespace dulce_aroma.Forms.proveedores
             try
             {
                 var idProveedor = Convert.ToInt32( this.dgvbase.SelectedRows[0].Cells[0].Value );
-                var nombreProveedor = this.dgvbase.SelectedRows[0].Cells[2].Value.ToString();
+                var nombreProveedor = this.dgvbase.SelectedRows[0].Cells[1].Value.ToString();
                 var res = MessageBox.Show($"¿Desea dar de baja al proveedor \"{nombreProveedor}\"?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (res != DialogResult.Yes) return;
                 // Proceso de eliminado

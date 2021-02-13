@@ -16,7 +16,25 @@ namespace dulce_aroma
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoginForm());
+            // Para cerrar el proceso contaremos los forms abiertos y validaremos.
+            LoginForm main = new LoginForm();
+            //NewConsultForm main = new NewConsultForm();
+            main.FormClosed += MainForm_Closed;
+            main.Show(); // Inicio del form principal manualmente.
+            Application.Run(); // Quitamos el arranque del form al iniciar proyecto.
+        }
+        private static void MainForm_Closed(object sender, FormClosedEventArgs e)
+        {
+            ((Form)sender).FormClosed -= MainForm_Closed;
+
+            if (Application.OpenForms.Count == 0)
+            {
+                Application.ExitThread();
+            }
+            else
+            {
+                Application.OpenForms[0].FormClosed += MainForm_Closed;
+            }
         }
     }
 }

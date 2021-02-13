@@ -80,7 +80,7 @@ namespace dulce_aroma.Forms.helpers
             this.txtcambio.ReadOnly = true;
             this.txtcambio.Size = new System.Drawing.Size(457, 61);
             this.txtcambio.TabIndex = 3;
-            this.txtcambio.Text = "$0.00";
+            this.txtcambio.Text = "0";
             // 
             // CambioHelper
             // 
@@ -93,6 +93,8 @@ namespace dulce_aroma.Forms.helpers
             this.Controls.Add(this.txtpagoCon);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.KeyPreview = true;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "CambioHelper";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CAMBIO DEL IMPORTE";

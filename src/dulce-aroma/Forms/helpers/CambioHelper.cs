@@ -64,10 +64,31 @@ namespace dulce_aroma.Forms.helpers
                 this.Cambio = 0;
                 return;
             }
+            // Validar si es < 0
+            /*
+                SI EL PAGO ES MAYOR AL IMPORTE ?
+            */
+            var cambio = Convert.ToDecimal(this.txtcambio.Text.Trim());
             var pagoCon = Convert.ToDecimal(this.txtpagoCon.Text.Trim());
             this.PagoCon = pagoCon;
             this.Cambio = (pagoCon - Importe);
-            this.txtcambio.Text = $"${(pagoCon - Importe)}";
+            this.txtcambio.Text = (pagoCon - Importe).ToString();
+            if(cambio < 0)
+            {
+                this.Cambio = 0;
+                this.txtcambio.Text = "0";
+            }
+            if(pagoCon < 0)
+            {
+                this.PagoCon = 0;
+                this.txtpagoCon.Text = "0";
+            }
+            if(pagoCon < this.Importe)
+            {
+                this.txtcambio.Text = "0";
+                this.PagoCon = this.Importe;
+                this.Cambio = 0;
+            }
         }
 
         private void txtpagoCon_KeyPress(object sender, KeyPressEventArgs e)

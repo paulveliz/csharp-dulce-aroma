@@ -81,7 +81,9 @@ namespace dulce_aroma.Forms.turnos
             var turno = await tCtrl.ObtenerActivo();
             if (turno.isActive)
             {
-                var cerrado = await tCtrl.ModificarEstatus(turno.turno.id, 2);
+                var fecha = DateTime.Now.Date.ToString("d", System.Globalization.CultureInfo.CurrentCulture);
+                var hora = DateTime.Now.TimeOfDay;
+                var cerrado = await tCtrl.ModificarEstatus(turno.turno.id, 2, Convert.ToDateTime( fecha ), hora);
                 if (cerrado.isSucess)
                 {
                     this.txtestatus.Text = "NO HAY TURNO ABIERTO, TIENE QUE ABRIR UNO PARA PODER REALIZAR VENTAS.";

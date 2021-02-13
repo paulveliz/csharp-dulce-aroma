@@ -60,6 +60,7 @@ namespace dulce_aroma
                 // Acceder al menu y enviar al empleado para validar panel administrativo.
                 var frm = new MenuForm(empleado);
                 frm.Show();
+                this.Close();
             }
             else
             {

@@ -48,12 +48,14 @@ namespace controladores
             }
         }
 
-        public async Task<(bool isSucess, Turnos turno)> ModificarEstatus(int idTurno, int nuevoEstatus)
+        public async Task<(bool isSucess, Turnos turno)> ModificarEstatus(int idTurno, int nuevoEstatus, DateTime fecha, TimeSpan hora)
         {
             using (var db = new dulce_aroma_db())
             {
                 var t = await db.Turnos.FirstOrDefaultAsync(tr => tr.id == idTurno);
                 t.idEstatus = nuevoEstatus;
+                t.hora_cierre = hora;
+                t.fecha_cierre = fecha;
                 var aff = await db.SaveChangesAsync();
                 return aff > 0 ? (true, t) : (false, t);
             }
