@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using modelos.Context;
 using controladores;
+using dulce_aroma.Forms.turnos;
 
 namespace dulce_aroma.Forms.menu
 {
@@ -78,6 +79,36 @@ namespace dulce_aroma.Forms.menu
             {
                 MessageBox.Show("No hay turno activo.","Abra un turno", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+        private async void informeDeTurnoActualToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var vCtrl = new VentasController();
+            var tCtrl = new TurnoController();
+            var hayTurno = await tCtrl.ObtenerUltimoTurnoConcluido();
+            if(!hayTurno.exists)
+            {
+                MessageBox.Show("No hay turno.", "Abra un turno", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            var turno = hayTurno.turno;
+            var ventasPorTurno = await vCtrl.ObtenerPorTurno(turno.id);
+            var ventasR = ventasPorTurno.Select(v => new ReporteVentaModel()
+            {
+                fecha = v.fecha,
+                hora = v.hora,
+                id = v.id,
+                importe = v.importe
+            }).ToList();
+            var totalVentas = ventasR.Count();
+            decimal importeVentas = 0;
+            foreach (var v in ventasR)
+            {
+                importeVentas += v.importe;
+            }
+
+            var frmRpt = new ReporteDeTurno(ventasR, turno.Empleados.nombre_completo, turno.fecha_apertura.ToString("d"), turno.hora_apertura.ToString("t"), turno.fecha_cierre?.ToString("d"), turno.hora_cierre?.ToString("t"), totalVentas.ToString(), importeVentas.ToString());
+            frmRpt.ShowDialog();
         }
     }
 }

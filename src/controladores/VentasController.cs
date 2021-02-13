@@ -117,7 +117,7 @@ namespace controladores
             }
         }
 
-        public async Task<IEnumerable<Ventas>> ObtenerPorTurno(DateTime from, DateTime to, int idTurno)
+        public async Task<IEnumerable<Ventas>> ObtenerPorTurno(int idTurno)
         {
             using (var db = new dulce_aroma_db())
             {
@@ -127,8 +127,6 @@ namespace controladores
                                       .Include(v => v.Turnos)
                                       .Where(v =>
                                         v.idEstatus != 2 &&
-                                        v.fecha >= from &&
-                                        v.fecha <= to &&
                                         v.idTurno == idTurno)
                                       .OrderByDescending(v => v.id)
                                       .ToListAsync();

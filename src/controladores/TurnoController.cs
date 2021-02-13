@@ -52,7 +52,11 @@ namespace controladores
         {
             using (var db = new dulce_aroma_db())
             {
-                var t = await db.Turnos.FirstOrDefaultAsync(tr => tr.id == idTurno);
+                var t = await db.Turnos
+                    .Include(tr => tr.Empleados)
+                    .Include(tr => tr.cTurnoEstatus)
+                    .Include(tr => tr.Ventas)
+                    .FirstOrDefaultAsync(tr => tr.id == idTurno);
                 t.idEstatus = nuevoEstatus;
                 t.hora_cierre = hora;
                 t.fecha_cierre = fecha;
@@ -108,6 +112,20 @@ namespace controladores
                                     .OrderByDescending(t => t.id)
                                     .ToListAsync();
                 return turnos;
+            }
+        }
+        public async Task<(bool exists, Turnos turno)> ObtenerUltimoTurnoConcluido()
+        {
+            using (var db = new dulce_aroma_db())
+            {
+                var turnos = await db.Turnos
+                                    .Include(t => t.cTurnoEstatus)
+                                    .Include(t => t.Empleados)
+                                    .Include(t => t.Ventas)
+                                    .Where(t => t.idEstatus != 1)
+                                    .OrderByDescending(t => t.id)
+                                    .ToListAsync();
+                return turnos.Count > 0 ? (true, turnos[0]) : (false, null);
             }
         }
     }

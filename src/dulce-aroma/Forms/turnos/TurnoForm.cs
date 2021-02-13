@@ -74,6 +74,27 @@ namespace dulce_aroma.Forms.turnos
             }
         }
 
+        private async Task GenerarReporteTurno(Turnos turno)
+        {
+            var vCtrl = new VentasController();
+            var ventasPorTurno = await vCtrl.ObtenerPorTurno(turno.id);
+            var ventasR = ventasPorTurno.Select(v => new ReporteVentaModel() {
+                fecha = v.fecha,
+                hora = v.hora,
+                id = v.id,
+                importe = v.importe
+            }).ToList();
+            var totalVentas = ventasR.Count();
+            decimal importeVentas = 0;
+            foreach (var v in ventasR)
+            {
+                importeVentas += v.importe;
+            }
+
+            var frmRpt = new ReporteDeTurno(ventasR, turno.Empleados.nombre_completo, turno.fecha_apertura.ToString("d"), turno.hora_apertura.ToString("t"), turno.fecha_cierre?.ToString("d"), turno.hora_cierre?.ToString("t"), totalVentas.ToString(), importeVentas.ToString());
+            frmRpt.ShowDialog();
+        }
+
         private async void btncerrar_Click(object sender, EventArgs e)
         {
             var result = MessageBox.Show("¿CERRAR turno?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -92,6 +113,7 @@ namespace dulce_aroma.Forms.turnos
                     // Imprimir reporte de turno
                     var turnoRep = MessageBox.Show("¿IMPRIMIR REPORTE DE TURNO?", "Informe", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (!turnoRep.Equals(DialogResult.Yes)) return;
+                    await GenerarReporteTurno(cerrado.turno);
                 }
             }
         }
