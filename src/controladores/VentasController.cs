@@ -27,10 +27,13 @@ namespace controladores
                     .Include(v => v.cVentaEstatus)
                     .Include(v => v.Turnos)
                     .FirstOrDefaultAsync(v => v.id == newVenta.id);
-                // Ingresar detalles.  TODO QUITAR EXISTENCIAS.
+                // Ingresar detalles.  
+                ProductoController pCtrl = new ProductoController();
                 foreach (var d in detalle)
                 {
                     result.Detalle_Ventas.Add(d);
+                    // Quitamos existencias
+                    await pCtrl.QuitarExistencias(d.idProducto, d.cantidad);
                 }
                 // Guardar cambios
                 var aff = await db.SaveChangesAsync();

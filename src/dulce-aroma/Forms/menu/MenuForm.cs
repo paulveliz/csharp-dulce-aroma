@@ -29,6 +29,10 @@ namespace dulce_aroma.Forms.menu
         private void MenuForm_Load(object sender, EventArgs e)
         {
             bienvenida();
+            if(this.Empleado.idNivel != 1)
+            {
+                toolStripLabel1.Enabled = false;
+            }
         }
 
         private void empleadosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -59,6 +63,21 @@ namespace dulce_aroma.Forms.menu
         {
             var frm = new turnos.TurnoForm();
             frm.ShowDialog();
+        }
+
+        private async void puntoDeVentaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TurnoController tc = new TurnoController();
+            var turno = await tc.ObtenerActivo();
+            if (turno.isActive)
+            {
+                var frm = new ventas.FormVenta();
+                frm.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("No hay turno activo.","Abra un turno", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
     }
 }

@@ -83,6 +83,12 @@ namespace dulce_aroma.Forms.proveedores
                 MessageBox.Show("El nombre del proveedor debe tener almenos 4 letras de longitud.","Nombre incompleto", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+            var existsP = await pCtrl.VerificarNombre(this.txtnombre.Text.Trim());
+            if (existsP.exists)
+            {
+                MessageBox.Show("El proveedor ya existe.", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             var confirm = MessageBox.Show($"¿Desea agregar al proveedor \"{this.txtnombre.Text}\"?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
             if (confirm != DialogResult.Yes) return;
             var p = new Proveedores()

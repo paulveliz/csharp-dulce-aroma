@@ -194,8 +194,9 @@ namespace dulce_aroma.Forms.menu
             this.puntoDeVentaToolStripMenuItem.BackColor = System.Drawing.Color.SandyBrown;
             this.puntoDeVentaToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("puntoDeVentaToolStripMenuItem.Image")));
             this.puntoDeVentaToolStripMenuItem.Name = "puntoDeVentaToolStripMenuItem";
-            this.puntoDeVentaToolStripMenuItem.Size = new System.Drawing.Size(206, 28);
+            this.puntoDeVentaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.puntoDeVentaToolStripMenuItem.Text = "Punto de venta";
+            this.puntoDeVentaToolStripMenuItem.Click += new System.EventHandler(this.puntoDeVentaToolStripMenuItem_Click);
             // 
             // informesToolStripMenuItem
             // 
@@ -205,25 +206,25 @@ namespace dulce_aroma.Forms.menu
             this.informeDeDevolucionesToolStripMenuItem});
             this.informesToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("informesToolStripMenuItem.Image")));
             this.informesToolStripMenuItem.Name = "informesToolStripMenuItem";
-            this.informesToolStripMenuItem.Size = new System.Drawing.Size(206, 28);
+            this.informesToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.informesToolStripMenuItem.Text = "Informes";
             // 
             // informeDeVentasToolStripMenuItem
             // 
             this.informeDeVentasToolStripMenuItem.Name = "informeDeVentasToolStripMenuItem";
-            this.informeDeVentasToolStripMenuItem.Size = new System.Drawing.Size(296, 28);
+            this.informeDeVentasToolStripMenuItem.Size = new System.Drawing.Size(275, 26);
             this.informeDeVentasToolStripMenuItem.Text = "Informe de ventas";
             // 
             // informeDeVentaEspecificaToolStripMenuItem
             // 
             this.informeDeVentaEspecificaToolStripMenuItem.Name = "informeDeVentaEspecificaToolStripMenuItem";
-            this.informeDeVentaEspecificaToolStripMenuItem.Size = new System.Drawing.Size(296, 28);
+            this.informeDeVentaEspecificaToolStripMenuItem.Size = new System.Drawing.Size(275, 26);
             this.informeDeVentaEspecificaToolStripMenuItem.Text = "Informe de venta especifica";
             // 
             // informeDeDevolucionesToolStripMenuItem
             // 
             this.informeDeDevolucionesToolStripMenuItem.Name = "informeDeDevolucionesToolStripMenuItem";
-            this.informeDeDevolucionesToolStripMenuItem.Size = new System.Drawing.Size(296, 28);
+            this.informeDeDevolucionesToolStripMenuItem.Size = new System.Drawing.Size(275, 26);
             this.informeDeDevolucionesToolStripMenuItem.Text = "Informe de devoluciones";
             // 
             // toolStripSeparator2

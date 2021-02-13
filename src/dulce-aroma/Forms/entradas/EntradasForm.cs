@@ -266,7 +266,7 @@ namespace dulce_aroma.Forms.entradas
             {
                 fecha =  Convert.ToDateTime( fecha ),
                 hora = hora,
-                idEmpleado = 3 /*TODO: IMPLEMENTAR EMPLEADO*/,
+                idEmpleado = 1 /*TODO: IMPLEMENTAR EMPLEADO*/,
                 idEstatus = 1,
                 idProveedor = this.Proveedor.id,
                 importe = importe
@@ -307,6 +307,14 @@ namespace dulce_aroma.Forms.entradas
         private async void EntradasForm_Load(object sender, EventArgs e)
         {
             await ObtenerEntradasToDgv();
+        }
+
+        private void EntradasForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Escape)
+            {
+                this.Close();
+            }
         }
     }
 }

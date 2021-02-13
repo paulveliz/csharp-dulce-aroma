@@ -13,10 +13,13 @@ namespace dulce_aroma.Forms.helpers
     public partial class CambioHelper : Form
     {
         public decimal Cambio { get; set; }
+        public decimal PagoCon { get; set; }
         public decimal Importe { get; set; }
         public CambioHelper(decimal importe)
         {
             this.Importe = importe;
+            this.Cambio = 0;
+            this.PagoCon = 0;
             InitializeComponent();
         }
 
@@ -55,8 +58,15 @@ namespace dulce_aroma.Forms.helpers
 
         private void txtpagoCon_TextChanged(object sender, EventArgs e)
         {
-            if (txtpagoCon.Text.Length == 0) return;
+            if (txtpagoCon.Text.Length == 0) 
+            {
+                this.PagoCon = 0;
+                this.Cambio = 0;
+                return;
+            }
             var pagoCon = Convert.ToDecimal(this.txtpagoCon.Text.Trim());
+            this.PagoCon = pagoCon;
+            this.Cambio = (pagoCon - Importe);
             this.txtcambio.Text = $"${(pagoCon - Importe)}";
         }
 

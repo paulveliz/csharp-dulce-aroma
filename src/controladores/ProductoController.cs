@@ -202,5 +202,18 @@ namespace controladores
                 return aff > 0 ? (true, res) : (false, null);
             }
         }
+        public async Task<(bool actualizado, Productos producto)> QuitarExistencias(int idProducto, int nuevaCantidad)
+        {
+            using (var db = new dulce_aroma_db())
+            {
+                var res = await db.Productos
+                                        .Include(p => p.cProductoEstatus)
+                                        .Include(p => p.Proveedores)
+                                        .FirstOrDefaultAsync(p => p.id == idProducto);
+                res.existencias -= nuevaCantidad;
+                var aff = await db.SaveChangesAsync();
+                return aff > 0 ? (true, res) : (false, null);
+            }
+        }
     }
 }

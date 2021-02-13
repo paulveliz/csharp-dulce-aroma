@@ -47,7 +47,9 @@ CREATE TABLE Ventas(
     idEmpleado int not null,
     fecha date not null,
     hora  time(7) not null,
+    pago_con numeric(10,2) not null,
     importe  numeric(10,2) not null,
+    cambio numeric(10,2) not null,
     idEstatus int not null,
     FOREIGN KEY (idEstatus) REFERENCES cVentaEstatus(id),
     FOREIGN KEY (idTurno) REFERENCES Turnos(id),
@@ -133,4 +135,6 @@ CREATE TABLE Detalle_Entradas(
     Se agrego:
     Empleado en entrada
     Fechas de cierre en turnos
+    Se agrego:
+    Pago con y cambio
 */

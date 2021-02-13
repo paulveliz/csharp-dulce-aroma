@@ -145,7 +145,9 @@
           <Property Name="idEmpleado" Type="int" Nullable="false" />
           <Property Name="fecha" Type="date" Nullable="false" />
           <Property Name="hora" Type="time" Precision="7" Nullable="false" />
+          <Property Name="pago_con" Type="numeric" Precision="10" Scale="2" Nullable="false" />
           <Property Name="importe" Type="numeric" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="cambio" Type="numeric" Precision="10" Scale="2" Nullable="false" />
           <Property Name="idEstatus" Type="int" Nullable="false" />
         </EntityType>
         <Association Name="FK__Detalle_E__idEnt__4D94879B">
@@ -612,7 +614,9 @@
           <Property Name="idEmpleado" Type="Int32" Nullable="false" />
           <Property Name="fecha" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="hora" Type="Time" Nullable="false" Precision="7" />
+          <Property Name="pago_con" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
           <Property Name="importe" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="cambio" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
           <Property Name="idEstatus" Type="Int32" Nullable="false" />
           <NavigationProperty Name="cVentaEstatus" Relationship="Self.FK__Ventas__idEstatu__33D4B598" FromRole="Ventas" ToRole="cVentaEstatus" />
           <NavigationProperty Name="Detalle_Ventas" Relationship="Self.FK__Detalle_V__idVen__4316F928" FromRole="Ventas" ToRole="Detalle_Ventas" />
@@ -1067,7 +1071,9 @@
                 <ScalarProperty Name="idEmpleado" ColumnName="idEmpleado" />
                 <ScalarProperty Name="fecha" ColumnName="fecha" />
                 <ScalarProperty Name="hora" ColumnName="hora" />
+                <ScalarProperty Name="pago_con" ColumnName="pago_con" />
                 <ScalarProperty Name="importe" ColumnName="importe" />
+                <ScalarProperty Name="cambio" ColumnName="cambio" />
                 <ScalarProperty Name="idEstatus" ColumnName="idEstatus" />
               </MappingFragment>
             </EntityTypeMapping>

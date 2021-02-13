@@ -54,6 +54,8 @@ namespace dulce_aroma.Forms.entradas
             this.label1 = new System.Windows.Forms.Label();
             this.txtproducto = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.kryptonHeader3 = new ComponentFactory.Krypton.Toolkit.KryptonHeader();
+            this.btnfinalizar = new ComponentFactory.Krypton.Toolkit.ButtonSpecAny();
             this.label10 = new System.Windows.Forms.Label();
             this.txtProdAfectados = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -72,16 +74,14 @@ namespace dulce_aroma.Forms.entradas
             this.dgv1costo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgv1importe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvexistentes = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
-            this.kryptonHeader4 = new ComponentFactory.Krypton.Toolkit.KryptonHeader();
-            this.kryptonHeader2 = new ComponentFactory.Krypton.Toolkit.KryptonHeader();
-            this.kryptonHeader3 = new ComponentFactory.Krypton.Toolkit.KryptonHeader();
-            this.btnfinalizar = new ComponentFactory.Krypton.Toolkit.ButtonSpecAny();
             this.dgvExistentesId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvExEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvExProveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvExFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvExImporte = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvExEstatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kryptonHeader4 = new ComponentFactory.Krypton.Toolkit.KryptonHeader();
+            this.kryptonHeader2 = new ComponentFactory.Krypton.Toolkit.KryptonHeader();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -406,6 +406,29 @@ namespace dulce_aroma.Forms.entradas
             this.panel4.Size = new System.Drawing.Size(394, 426);
             this.panel4.TabIndex = 0;
             // 
+            // kryptonHeader3
+            // 
+            this.kryptonHeader3.ButtonSpecs.AddRange(new ComponentFactory.Krypton.Toolkit.ButtonSpecAny[] {
+            this.btnfinalizar});
+            this.kryptonHeader3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.kryptonHeader3.Location = new System.Drawing.Point(0, 390);
+            this.kryptonHeader3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.kryptonHeader3.Name = "kryptonHeader3";
+            this.kryptonHeader3.Size = new System.Drawing.Size(394, 36);
+            this.kryptonHeader3.TabIndex = 56;
+            this.kryptonHeader3.Values.Description = "";
+            this.kryptonHeader3.Values.Heading = "";
+            this.kryptonHeader3.Values.Image = null;
+            // 
+            // btnfinalizar
+            // 
+            this.btnfinalizar.Enabled = ComponentFactory.Krypton.Toolkit.ButtonEnabled.False;
+            this.btnfinalizar.Image = ((System.Drawing.Image)(resources.GetObject("btnfinalizar.Image")));
+            this.btnfinalizar.Style = ComponentFactory.Krypton.Toolkit.PaletteButtonStyle.Standalone;
+            this.btnfinalizar.Text = "Generar entrada";
+            this.btnfinalizar.UniqueName = "754356345B2E4E8B108F8012F7C927C4";
+            this.btnfinalizar.Click += new System.EventHandler(this.btnfinalizar_Click);
+            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -623,51 +646,6 @@ namespace dulce_aroma.Forms.entradas
             this.dgvexistentes.Size = new System.Drawing.Size(784, 393);
             this.dgvexistentes.TabIndex = 1;
             // 
-            // kryptonHeader4
-            // 
-            this.kryptonHeader4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.kryptonHeader4.Location = new System.Drawing.Point(0, 0);
-            this.kryptonHeader4.Name = "kryptonHeader4";
-            this.kryptonHeader4.Size = new System.Drawing.Size(784, 37);
-            this.kryptonHeader4.TabIndex = 0;
-            this.kryptonHeader4.Values.Description = "Doble clic para generar informe";
-            this.kryptonHeader4.Values.Heading = "Ultimas entradas hechas";
-            this.kryptonHeader4.Values.Image = ((System.Drawing.Image)(resources.GetObject("kryptonHeader4.Values.Image")));
-            // 
-            // kryptonHeader2
-            // 
-            this.kryptonHeader2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.kryptonHeader2.Location = new System.Drawing.Point(0, 0);
-            this.kryptonHeader2.Name = "kryptonHeader2";
-            this.kryptonHeader2.Size = new System.Drawing.Size(784, 37);
-            this.kryptonHeader2.TabIndex = 0;
-            this.kryptonHeader2.Values.Description = "Doble clic para remover";
-            this.kryptonHeader2.Values.Heading = "Productos en entrada";
-            this.kryptonHeader2.Values.Image = ((System.Drawing.Image)(resources.GetObject("kryptonHeader2.Values.Image")));
-            // 
-            // kryptonHeader3
-            // 
-            this.kryptonHeader3.ButtonSpecs.AddRange(new ComponentFactory.Krypton.Toolkit.ButtonSpecAny[] {
-            this.btnfinalizar});
-            this.kryptonHeader3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.kryptonHeader3.Location = new System.Drawing.Point(0, 390);
-            this.kryptonHeader3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.kryptonHeader3.Name = "kryptonHeader3";
-            this.kryptonHeader3.Size = new System.Drawing.Size(394, 36);
-            this.kryptonHeader3.TabIndex = 56;
-            this.kryptonHeader3.Values.Description = "";
-            this.kryptonHeader3.Values.Heading = "";
-            this.kryptonHeader3.Values.Image = null;
-            // 
-            // btnfinalizar
-            // 
-            this.btnfinalizar.Enabled = ComponentFactory.Krypton.Toolkit.ButtonEnabled.False;
-            this.btnfinalizar.Image = ((System.Drawing.Image)(resources.GetObject("btnfinalizar.Image")));
-            this.btnfinalizar.Style = ComponentFactory.Krypton.Toolkit.PaletteButtonStyle.Standalone;
-            this.btnfinalizar.Text = "Generar entrada";
-            this.btnfinalizar.UniqueName = "754356345B2E4E8B108F8012F7C927C4";
-            this.btnfinalizar.Click += new System.EventHandler(this.btnfinalizar_Click);
-            // 
             // dgvExistentesId
             // 
             this.dgvExistentesId.HeaderText = "Id";
@@ -711,6 +689,28 @@ namespace dulce_aroma.Forms.entradas
             this.dgvExEstatus.Name = "dgvExEstatus";
             this.dgvExEstatus.ReadOnly = true;
             // 
+            // kryptonHeader4
+            // 
+            this.kryptonHeader4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.kryptonHeader4.Location = new System.Drawing.Point(0, 0);
+            this.kryptonHeader4.Name = "kryptonHeader4";
+            this.kryptonHeader4.Size = new System.Drawing.Size(784, 37);
+            this.kryptonHeader4.TabIndex = 0;
+            this.kryptonHeader4.Values.Description = "Doble clic para generar informe";
+            this.kryptonHeader4.Values.Heading = "Ultimas entradas hechas";
+            this.kryptonHeader4.Values.Image = ((System.Drawing.Image)(resources.GetObject("kryptonHeader4.Values.Image")));
+            // 
+            // kryptonHeader2
+            // 
+            this.kryptonHeader2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.kryptonHeader2.Location = new System.Drawing.Point(0, 0);
+            this.kryptonHeader2.Name = "kryptonHeader2";
+            this.kryptonHeader2.Size = new System.Drawing.Size(784, 37);
+            this.kryptonHeader2.TabIndex = 0;
+            this.kryptonHeader2.Values.Description = "Doble clic para remover";
+            this.kryptonHeader2.Values.Heading = "Productos en entrada";
+            this.kryptonHeader2.Values.Image = ((System.Drawing.Image)(resources.GetObject("kryptonHeader2.Values.Image")));
+            // 
             // EntradasForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -718,12 +718,14 @@ namespace dulce_aroma.Forms.entradas
             this.ClientSize = new System.Drawing.Size(1182, 840);
             this.Controls.Add(this.splitContainer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.KeyPreview = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "EntradasForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sistema dulce aroma - Entradas";
             this.Load += new System.EventHandler(this.EntradasForm_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.EntradasForm_KeyDown);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();

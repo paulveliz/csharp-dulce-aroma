@@ -188,23 +188,48 @@ namespace dulce_aroma.Forms.ventas
                     importe = importeProd
                 });
             }
-            var newVenta = await ventasController.CrearNueva(venta, detalle);
-            if (newVenta.IsSucess)
+            
+            using (var helper = new helpers.CambioHelper(this.ImporteTotal))
             {
-                using (var helper = new helpers.CambioHelper(this.ImporteTotal))
+                this.dgvbase.Rows.Clear();
+                this.ImporteTotal = 0;
+                ActualizarImporteTotal();
+                var result = helper.ShowDialog();
+                if(result == DialogResult.Yes)
                 {
-                    this.dgvbase.Rows.Clear();
-                    this.ImporteTotal = 0;
-                    ActualizarImporteTotal();
-                    var result = helper.ShowDialog();
-                    if (!result.Equals(DialogResult.Yes)) return;
-                    // Imprimir ticket.
-                }
+                    venta.pago_con = helper.PagoCon;
+                    venta.cambio = helper.Cambio;
+                    var newVenta = await ventasController.CrearNueva(venta, detalle);
+                    if (newVenta.IsSucess)
+                    {
+                        MessageBox.Show("Venta exitosa", "Imprimiendo ticket", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        // Imprimir ticket.
+                    }
 
-            }
-            else
-            {
-                MessageBox.Show("Ocurrio un error, intente de nuevo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                }
+                else if(result == DialogResult.No)
+                {
+                    // Solo guardar la venta
+                    venta.pago_con = helper.PagoCon;
+                    venta.cambio = helper.Cambio;
+                    var newVenta = await ventasController.CrearNueva(venta, detalle);
+                    if (newVenta.IsSucess)
+                    {
+                        MessageBox.Show("Venta exitosa", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                else
+                {
+                    // Solo guardar la venta
+                    venta.pago_con = helper.PagoCon;
+                    venta.cambio = helper.Cambio;
+                    var newVenta = await ventasController.CrearNueva(venta, detalle);
+                    if (newVenta.IsSucess)
+                    {
+                        MessageBox.Show("Venta exitosa", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                
             }
         }
     }

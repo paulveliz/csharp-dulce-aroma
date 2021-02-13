@@ -25,7 +25,9 @@ namespace modelos.Context
         public int idEmpleado { get; set; }
         public System.DateTime fecha { get; set; }
         public System.TimeSpan hora { get; set; }
+        public decimal pago_con { get; set; }
         public decimal importe { get; set; }
+        public decimal cambio { get; set; }
         public int idEstatus { get; set; }
     
         public virtual cVentaEstatus cVentaEstatus { get; set; }
