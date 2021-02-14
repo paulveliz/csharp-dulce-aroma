@@ -17,7 +17,7 @@ namespace dulce_aroma.Forms.turnos
         {
             InitializeComponent();
             var rptH = new ReportClass();
-            rptH.FileName = @"C:\Users\PaulVeliz\Documents\Proyectos\dulce-aroma\src\dulce-aroma\Forms\turnos\TurnoReport.rpt";
+            rptH.FileName = @"C:\dulce-aroma-reportes\TurnoReport.rpt";
             rptH.Load();
             rptH.SetDataSource(ventas);
 

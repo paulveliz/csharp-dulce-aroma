@@ -32,14 +32,14 @@ namespace dulce_aroma.Forms.selectores
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProductoSelectorForm));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvbase = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
-            this.txtbuscar = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
-            this.lupa = new ComponentFactory.Krypton.Toolkit.ButtonSpecAny();
-            this.kryptonHeader2 = new ComponentFactory.Krypton.Toolkit.KryptonHeader();
             this.dgvNoProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvProveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvExistencias = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvEstatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtbuscar = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.lupa = new ComponentFactory.Krypton.Toolkit.ButtonSpecAny();
+            this.kryptonHeader2 = new ComponentFactory.Krypton.Toolkit.KryptonHeader();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvbase)).BeginInit();
             this.SuspendLayout();
@@ -84,40 +84,6 @@ namespace dulce_aroma.Forms.selectores
             this.dgvbase.TabIndex = 0;
             this.dgvbase.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvbase_CellDoubleClick);
             // 
-            // txtbuscar
-            // 
-            this.txtbuscar.ButtonSpecs.AddRange(new ComponentFactory.Krypton.Toolkit.ButtonSpecAny[] {
-            this.lupa});
-            this.txtbuscar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.txtbuscar.Location = new System.Drawing.Point(3, 22);
-            this.txtbuscar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtbuscar.Name = "txtbuscar";
-            this.txtbuscar.Size = new System.Drawing.Size(925, 42);
-            this.txtbuscar.StateCommon.Content.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbuscar.StateCommon.Content.Padding = new System.Windows.Forms.Padding(5, 6, 2, 3);
-            this.txtbuscar.StateNormal.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbuscar.TabIndex = 1;
-            this.txtbuscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbuscar_KeyPress);
-            // 
-            // lupa
-            // 
-            this.lupa.Edge = ComponentFactory.Krypton.Toolkit.PaletteRelativeEdgeAlign.Near;
-            this.lupa.Image = ((System.Drawing.Image)(resources.GetObject("lupa.Image")));
-            this.lupa.Style = ComponentFactory.Krypton.Toolkit.PaletteButtonStyle.Standalone;
-            this.lupa.UniqueName = "E448180152AC41CD62805BF627D2BF45";
-            // 
-            // kryptonHeader2
-            // 
-            this.kryptonHeader2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.kryptonHeader2.Location = new System.Drawing.Point(0, 0);
-            this.kryptonHeader2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.kryptonHeader2.Name = "kryptonHeader2";
-            this.kryptonHeader2.Size = new System.Drawing.Size(931, 37);
-            this.kryptonHeader2.TabIndex = 5;
-            this.kryptonHeader2.Values.Description = "";
-            this.kryptonHeader2.Values.Heading = "Productos actuales";
-            this.kryptonHeader2.Values.Image = ((System.Drawing.Image)(resources.GetObject("kryptonHeader2.Values.Image")));
-            // 
             // dgvNoProducto
             // 
             this.dgvNoProducto.HeaderText = "No. Producto";
@@ -153,6 +119,40 @@ namespace dulce_aroma.Forms.selectores
             this.dgvEstatus.Name = "dgvEstatus";
             this.dgvEstatus.ReadOnly = true;
             // 
+            // txtbuscar
+            // 
+            this.txtbuscar.ButtonSpecs.AddRange(new ComponentFactory.Krypton.Toolkit.ButtonSpecAny[] {
+            this.lupa});
+            this.txtbuscar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.txtbuscar.Location = new System.Drawing.Point(3, 22);
+            this.txtbuscar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtbuscar.Name = "txtbuscar";
+            this.txtbuscar.Size = new System.Drawing.Size(925, 42);
+            this.txtbuscar.StateCommon.Content.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbuscar.StateCommon.Content.Padding = new System.Windows.Forms.Padding(5, 6, 2, 3);
+            this.txtbuscar.StateNormal.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbuscar.TabIndex = 1;
+            this.txtbuscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbuscar_KeyPress);
+            // 
+            // lupa
+            // 
+            this.lupa.Edge = ComponentFactory.Krypton.Toolkit.PaletteRelativeEdgeAlign.Near;
+            this.lupa.Image = ((System.Drawing.Image)(resources.GetObject("lupa.Image")));
+            this.lupa.Style = ComponentFactory.Krypton.Toolkit.PaletteButtonStyle.Standalone;
+            this.lupa.UniqueName = "E448180152AC41CD62805BF627D2BF45";
+            // 
+            // kryptonHeader2
+            // 
+            this.kryptonHeader2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.kryptonHeader2.Location = new System.Drawing.Point(0, 0);
+            this.kryptonHeader2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.kryptonHeader2.Name = "kryptonHeader2";
+            this.kryptonHeader2.Size = new System.Drawing.Size(931, 37);
+            this.kryptonHeader2.TabIndex = 5;
+            this.kryptonHeader2.Values.Description = "";
+            this.kryptonHeader2.Values.Heading = "Productos actuales";
+            this.kryptonHeader2.Values.Image = ((System.Drawing.Image)(resources.GetObject("kryptonHeader2.Values.Image")));
+            // 
             // ProductoSelectorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -161,10 +161,13 @@ namespace dulce_aroma.Forms.selectores
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.kryptonHeader2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.Name = "ProductoSelectorForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Seleccione un producto haciendo doble clic";
             this.Load += new System.EventHandler(this.ProductoSelectorForm_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ProductoSelectorForm_KeyDown);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvbase)).EndInit();

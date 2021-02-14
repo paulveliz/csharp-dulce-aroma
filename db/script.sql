@@ -130,7 +130,6 @@ CREATE TABLE Detalle_Entradas(
     FOREIGN KEY (idProducto) REFERENCES Productos(id)
 )
 
-
 /*
     Se agrego:
     Empleado en entrada

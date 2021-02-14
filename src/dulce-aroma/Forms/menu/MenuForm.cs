@@ -24,7 +24,7 @@ namespace dulce_aroma.Forms.menu
 
         private void bienvenida()
         {
-            this.Text = $"Bienvenida al sistema dulce aroma - {this.Empleado.nombre_completo}";
+            this.Text = $"SISTEMA DULCE AROMA - {this.Empleado.nombre_completo}";
         }
 
         private void MenuForm_Load(object sender, EventArgs e)
@@ -33,6 +33,9 @@ namespace dulce_aroma.Forms.menu
             if(this.Empleado.idNivel != 1)
             {
                 toolStripLabel1.Enabled = false;
+                nuevaEntradaToolStripMenuItem.Enabled = false;
+                nuevoProductoToolStripMenuItem.Enabled = false;
+                nuevoProveedorToolStripMenuItem1.Enabled = false;
             }
         }
 
@@ -56,13 +59,13 @@ namespace dulce_aroma.Forms.menu
 
         private void nuevaEntradaToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            var frm = new entradas.EntradasForm();
+            var frm = new entradas.EntradasForm(this.Empleado);
             frm.ShowDialog();
         }
 
         private void turnoActualToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var frm = new turnos.TurnoForm();
+            var frm = new turnos.TurnoForm(this.Empleado);
             frm.ShowDialog();
         }
 
@@ -72,7 +75,7 @@ namespace dulce_aroma.Forms.menu
             var turno = await tc.ObtenerActivo();
             if (turno.isActive)
             {
-                var frm = new ventas.FormVenta();
+                var frm = new ventas.FormVenta(this.Empleado);
                 frm.ShowDialog();
             }
             else
@@ -109,6 +112,12 @@ namespace dulce_aroma.Forms.menu
 
             var frmRpt = new ReporteDeTurno(ventasR, turno.Empleados.nombre_completo, turno.fecha_apertura.ToString("d"), turno.hora_apertura.ToString("t"), turno.fecha_cierre?.ToString("d"), turno.hora_cierre?.ToString("t"), totalVentas.ToString(), importeVentas.ToString());
             frmRpt.ShowDialog();
+        }
+
+        private void cambiarMiContraseñaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var frm = new helpers.CambiarPassHelper(this.Empleado);
+            frm.ShowDialog();
         }
     }
 }

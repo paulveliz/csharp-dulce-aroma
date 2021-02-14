@@ -38,12 +38,12 @@ namespace dulce_aroma.Forms.proveedores
             this.kryptonHeader1 = new ComponentFactory.Krypton.Toolkit.KryptonHeader();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgvbase = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
-            this.txtbuscar = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
-            this.lupa = new ComponentFactory.Krypton.Toolkit.ButtonSpecAny();
-            this.kryptonHeader2 = new ComponentFactory.Krypton.Toolkit.KryptonHeader();
             this.dgvNoProveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvNombreCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvEstatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtbuscar = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.lupa = new ComponentFactory.Krypton.Toolkit.ButtonSpecAny();
+            this.kryptonHeader2 = new ComponentFactory.Krypton.Toolkit.KryptonHeader();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -171,6 +171,27 @@ namespace dulce_aroma.Forms.proveedores
             this.dgvbase.TabStop = false;
             this.dgvbase.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvbase_CellDoubleClick);
             // 
+            // dgvNoProveedor
+            // 
+            this.dgvNoProveedor.HeaderText = "No. Proveedor";
+            this.dgvNoProveedor.MinimumWidth = 6;
+            this.dgvNoProveedor.Name = "dgvNoProveedor";
+            this.dgvNoProveedor.ReadOnly = true;
+            // 
+            // dgvNombreCliente
+            // 
+            this.dgvNombreCliente.HeaderText = "Nombre";
+            this.dgvNombreCliente.MinimumWidth = 6;
+            this.dgvNombreCliente.Name = "dgvNombreCliente";
+            this.dgvNombreCliente.ReadOnly = true;
+            // 
+            // dgvEstatus
+            // 
+            this.dgvEstatus.HeaderText = "Estatus";
+            this.dgvEstatus.MinimumWidth = 6;
+            this.dgvEstatus.Name = "dgvEstatus";
+            this.dgvEstatus.ReadOnly = true;
+            // 
             // txtbuscar
             // 
             this.txtbuscar.ButtonSpecs.AddRange(new ComponentFactory.Krypton.Toolkit.ButtonSpecAny[] {
@@ -206,33 +227,13 @@ namespace dulce_aroma.Forms.proveedores
             this.kryptonHeader2.Values.Heading = "Proveedores actuales";
             this.kryptonHeader2.Values.Image = ((System.Drawing.Image)(resources.GetObject("kryptonHeader2.Values.Image")));
             // 
-            // dgvNoProveedor
-            // 
-            this.dgvNoProveedor.HeaderText = "No. Proveedor";
-            this.dgvNoProveedor.MinimumWidth = 6;
-            this.dgvNoProveedor.Name = "dgvNoProveedor";
-            this.dgvNoProveedor.ReadOnly = true;
-            // 
-            // dgvNombreCliente
-            // 
-            this.dgvNombreCliente.HeaderText = "Nombre";
-            this.dgvNombreCliente.MinimumWidth = 6;
-            this.dgvNombreCliente.Name = "dgvNombreCliente";
-            this.dgvNombreCliente.ReadOnly = true;
-            // 
-            // dgvEstatus
-            // 
-            this.dgvEstatus.HeaderText = "Estatus";
-            this.dgvEstatus.MinimumWidth = 6;
-            this.dgvEstatus.Name = "dgvEstatus";
-            this.dgvEstatus.ReadOnly = true;
-            // 
             // ProveedorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(876, 639);
             this.Controls.Add(this.splitContainer1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;

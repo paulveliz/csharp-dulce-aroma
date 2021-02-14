@@ -17,8 +17,10 @@ namespace dulce_aroma.Forms.entradas
         EntradaController eCtrl = new EntradaController();
         public Proveedores Proveedor { get; set; }
         public Productos Producto { get; set; }
-        public EntradasForm()
+        public Empleados Empleado { get; set; }
+        public EntradasForm(Empleados emp)
         {
+            this.Empleado = emp;
             InitializeComponent();
         }
 
@@ -127,13 +129,13 @@ namespace dulce_aroma.Forms.entradas
 
         private void txtprecio_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != ','))
             {
                 e.Handled = true;
             }
 
             // only allow one decimal point
-            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            if ((e.KeyChar == ',') && ((sender as TextBox).Text.IndexOf(',') > -1))
             {
                 e.Handled = true;
             }
@@ -141,13 +143,13 @@ namespace dulce_aroma.Forms.entradas
 
         private void txtcosto_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != ','))
             {
                 e.Handled = true;
             }
 
             // only allow one decimal point
-            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            if ((e.KeyChar == ',') && ((sender as TextBox).Text.IndexOf(',') > -1))
             {
                 e.Handled = true;
             }
@@ -266,7 +268,7 @@ namespace dulce_aroma.Forms.entradas
             {
                 fecha =  Convert.ToDateTime( fecha ),
                 hora = hora,
-                idEmpleado = 1 /*TODO: IMPLEMENTAR EMPLEADO*/,
+                idEmpleado = this.Empleado.id,
                 idEstatus = 1,
                 idProveedor = this.Proveedor.id,
                 importe = importe

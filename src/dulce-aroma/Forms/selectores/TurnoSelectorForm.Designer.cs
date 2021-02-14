@@ -32,11 +32,11 @@ namespace dulce_aroma.Forms.selectores
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TurnoSelectorForm));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvbase = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
-            this.kryptonHeader2 = new ComponentFactory.Krypton.Toolkit.KryptonHeader();
             this.dgvIdTurno = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvFechaApertura = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvFechaCierre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kryptonHeader2 = new ComponentFactory.Krypton.Toolkit.KryptonHeader();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvbase)).BeginInit();
             this.SuspendLayout();
@@ -78,18 +78,6 @@ namespace dulce_aroma.Forms.selectores
             this.dgvbase.TabIndex = 0;
             this.dgvbase.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvbase_CellDoubleClick);
             // 
-            // kryptonHeader2
-            // 
-            this.kryptonHeader2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.kryptonHeader2.Location = new System.Drawing.Point(0, 0);
-            this.kryptonHeader2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.kryptonHeader2.Name = "kryptonHeader2";
-            this.kryptonHeader2.Size = new System.Drawing.Size(936, 37);
-            this.kryptonHeader2.TabIndex = 7;
-            this.kryptonHeader2.Values.Description = "";
-            this.kryptonHeader2.Values.Heading = "Ultimos 100 turnos concluidos";
-            this.kryptonHeader2.Values.Image = ((System.Drawing.Image)(resources.GetObject("kryptonHeader2.Values.Image")));
-            // 
             // dgvIdTurno
             // 
             this.dgvIdTurno.HeaderText = "Folio";
@@ -118,6 +106,18 @@ namespace dulce_aroma.Forms.selectores
             this.dgvFechaCierre.Name = "dgvFechaCierre";
             this.dgvFechaCierre.ReadOnly = true;
             // 
+            // kryptonHeader2
+            // 
+            this.kryptonHeader2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.kryptonHeader2.Location = new System.Drawing.Point(0, 0);
+            this.kryptonHeader2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.kryptonHeader2.Name = "kryptonHeader2";
+            this.kryptonHeader2.Size = new System.Drawing.Size(936, 37);
+            this.kryptonHeader2.TabIndex = 7;
+            this.kryptonHeader2.Values.Description = "";
+            this.kryptonHeader2.Values.Heading = "Ultimos 100 turnos concluidos";
+            this.kryptonHeader2.Values.Image = ((System.Drawing.Image)(resources.GetObject("kryptonHeader2.Values.Image")));
+            // 
             // TurnoSelectorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -126,6 +126,7 @@ namespace dulce_aroma.Forms.selectores
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.kryptonHeader2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "TurnoSelectorForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Seleccione turno a imprimir";

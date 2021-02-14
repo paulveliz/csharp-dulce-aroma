@@ -16,9 +16,11 @@ namespace dulce_aroma.Forms.ventas
     {
         VentasController ventasController = new VentasController();
         ProductoController productoController = new ProductoController();
+        public Empleados Empleado { get; set; }
         public decimal ImporteTotal { get; set; }
-        public FormVenta()
+        public FormVenta(Empleados emp)
         {
+            this.Empleado = emp;
             InitializeComponent();
             this.ImporteTotal = 0;
         }
@@ -153,6 +155,11 @@ namespace dulce_aroma.Forms.ventas
 
         private async void btnfinalizarventa_Click(object sender, EventArgs e)
         {
+            await RealizarVenta();
+        }
+
+        private async Task RealizarVenta()
+        {
             var confirmarVenta = MessageBox.Show("¿Efectúar venta?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (!confirmarVenta.Equals(DialogResult.Yes)) return;
             if (this.dgvbase.Rows.Count == 0)
@@ -165,17 +172,17 @@ namespace dulce_aroma.Forms.ventas
             var turno = await turnoCtrl.ObtenerActivo();
             var venta = new Ventas()
             {
-                fecha =  Convert.ToDateTime( fecha ),
+                fecha = Convert.ToDateTime(fecha),
                 hora = hora,
                 idEstatus = 1,
-                idEmpleado = 1, /*TODO: INSERTE EMPLEADO AQUI*/
+                idEmpleado = this.Empleado.id,
                 idTurno = turno.turno.id,
                 importe = this.ImporteTotal
             };
             var detalle = new List<Detalle_Ventas>();
             foreach (DataGridViewRow row in this.dgvbase.Rows)
             {
-                int idProducto =  Convert.ToInt32(row.Cells[0].Value);
+                int idProducto = Convert.ToInt32(row.Cells[0].Value);
                 int cantidadProd = Convert.ToInt32(row.Cells[2].Value);
                 decimal importeProd = Convert.ToDecimal(row.Cells[4].Value);
                 var producto = await productoController.ObtenerPorId(idProducto);
@@ -188,14 +195,14 @@ namespace dulce_aroma.Forms.ventas
                     importe = importeProd
                 });
             }
-            
+
             using (var helper = new helpers.CambioHelper(this.ImporteTotal))
             {
                 this.dgvbase.Rows.Clear();
                 this.ImporteTotal = 0;
                 ActualizarImporteTotal();
                 var result = helper.ShowDialog();
-                if(result == DialogResult.Yes)
+                if (result == DialogResult.Yes)
                 {
                     venta.pago_con = helper.PagoCon;
                     venta.cambio = helper.Cambio;
@@ -207,7 +214,7 @@ namespace dulce_aroma.Forms.ventas
                     }
 
                 }
-                else if(result == DialogResult.No)
+                else if (result == DialogResult.No)
                 {
                     // Solo guardar la venta
                     venta.pago_con = helper.PagoCon;
@@ -229,7 +236,40 @@ namespace dulce_aroma.Forms.ventas
                         MessageBox.Show("Venta exitosa", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
-                
+
+            }
+        }
+
+        private async void FormVenta_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.F1)
+            {
+                using (var selector = new selectores.ProductoSelectorForm())
+                {
+                    var result = selector.ShowDialog();
+                    if (!result.Equals(DialogResult.Yes)) return;
+                    var producto = selector.Producto;
+                    AddProductToDgv(producto, 1);
+                }
+            }
+            if(e.KeyCode == Keys.F5)
+            {
+                await RealizarVenta();
+            }
+            if(e.KeyCode == Keys.Escape)
+            {
+                EscapeDeteleItems();
+            }
+        }
+
+        private void EscapeDeteleItems()
+        {
+            foreach (DataGridViewRow row in this.dgvbase.Rows)
+            {
+                decimal importeDeRowActual = Convert.ToDecimal(row.Cells[4].Value);
+                this.ImporteTotal -= importeDeRowActual;
+                ActualizarImporteTotal();
+                this.dgvbase.Rows.RemoveAt(row.Index);
             }
         }
     }

@@ -73,6 +73,11 @@ namespace dulce_aroma.Forms.inventarios
                 MessageBox.Show($"En el sistema ya existe un producto llamado \"{this.txtnombre.Text.Trim()}\", intente con otro nombre.", "Ya existe", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+            if(txtcodigo.Text.Length == 0)
+            {
+                MessageBox.Show($"El codigo del producto es obligatorio.", "Codigo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             var confirm = MessageBox.Show($"¿Desea agregar el producto \"{this.txtnombre.Text.Trim()}\"?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (confirm != DialogResult.Yes) return;
             var proveedor = (Proveedores)this.cboxproveedores.SelectedItem;
@@ -80,7 +85,7 @@ namespace dulce_aroma.Forms.inventarios
             var hora = DateTime.Now.TimeOfDay;
             var p = new Productos() 
             {
-                codigo = this.txtcodigo.Text.Trim().Length == 0 ? "Sin código" : this.txtcodigo.Text.Trim(),
+                codigo = this.txtcodigo.Text.Trim(),
                 nombre = this.txtnombre.Text.Trim(),
                 idProveedor = proveedor.id,
                 existencias = 0,
@@ -152,6 +157,29 @@ namespace dulce_aroma.Forms.inventarios
             catch (Exception)
             {
                 return;
+            }
+        }
+
+        private async void dgvbase_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if(e.Button == MouseButtons.Right)
+            {
+                try
+                {
+                    int idProduct = Convert.ToInt32(this.dgvbase.SelectedRows[0].Cells[0].Value);
+                    var producto = await productoCon.ObtenerPorId(idProduct);
+                    using (var actualizar = new helpers.EditarProductoHelper(producto))
+                    {
+                        var result = actualizar.ShowDialog();
+                        if (!result.Equals(DialogResult.Yes)) return;
+                        MessageBox.Show($"El producto fue modificado con exito.", "Resultados", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        await ObtenerProductosToDgv();
+                    }
+                }
+                catch (Exception)
+                {
+                    return;
+                }
             }
         }
     }

@@ -15,15 +15,17 @@ namespace dulce_aroma.Forms.turnos
     public partial class TurnoForm : Form
     {
         TurnoController tCtrl = new TurnoController();
-        public TurnoForm()
+        public Empleados Empleado { get; set; }
+        public TurnoForm(Empleados emp)
         {
+            this.Empleado = emp;
             InitializeComponent();
         }
 
         private async void TurnoForm_Load(object sender, EventArgs e)
         {
             this.txtestatus.Text = "CARGANDO DATOS...";
-            this.txtempleado.Text = "CARGANDO DATOS...";
+            this.txtempleado.Text = $"{this.Empleado.nombre_completo}";
             var turno = await tCtrl.ObtenerActivo();
             if (turno.isActive)
             {
@@ -53,7 +55,7 @@ namespace dulce_aroma.Forms.turnos
             {
                 fecha_apertura = Convert.ToDateTime(fecha), 
                 hora_apertura = hora,
-                idEmpleado = 1,
+                idEmpleado = this.Empleado.id,
                 idEstatus = 1,
             });
             if (tnew.isSucess)

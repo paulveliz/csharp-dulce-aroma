@@ -30,6 +30,7 @@ namespace dulce_aroma.Forms.ventas
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormVenta));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.kryptonDockableNavigator1 = new ComponentFactory.Krypton.Docking.KryptonDockableNavigator();
             this.kryptonPage1 = new ComponentFactory.Krypton.Navigator.KryptonPage();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -229,6 +230,8 @@ namespace dulce_aroma.Forms.ventas
             this.dgvbase.ReadOnly = true;
             this.dgvbase.RowHeadersVisible = false;
             this.dgvbase.RowHeadersWidth = 51;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvbase.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvbase.RowTemplate.Height = 24;
             this.dgvbase.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvbase.Size = new System.Drawing.Size(621, 430);
@@ -345,11 +348,14 @@ namespace dulce_aroma.Forms.ventas
             this.ClientSize = new System.Drawing.Size(1578, 858);
             this.Controls.Add(this.kryptonDockableNavigator1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.Name = "FormVenta";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SISTEMA DULCE AROMA - PUNTO DE VENTA";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FormVenta_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormVenta_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonDockableNavigator1)).EndInit();
             this.kryptonDockableNavigator1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPage1)).EndInit();

@@ -29,6 +29,7 @@ namespace dulce_aroma.Forms.respaldos
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RespaldoForm));
             this.SuspendLayout();
             // 
             // RespaldoForm
@@ -37,6 +38,7 @@ namespace dulce_aroma.Forms.respaldos
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(629, 420);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "RespaldoForm";

@@ -29,6 +29,7 @@ namespace dulce_aroma.Forms.selectores
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CantidadSelectorForm));
             this.txtcant = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
@@ -51,6 +52,7 @@ namespace dulce_aroma.Forms.selectores
             this.ClientSize = new System.Drawing.Size(307, 119);
             this.Controls.Add(this.txtcant);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.Name = "CantidadSelectorForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

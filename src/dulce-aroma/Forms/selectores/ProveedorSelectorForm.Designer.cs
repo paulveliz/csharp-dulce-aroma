@@ -113,6 +113,7 @@ namespace dulce_aroma.Forms.selectores
             this.Controls.Add(this.dgvbase);
             this.Controls.Add(this.txtbuscar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ProveedorSelectorForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Seleccione un proveedor con doble clic";

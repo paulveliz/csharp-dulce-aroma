@@ -106,6 +106,7 @@ namespace dulce_aroma.Forms.entradas
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -115,8 +116,8 @@ namespace dulce_aroma.Forms.entradas
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.panel2);
-            this.splitContainer1.Size = new System.Drawing.Size(1182, 840);
-            this.splitContainer1.SplitterDistance = 394;
+            this.splitContainer1.Size = new System.Drawing.Size(1181, 750);
+            this.splitContainer1.SplitterDistance = 393;
             this.splitContainer1.TabIndex = 0;
             // 
             // panel1
@@ -125,14 +126,16 @@ namespace dulce_aroma.Forms.entradas
             this.panel1.Controls.Add(this.kryptonHeader1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(394, 840);
+            this.panel1.Size = new System.Drawing.Size(393, 750);
             this.panel1.TabIndex = 0;
             // 
             // splitContainer3
             // 
             this.splitContainer3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer3.Location = new System.Drawing.Point(0, 37);
+            this.splitContainer3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.splitContainer3.Name = "splitContainer3";
             this.splitContainer3.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -143,8 +146,8 @@ namespace dulce_aroma.Forms.entradas
             // splitContainer3.Panel2
             // 
             this.splitContainer3.Panel2.Controls.Add(this.panel4);
-            this.splitContainer3.Size = new System.Drawing.Size(394, 803);
-            this.splitContainer3.SplitterDistance = 373;
+            this.splitContainer3.Size = new System.Drawing.Size(393, 713);
+            this.splitContainer3.SplitterDistance = 330;
             this.splitContainer3.TabIndex = 2;
             // 
             // panel3
@@ -170,8 +173,9 @@ namespace dulce_aroma.Forms.entradas
             this.panel3.Controls.Add(this.txtproducto);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(394, 373);
+            this.panel3.Size = new System.Drawing.Size(393, 330);
             this.panel3.TabIndex = 0;
             // 
             // btnNoProveedor
@@ -191,7 +195,7 @@ namespace dulce_aroma.Forms.entradas
             this.btnSearchProveedor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSearchProveedor.Name = "btnSearchProveedor";
             this.btnSearchProveedor.Size = new System.Drawing.Size(43, 27);
-            this.btnSearchProveedor.TabIndex = 67;
+            this.btnSearchProveedor.TabIndex = 0;
             this.btnSearchProveedor.Text = "?";
             this.btnSearchProveedor.UseVisualStyleBackColor = true;
             this.btnSearchProveedor.Click += new System.EventHandler(this.btnSearchProveedor_Click);
@@ -215,6 +219,7 @@ namespace dulce_aroma.Forms.entradas
             this.txtproveedor.ReadOnly = true;
             this.txtproveedor.Size = new System.Drawing.Size(272, 27);
             this.txtproveedor.TabIndex = 65;
+            this.txtproveedor.TabStop = false;
             // 
             // label6
             // 
@@ -230,7 +235,7 @@ namespace dulce_aroma.Forms.entradas
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(157, 152);
+            this.label5.Location = new System.Drawing.Point(157, 153);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(18, 20);
             this.label5.TabIndex = 63;
@@ -243,7 +248,7 @@ namespace dulce_aroma.Forms.entradas
             this.btnQuitCant.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnQuitCant.Name = "btnQuitCant";
             this.btnQuitCant.Size = new System.Drawing.Size(43, 27);
-            this.btnQuitCant.TabIndex = 62;
+            this.btnQuitCant.TabIndex = 5;
             this.btnQuitCant.Text = "-";
             this.btnQuitCant.UseVisualStyleBackColor = true;
             this.btnQuitCant.Click += new System.EventHandler(this.btnQuitCant_Click);
@@ -255,7 +260,7 @@ namespace dulce_aroma.Forms.entradas
             this.btnAddCant.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAddCant.Name = "btnAddCant";
             this.btnAddCant.Size = new System.Drawing.Size(43, 27);
-            this.btnAddCant.TabIndex = 61;
+            this.btnAddCant.TabIndex = 4;
             this.btnAddCant.Text = "+";
             this.btnAddCant.UseVisualStyleBackColor = true;
             this.btnAddCant.Click += new System.EventHandler(this.btnAddCant_Click);
@@ -303,7 +308,7 @@ namespace dulce_aroma.Forms.entradas
             this.btnSearchProducto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSearchProducto.Name = "btnSearchProducto";
             this.btnSearchProducto.Size = new System.Drawing.Size(43, 27);
-            this.btnSearchProducto.TabIndex = 57;
+            this.btnSearchProducto.TabIndex = 1;
             this.btnSearchProducto.Text = "?";
             this.btnSearchProducto.UseVisualStyleBackColor = true;
             this.btnSearchProducto.Click += new System.EventHandler(this.btnSearchProducto_Click);
@@ -312,7 +317,7 @@ namespace dulce_aroma.Forms.entradas
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(11, 125);
+            this.label4.Location = new System.Drawing.Point(11, 126);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(130, 20);
             this.label4.TabIndex = 56;
@@ -326,7 +331,7 @@ namespace dulce_aroma.Forms.entradas
             this.txtprecio.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtprecio.Name = "txtprecio";
             this.txtprecio.Size = new System.Drawing.Size(139, 27);
-            this.txtprecio.TabIndex = 55;
+            this.txtprecio.TabIndex = 2;
             this.txtprecio.Text = "0";
             this.txtprecio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtprecio_KeyPress);
             // 
@@ -336,15 +341,15 @@ namespace dulce_aroma.Forms.entradas
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnadd.Enabled = false;
             this.btnadd.Location = new System.Drawing.Point(11, 313);
-            this.btnadd.Margin = new System.Windows.Forms.Padding(4);
+            this.btnadd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnadd.Name = "btnadd";
-            this.btnadd.Size = new System.Drawing.Size(207, 39);
+            this.btnadd.Size = new System.Drawing.Size(205, 39);
             this.btnadd.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.btnadd.StateCommon.Content.Image.ImageH = ComponentFactory.Krypton.Toolkit.PaletteRelativeAlign.Near;
             this.btnadd.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnadd.TabIndex = 54;
+            this.btnadd.TabIndex = 6;
             this.btnadd.Values.Text = "Agregar (f1)";
             this.btnadd.Click += new System.EventHandler(this.btnadd_Click);
             // 
@@ -366,7 +371,7 @@ namespace dulce_aroma.Forms.entradas
             this.txtcosto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtcosto.Name = "txtcosto";
             this.txtcosto.Size = new System.Drawing.Size(139, 27);
-            this.txtcosto.TabIndex = 52;
+            this.txtcosto.TabIndex = 3;
             this.txtcosto.Text = "0";
             this.txtcosto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtcosto_KeyPress);
             // 
@@ -389,6 +394,7 @@ namespace dulce_aroma.Forms.entradas
             this.txtproducto.ReadOnly = true;
             this.txtproducto.Size = new System.Drawing.Size(272, 27);
             this.txtproducto.TabIndex = 50;
+            this.txtproducto.TabStop = false;
             // 
             // panel4
             // 
@@ -402,8 +408,9 @@ namespace dulce_aroma.Forms.entradas
             this.panel4.Controls.Add(this.kryptonHeader5);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(394, 426);
+            this.panel4.Size = new System.Drawing.Size(393, 379);
             this.panel4.TabIndex = 0;
             // 
             // kryptonHeader3
@@ -411,10 +418,10 @@ namespace dulce_aroma.Forms.entradas
             this.kryptonHeader3.ButtonSpecs.AddRange(new ComponentFactory.Krypton.Toolkit.ButtonSpecAny[] {
             this.btnfinalizar});
             this.kryptonHeader3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.kryptonHeader3.Location = new System.Drawing.Point(0, 390);
+            this.kryptonHeader3.Location = new System.Drawing.Point(0, 343);
             this.kryptonHeader3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.kryptonHeader3.Name = "kryptonHeader3";
-            this.kryptonHeader3.Size = new System.Drawing.Size(394, 36);
+            this.kryptonHeader3.Size = new System.Drawing.Size(393, 36);
             this.kryptonHeader3.TabIndex = 56;
             this.kryptonHeader3.Values.Description = "";
             this.kryptonHeader3.Values.Heading = "";
@@ -433,7 +440,7 @@ namespace dulce_aroma.Forms.entradas
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(9, 115);
+            this.label10.Location = new System.Drawing.Point(9, 114);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(131, 20);
             this.label10.TabIndex = 55;
@@ -449,8 +456,9 @@ namespace dulce_aroma.Forms.entradas
             this.txtProdAfectados.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtProdAfectados.Name = "txtProdAfectados";
             this.txtProdAfectados.ReadOnly = true;
-            this.txtProdAfectados.Size = new System.Drawing.Size(84, 27);
+            this.txtProdAfectados.Size = new System.Drawing.Size(83, 27);
             this.txtProdAfectados.TabIndex = 54;
+            this.txtProdAfectados.TabStop = false;
             this.txtProdAfectados.Text = "0";
             // 
             // label8
@@ -474,8 +482,9 @@ namespace dulce_aroma.Forms.entradas
             this.txtImporte.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtImporte.Name = "txtImporte";
             this.txtImporte.ReadOnly = true;
-            this.txtImporte.Size = new System.Drawing.Size(156, 27);
+            this.txtImporte.Size = new System.Drawing.Size(155, 27);
             this.txtImporte.TabIndex = 51;
+            this.txtImporte.TabStop = false;
             this.txtImporte.Text = "0";
             // 
             // label7
@@ -498,16 +507,18 @@ namespace dulce_aroma.Forms.entradas
             this.txtCantNuevasEntradas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCantNuevasEntradas.Name = "txtCantNuevasEntradas";
             this.txtCantNuevasEntradas.ReadOnly = true;
-            this.txtCantNuevasEntradas.Size = new System.Drawing.Size(84, 27);
+            this.txtCantNuevasEntradas.Size = new System.Drawing.Size(83, 27);
             this.txtCantNuevasEntradas.TabIndex = 49;
+            this.txtCantNuevasEntradas.TabStop = false;
             this.txtCantNuevasEntradas.Text = "0";
             // 
             // kryptonHeader5
             // 
             this.kryptonHeader5.Dock = System.Windows.Forms.DockStyle.Top;
             this.kryptonHeader5.Location = new System.Drawing.Point(0, 0);
+            this.kryptonHeader5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.kryptonHeader5.Name = "kryptonHeader5";
-            this.kryptonHeader5.Size = new System.Drawing.Size(394, 37);
+            this.kryptonHeader5.Size = new System.Drawing.Size(393, 37);
             this.kryptonHeader5.TabIndex = 1;
             this.kryptonHeader5.Values.Description = "";
             this.kryptonHeader5.Values.Heading = "Datos generales";
@@ -517,8 +528,9 @@ namespace dulce_aroma.Forms.entradas
             // 
             this.kryptonHeader1.Dock = System.Windows.Forms.DockStyle.Top;
             this.kryptonHeader1.Location = new System.Drawing.Point(0, 0);
+            this.kryptonHeader1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.kryptonHeader1.Name = "kryptonHeader1";
-            this.kryptonHeader1.Size = new System.Drawing.Size(394, 37);
+            this.kryptonHeader1.Size = new System.Drawing.Size(393, 37);
             this.kryptonHeader1.TabIndex = 0;
             this.kryptonHeader1.Values.Description = "";
             this.kryptonHeader1.Values.Heading = "Nueva entrada";
@@ -530,14 +542,16 @@ namespace dulce_aroma.Forms.entradas
             this.panel2.Controls.Add(this.kryptonHeader2);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(784, 840);
+            this.panel2.Size = new System.Drawing.Size(784, 750);
             this.panel2.TabIndex = 0;
             // 
             // splitContainer2
             // 
             this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer2.Location = new System.Drawing.Point(0, 37);
+            this.splitContainer2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.splitContainer2.Name = "splitContainer2";
             this.splitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -549,8 +563,8 @@ namespace dulce_aroma.Forms.entradas
             // 
             this.splitContainer2.Panel2.Controls.Add(this.dgvexistentes);
             this.splitContainer2.Panel2.Controls.Add(this.kryptonHeader4);
-            this.splitContainer2.Size = new System.Drawing.Size(784, 803);
-            this.splitContainer2.SplitterDistance = 369;
+            this.splitContainer2.Size = new System.Drawing.Size(784, 713);
+            this.splitContainer2.SplitterDistance = 327;
             this.splitContainer2.TabIndex = 1;
             // 
             // dgvNuevas
@@ -575,8 +589,9 @@ namespace dulce_aroma.Forms.entradas
             this.dgvNuevas.RowHeadersWidth = 51;
             this.dgvNuevas.RowTemplate.Height = 24;
             this.dgvNuevas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvNuevas.Size = new System.Drawing.Size(784, 369);
+            this.dgvNuevas.Size = new System.Drawing.Size(784, 327);
             this.dgvNuevas.TabIndex = 4;
+            this.dgvNuevas.TabStop = false;
             this.dgvNuevas.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNuevas_CellDoubleClick);
             // 
             // dgv1idProducto
@@ -637,14 +652,16 @@ namespace dulce_aroma.Forms.entradas
             this.dgvExEstatus});
             this.dgvexistentes.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvexistentes.Location = new System.Drawing.Point(0, 37);
+            this.dgvexistentes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvexistentes.Name = "dgvexistentes";
             this.dgvexistentes.ReadOnly = true;
             this.dgvexistentes.RowHeadersVisible = false;
             this.dgvexistentes.RowHeadersWidth = 51;
             this.dgvexistentes.RowTemplate.Height = 24;
             this.dgvexistentes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvexistentes.Size = new System.Drawing.Size(784, 393);
+            this.dgvexistentes.Size = new System.Drawing.Size(784, 345);
             this.dgvexistentes.TabIndex = 1;
+            this.dgvexistentes.TabStop = false;
             // 
             // dgvExistentesId
             // 
@@ -693,6 +710,7 @@ namespace dulce_aroma.Forms.entradas
             // 
             this.kryptonHeader4.Dock = System.Windows.Forms.DockStyle.Top;
             this.kryptonHeader4.Location = new System.Drawing.Point(0, 0);
+            this.kryptonHeader4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.kryptonHeader4.Name = "kryptonHeader4";
             this.kryptonHeader4.Size = new System.Drawing.Size(784, 37);
             this.kryptonHeader4.TabIndex = 0;
@@ -704,6 +722,7 @@ namespace dulce_aroma.Forms.entradas
             // 
             this.kryptonHeader2.Dock = System.Windows.Forms.DockStyle.Top;
             this.kryptonHeader2.Location = new System.Drawing.Point(0, 0);
+            this.kryptonHeader2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.kryptonHeader2.Name = "kryptonHeader2";
             this.kryptonHeader2.Size = new System.Drawing.Size(784, 37);
             this.kryptonHeader2.TabIndex = 0;
@@ -715,10 +734,12 @@ namespace dulce_aroma.Forms.entradas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1182, 840);
+            this.ClientSize = new System.Drawing.Size(1181, 750);
             this.Controls.Add(this.splitContainer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "EntradasForm";
