@@ -106,6 +106,7 @@ namespace controladores
                                     .Include(t => t.Empleados)
                                     .Include(t => t.Ventas)
                                     .Where(t =>
+                                        t.idEstatus != 1 &&
                                         t.fecha_apertura >= fromt &&
                                         t.fecha_apertura <= to 
                                     )

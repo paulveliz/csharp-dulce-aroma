@@ -1,7 +1,7 @@
 ﻿
-namespace dulce_aroma.Forms.turnos
+namespace dulce_aroma.Forms.entradas
 {
-    partial class ReporteDeTurno
+    partial class EntradasPorFechasReport
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace dulce_aroma.Forms.turnos
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReporteDeTurno));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EntradasPorFechasReport));
             this.crv = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.SuspendLayout();
             // 
@@ -47,21 +47,20 @@ namespace dulce_aroma.Forms.turnos
             this.crv.ShowLogo = false;
             this.crv.ShowParameterPanelButton = false;
             this.crv.ShowTextSearchButton = false;
-            this.crv.Size = new System.Drawing.Size(1158, 737);
-            this.crv.TabIndex = 0;
+            this.crv.Size = new System.Drawing.Size(800, 450);
+            this.crv.TabIndex = 2;
             // 
-            // ReporteDeTurno
+            // EntradasPorFechasReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1158, 737);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.crv);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "ReporteDeTurno";
+            this.Name = "EntradasPorFechasReport";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Reporte de Turno";
+            this.Text = "SISTEMA DULCE AROMA - ENTRADAS POR FECHA";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.ReporteDeTurno_Load);
             this.ResumeLayout(false);
 
         }

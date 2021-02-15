@@ -318,5 +318,37 @@ namespace dulce_aroma.Forms.entradas
                 this.Close();
             }
         }
+
+        private async void dgvexistentes_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                int idEntrada = Convert.ToInt32(this.dgvexistentes.SelectedRows[0].Cells[0].Value.ToString());
+                var result = MessageBox.Show($"¿Seleccionar entrada?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (!result.Equals(DialogResult.Yes)) return;
+                var entrada = await eCtrl.ObtenerPorId(idEntrada);
+                // Imprimir reporte
+                int cantProd = 0;
+                decimal importeTotal = 0;
+                var details = entrada.Detalle_Entradas.Select(dt => {
+                    cantProd += dt.cantidad;
+                    importeTotal += dt.importe;
+                    return new EntradaDetalleModel()
+                    {
+                        Importe = dt.importe,
+                        Cantidad = dt.cantidad,
+                        Costo = dt.cantidad,
+                        Precio = dt.precio,
+                        Producto = dt.Productos.nombre
+                    };
+                }).ToList();
+                var report = new EntradaReport(details, entrada.Empleados.nombre_completo, entrada.Proveedores.nombre, cantProd.ToString(), importeTotal.ToString(), entrada.fecha.ToString("d"), entrada.id.ToString());
+                report.ShowDialog();
+            }
+            catch (Exception)
+            {
+                return;
+            }
+        }
     }
 }

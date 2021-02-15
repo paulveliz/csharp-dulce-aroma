@@ -106,7 +106,7 @@ namespace controladores
                 var res = await db.Productos
                                         .Include(p => p.cProductoEstatus)
                                         .Include(p => p.Proveedores)
-                                        .FirstOrDefaultAsync(p => p.codigo == codigoProducto);
+                                        .FirstOrDefaultAsync(p => p.codigo == codigoProducto && p.idEstatus != 2);
                 return res;
             }
         }
@@ -182,7 +182,7 @@ namespace controladores
                 var res = await db.Productos
                                         .Include(p => p.cProductoEstatus)
                                         .Include(p => p.Proveedores)
-                                        .FirstOrDefaultAsync(p => p.nombre == nombreProducto);
+                                        .FirstOrDefaultAsync(p => p.nombre == nombreProducto && p.idEstatus != 2);
                 return res != null ? (true, res) : (false, res);
             }
         }

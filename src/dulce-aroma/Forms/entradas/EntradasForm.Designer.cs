@@ -341,7 +341,7 @@ namespace dulce_aroma.Forms.entradas
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnadd.Enabled = false;
             this.btnadd.Location = new System.Drawing.Point(11, 313);
-            this.btnadd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnadd.Margin = new System.Windows.Forms.Padding(4);
             this.btnadd.Name = "btnadd";
             this.btnadd.Size = new System.Drawing.Size(205, 39);
             this.btnadd.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
@@ -662,6 +662,7 @@ namespace dulce_aroma.Forms.entradas
             this.dgvexistentes.Size = new System.Drawing.Size(784, 345);
             this.dgvexistentes.TabIndex = 1;
             this.dgvexistentes.TabStop = false;
+            this.dgvexistentes.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvexistentes_CellDoubleClick);
             // 
             // dgvExistentesId
             // 

@@ -227,12 +227,38 @@
     <Compile Include="Forms\empleados\EmpleadosForm.Designer.cs">
       <DependentUpon>EmpleadosForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\entradas\EntradaDetalleModel.cs" />
+    <Compile Include="Forms\entradas\EntradaReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\entradas\EntradaReport.Designer.cs">
+      <DependentUpon>EntradaReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\entradas\EntradaReportCrv.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EntradaReportCrv.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Forms\entradas\EntradasForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\entradas\EntradasForm.Designer.cs">
       <DependentUpon>EntradasForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\entradas\EntradasPorFechasReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\entradas\EntradasPorFechasReport.Designer.cs">
+      <DependentUpon>EntradasPorFechasReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\entradas\EntradasPorFechasReportCrv.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EntradasPorFechasReportCrv.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\entradas\EntradasPorFechasReportModel.cs" />
     <Compile Include="Forms\helpers\CambiarPassHelper.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -263,6 +289,19 @@
     <Compile Include="Forms\menu\MenuForm.Designer.cs">
       <DependentUpon>MenuForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\proveedores\EntradasPorProveedorReportCrv.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EntradasPorProveedorReportCrv.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\proveedores\EntradasPorProveedorReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\proveedores\EntradasPorProveedorReportForm.Designer.cs">
+      <DependentUpon>EntradasPorProveedorReportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\proveedores\EntradasPorProveedorReportModel.cs" />
     <Compile Include="Forms\proveedores\ProveedorForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -280,6 +319,18 @@
     </Compile>
     <Compile Include="Forms\selectores\CantidadSelectorForm.Designer.cs">
       <DependentUpon>CantidadSelectorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\selectores\DateSelectorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\selectores\DateSelectorForm.Designer.cs">
+      <DependentUpon>DateSelectorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\selectores\EntradaSelectorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\selectores\EntradaSelectorForm.Designer.cs">
+      <DependentUpon>EntradaSelectorForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\selectores\ProductoSelectorForm.cs">
       <SubType>Form</SubType>
@@ -306,6 +357,12 @@
       <DependentUpon>ReporteDeTurno.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\turnos\ReporteDeTurnoModel.cs" />
+    <Compile Include="Forms\turnos\ReporteDeTurnoPorFechas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\turnos\ReporteDeTurnoPorFechas.Designer.cs">
+      <DependentUpon>ReporteDeTurnoPorFechas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\turnos\ReporteVentaDetalleModel.cs" />
     <Compile Include="Forms\turnos\ReporteVentaModel.cs" />
     <Compile Include="Forms\turnos\TurnoForm.cs">
@@ -318,6 +375,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>TurnoReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\turnos\TurnosPorFechasReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TurnosPorFechasReport.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Forms\ventas\FormVenta.cs">
@@ -337,8 +400,22 @@
     <EmbeddedResource Include="Forms\empleados\EmpleadosForm.resx">
       <DependentUpon>EmpleadosForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\entradas\EntradaReport.resx">
+      <DependentUpon>EntradaReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\entradas\EntradaReportCrv.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>EntradaReportCrv.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\entradas\EntradasForm.resx">
       <DependentUpon>EntradasForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\entradas\EntradasPorFechasReport.resx">
+      <DependentUpon>EntradasPorFechasReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\entradas\EntradasPorFechasReportCrv.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>EntradasPorFechasReportCrv.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\helpers\CambiarPassHelper.resx">
       <DependentUpon>CambiarPassHelper.cs</DependentUpon>
@@ -355,6 +432,13 @@
     <EmbeddedResource Include="Forms\menu\MenuForm.resx">
       <DependentUpon>MenuForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\proveedores\EntradasPorProveedorReportCrv.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>EntradasPorProveedorReportCrv.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\proveedores\EntradasPorProveedorReportForm.resx">
+      <DependentUpon>EntradasPorProveedorReportForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\proveedores\ProveedorForm.resx">
       <DependentUpon>ProveedorForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -363,6 +447,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\selectores\CantidadSelectorForm.resx">
       <DependentUpon>CantidadSelectorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\selectores\DateSelectorForm.resx">
+      <DependentUpon>DateSelectorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\selectores\EntradaSelectorForm.resx">
+      <DependentUpon>EntradaSelectorForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\selectores\ProductoSelectorForm.resx">
       <DependentUpon>ProductoSelectorForm.cs</DependentUpon>
@@ -376,12 +466,19 @@
     <EmbeddedResource Include="Forms\turnos\ReporteDeTurno.resx">
       <DependentUpon>ReporteDeTurno.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\turnos\ReporteDeTurnoPorFechas.resx">
+      <DependentUpon>ReporteDeTurnoPorFechas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\turnos\TurnoForm.resx">
       <DependentUpon>TurnoForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\turnos\TurnoReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>TurnoReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\turnos\TurnosPorFechasReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>TurnosPorFechasReport.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ventas\FormVenta.resx">
       <DependentUpon>FormVenta.cs</DependentUpon>

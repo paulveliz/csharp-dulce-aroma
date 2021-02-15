@@ -12,6 +12,7 @@ namespace dulce_aroma.Forms.turnos
         public int id { get; set; }
         public System.DateTime fecha { get; set; }
         public System.TimeSpan hora { get; set; }
+        public int cantProductos { get; set; }
         public decimal importe { get; set; }
     }
 }

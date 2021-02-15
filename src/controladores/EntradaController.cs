@@ -36,6 +36,7 @@ namespace controladores
                 await db.SaveChangesAsync();
                 var entradaActual = await db.Entradas
                     .Include(e => e.Detalle_Entradas)
+                    .Include("Detalle_Entradas.Productos")
                     .Include(e => e.Empleados)
                     .Include(e => e.cEntradaEstatus)
                     .Include(e => e.Proveedores)
@@ -65,6 +66,7 @@ namespace controladores
             {
                 var bajas = await db.Entradas
                                 .Include(e => e.Detalle_Entradas)
+                                .Include("Detalle_Entradas.Productos")
                                 .Include(e => e.Empleados)
                                 .Include(e => e.cEntradaEstatus)
                                 .Include(e => e.Proveedores)
@@ -84,6 +86,7 @@ namespace controladores
             {
                 var bajas = await db.Entradas
                                 .Include(e => e.Detalle_Entradas)
+                                .Include("Detalle_Entradas.Productos")
                                 .Include(e => e.Empleados)
                                 .Include(e => e.cEntradaEstatus)
                                 .Include(e => e.Proveedores)
@@ -103,11 +106,32 @@ namespace controladores
             {
                 var bajas = await db.Entradas
                                 .Include(e => e.Detalle_Entradas)
+                                .Include("Detalle_Entradas.Productos")
                                 .Include(e => e.Empleados)
                                 .Include(e => e.cEntradaEstatus)
                                 .Include(e => e.Proveedores)
                                 .Where(e =>
                                     e.idEstatus == 1 &&
+                                    e.fecha >= from &&
+                                    e.fecha <= to)
+                                .OrderByDescending(e => e.id)
+                                .ToListAsync();
+                return bajas;
+            }
+        }
+        public async Task<IEnumerable<Entradas>> ObtenerPorProveedor(DateTime from, DateTime to, int proveedorId)
+        {
+            using (var db = new dulce_aroma_db())
+            {
+                var bajas = await db.Entradas
+                                .Include(e => e.Detalle_Entradas)
+                                .Include("Detalle_Entradas.Productos")
+                                .Include(e => e.Empleados)
+                                .Include(e => e.cEntradaEstatus)
+                                .Include(e => e.Proveedores)
+                                .Where(e =>
+                                    e.idEstatus == 1 &&
+                                    e.idProveedor == proveedorId &&
                                     e.fecha >= from &&
                                     e.fecha <= to)
                                 .OrderByDescending(e => e.id)
@@ -122,6 +146,7 @@ namespace controladores
                 var bajas = await db.Entradas
                                 .Include(e => e.cEntradaEstatus)
                                 .Include(e => e.Detalle_Entradas)
+                                .Include("Detalle_Entradas.Productos")
                                 .Include(e => e.Proveedores)
                                 .Include(e => e.Empleados)
                                 .Where(e =>
@@ -139,6 +164,7 @@ namespace controladores
             {
                 var entrada = await db.Entradas
                         .Include(e => e.Detalle_Entradas)
+                        .Include("Detalle_Entradas.Productos")
                         .Include(e => e.Empleados)
                         .Include(e => e.cEntradaEstatus)
                         .Include(e => e.Proveedores)

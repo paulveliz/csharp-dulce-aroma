@@ -32,5 +32,10 @@ namespace dulce_aroma.Forms.turnos
             crv.ReportSource = rptH;
             crv.Refresh();
         }
+
+        private void ReporteDeTurno_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

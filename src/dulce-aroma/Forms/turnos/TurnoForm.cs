@@ -84,6 +84,7 @@ namespace dulce_aroma.Forms.turnos
                 fecha = v.fecha,
                 hora = v.hora,
                 id = v.id,
+                cantProductos = v.Detalle_Ventas.Count,
                 importe = v.importe
             }).ToList();
             var totalVentas = ventasR.Count();

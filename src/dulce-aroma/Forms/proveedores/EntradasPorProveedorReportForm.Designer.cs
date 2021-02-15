@@ -1,7 +1,7 @@
 ﻿
-namespace dulce_aroma.Forms.turnos
+namespace dulce_aroma.Forms.proveedores
 {
-    partial class ReporteDeTurno
+    partial class EntradasPorProveedorReportForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace dulce_aroma.Forms.turnos
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReporteDeTurno));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EntradasPorProveedorReportForm));
             this.crv = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.SuspendLayout();
             // 
@@ -47,21 +47,21 @@ namespace dulce_aroma.Forms.turnos
             this.crv.ShowLogo = false;
             this.crv.ShowParameterPanelButton = false;
             this.crv.ShowTextSearchButton = false;
-            this.crv.Size = new System.Drawing.Size(1158, 737);
-            this.crv.TabIndex = 0;
+            this.crv.Size = new System.Drawing.Size(858, 696);
+            this.crv.TabIndex = 1;
             // 
-            // ReporteDeTurno
+            // EntradasPorProveedorReportForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1158, 737);
+            this.ClientSize = new System.Drawing.Size(858, 696);
             this.Controls.Add(this.crv);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "ReporteDeTurno";
+            this.Name = "EntradasPorProveedorReportForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Reporte de Turno";
+            this.Text = "SISTEMA DULCE AROMA - ENTRADAS POR PROVEEDOR";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.ReporteDeTurno_Load);
+            this.Load += new System.EventHandler(this.EntradasPorProveedorReportForm_Load);
             this.ResumeLayout(false);
 
         }
