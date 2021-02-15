@@ -12,6 +12,7 @@ using controladores;
 using dulce_aroma.Forms.turnos;
 using dulce_aroma.Forms.proveedores;
 using dulce_aroma.Forms.entradas;
+using dulce_aroma.Forms.inventarios;
 
 namespace dulce_aroma.Forms.menu
 {
@@ -230,6 +231,51 @@ namespace dulce_aroma.Forms.menu
                 var report = new EntradaReport(details, entrada.Empleados.nombre_completo, entrada.Proveedores.nombre, cantProd.ToString(), importeTotal.ToString(), entrada.fecha.ToString("d"), entrada.id.ToString());
                 report.ShowDialog();
             }
+        }
+
+        private async void informePorAgotarseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var pController = new ProductoController();
+            var productos = await pController.ObtenerPorAgotarse();
+            var productosR = productos.Select(p => new ProductoReportModel()
+            {
+                Codigo = p.codigo,
+                Existencias = p.existencias,
+                Producto = p.nombre,
+                Proveedor = p.Proveedores.nombre
+            }).ToList();
+            var report = new inventarios.ProductoReportForm(productosR, "poragotarse");
+            report.ShowDialog();
+        }
+
+        private async void informeAgotadosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var pController = new ProductoController();
+            var productos = await pController.ObtenerAgotados();
+            var productosR = productos.Select(p => new ProductoReportModel()
+            {
+                Codigo = p.codigo,
+                Existencias = p.existencias,
+                Producto = p.nombre,
+                Proveedor = p.Proveedores.nombre
+            }).ToList();
+            var report = new inventarios.ProductoReportForm(productosR, "agotados");
+            report.ShowDialog();
+        }
+
+        private async void informeDeInventarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var pController = new ProductoController();
+            var productos = await pController.ObtenerTodos();
+            var productosR = productos.Select(p => new ProductoReportModel()
+            {
+                Codigo = p.codigo,
+                Existencias = p.existencias,
+                Producto = p.nombre,
+                Proveedor = p.Proveedores.nombre
+            }).ToList();
+            var report = new inventarios.ProductoReportForm(productosR, "inventario");
+            report.ShowDialog();
         }
     }
 }

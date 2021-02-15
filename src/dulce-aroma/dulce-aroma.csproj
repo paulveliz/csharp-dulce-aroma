@@ -283,6 +283,31 @@
     <Compile Include="Forms\inventarios\InventarioForm.Designer.cs">
       <DependentUpon>InventarioForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\inventarios\ProductoReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\inventarios\ProductoReportForm.Designer.cs">
+      <DependentUpon>ProductoReportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\inventarios\ProductoReportModel.cs" />
+    <Compile Include="Forms\inventarios\ReporteInventarioAgotadosCrv.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReporteInventarioAgotadosCrv.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\inventarios\ReporteInventarioCrv.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReporteInventarioCrv.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\inventarios\ReporteInventarioPorAgotarseCrv.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReporteInventarioPorAgotarseCrv.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Forms\menu\MenuForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -428,6 +453,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\inventarios\InventarioForm.resx">
       <DependentUpon>InventarioForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\inventarios\ProductoReportForm.resx">
+      <DependentUpon>ProductoReportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\inventarios\ReporteInventarioAgotadosCrv.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReporteInventarioAgotadosCrv.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\inventarios\ReporteInventarioCrv.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReporteInventarioCrv.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\inventarios\ReporteInventarioPorAgotarseCrv.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReporteInventarioPorAgotarseCrv.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\menu\MenuForm.resx">
       <DependentUpon>MenuForm.cs</DependentUpon>
