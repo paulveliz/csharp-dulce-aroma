@@ -73,6 +73,8 @@ namespace controladores
                     .Include(tr => tr.Empleados)
                     .Include(tr => tr.cTurnoEstatus)
                     .Include(tr => tr.Ventas)
+                    .Include("Ventas.Detalle_Ventas")
+                    .Include("Ventas.Detalle_Ventas.Productos")
                     .FirstOrDefaultAsync(tr => tr.id == idTurno);
                 return t;
             }

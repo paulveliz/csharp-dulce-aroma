@@ -13,6 +13,7 @@ using dulce_aroma.Forms.turnos;
 using dulce_aroma.Forms.proveedores;
 using dulce_aroma.Forms.entradas;
 using dulce_aroma.Forms.inventarios;
+using dulce_aroma.Forms.administracion;
 
 namespace dulce_aroma.Forms.menu
 {
@@ -276,6 +277,111 @@ namespace dulce_aroma.Forms.menu
             }).ToList();
             var report = new inventarios.ProductoReportForm(productosR, "inventario");
             report.ShowDialog();
+        }
+
+        private void productosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (var selector = new selectores.TurnoGeneralSelector())
+            {
+                var result = selector.ShowDialog();
+                if (!result.Equals(DialogResult.Yes)) return;
+                var turno = selector.Turno;
+                int cantProds = 0;
+                decimal importePorPrecio = 0;
+                decimal importePorCosto = 0;
+                decimal gananciaTurno = 0;
+
+                var lst = new List<ProductoGananciaModel>();
+
+                foreach (var venta in turno.Ventas)
+                {
+                    cantProds += (from producto in venta.Detalle_Ventas select producto.cantidad).Sum();
+                    importePorPrecio += (from producto in venta.Detalle_Ventas select producto.precio).Sum();
+                    importePorCosto += (from producto in venta.Detalle_Ventas select producto.costo).Sum();
+
+                    foreach (var producto in venta.Detalle_Ventas)
+                    {
+                        lst.Add(new ProductoGananciaModel()
+                        {
+                            Cantidad = producto.cantidad,
+                            Costo = producto.costo,
+                            Precio = producto.precio,
+                            Ganancia = (producto.precio - producto.costo),
+                            Producto = producto.Productos.nombre
+                        });
+                    };
+                }
+                gananciaTurno = (importePorPrecio - importePorCosto);
+                var gananciaModel = new GananciaPorTurnoModel() 
+                {
+                    CantProductos = cantProds,
+                    Empleado = turno.Empleados.nombre_completo,
+                    FechaApertura = turno.fecha_apertura.ToString("d"),
+                    HoraApertura = turno.hora_apertura.ToString("t"),
+                    FechaCierre = turno.fecha_cierre?.ToString("d"),
+                    HoraCierre = turno.hora_cierre?.ToString("t"),
+                    GananciaTurno = gananciaTurno,
+                    ImportePorCosto = importePorCosto,
+                    ImportePorPrecio = importePorPrecio,
+                    NoTurno = turno.id
+                };
+                // generar reporte
+                var report = new administracion.ReporteGananciasForm(lst, gananciaModel);
+                report.ShowDialog();
+            }
+        }
+
+        private void informeDeProductosVendidosPorTurnoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (var selector = new selectores.TurnoGeneralSelector())
+            {
+                var result = selector.ShowDialog();
+                if (!result.Equals(DialogResult.Yes)) return;
+                var turno = selector.Turno;
+                int cantProds = 0;
+                decimal importePorPrecio = 0;
+                decimal importePorCosto = 0;
+                decimal gananciaTurno = 0;
+
+                var lst = new List<ReporteDeTurnoProductosModel>();
+
+                foreach (var venta in turno.Ventas)
+                {
+                    cantProds += (from producto in venta.Detalle_Ventas select producto.cantidad).Sum();
+                    importePorPrecio += (from producto in venta.Detalle_Ventas select producto.precio).Sum();
+                    importePorCosto += (from producto in venta.Detalle_Ventas select producto.costo).Sum();
+
+                    foreach (var producto in venta.Detalle_Ventas)
+                    {
+                        lst.Add(new ReporteDeTurnoProductosModel()
+                        {
+                            Cantidad = producto.cantidad,
+                            Precio = producto.precio,
+                            Producto = producto.Productos.nombre,
+                            Codigo = producto.Productos.codigo,
+                            Total = (producto.precio * producto.cantidad)
+                        });
+                    };
+                }
+                gananciaTurno = (importePorPrecio - importePorCosto);
+                var gananciaModel = new GananciaPorTurnoModel() 
+                {
+                    CantProductos = cantProds,
+                    Empleado = turno.Empleados.nombre_completo,
+                    FechaApertura = turno.fecha_apertura.ToString("d"),
+                    HoraApertura = turno.hora_apertura.ToString("t"),
+                    FechaCierre = turno.fecha_cierre?.ToString("d"),
+                    HoraCierre = turno.hora_cierre?.ToString("t"),
+                    GananciaTurno = gananciaTurno,
+                    ImportePorCosto = importePorCosto,
+                    ImportePorPrecio = importePorPrecio,
+                    NoTurno = turno.id
+                };
+                // generar reporte
+                var report = new turnos.ReporteDeProductosEnTurno(lst, gananciaModel);
+                report.ShowDialog();
+            }
+
         }
     }
 }

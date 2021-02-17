@@ -221,6 +221,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\administracion\GananciaPorTurnoModel.cs" />
+    <Compile Include="Forms\administracion\ProductoGananciaModel.cs" />
+    <Compile Include="Forms\administracion\ReporteGananciasForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\administracion\ReporteGananciasForm.Designer.cs">
+      <DependentUpon>ReporteGananciasForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\administracion\ReporteGananciasPorTurnoCrv.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReporteGananciasPorTurnoCrv.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Forms\empleados\EmpleadosForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -369,11 +383,23 @@
     <Compile Include="Forms\selectores\ProveedorSelectorForm.Designer.cs">
       <DependentUpon>ProveedorSelectorForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\selectores\TurnoGeneralSelector.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\selectores\TurnoGeneralSelector.Designer.cs">
+      <DependentUpon>TurnoGeneralSelector.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\selectores\TurnoSelectorForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\selectores\TurnoSelectorForm.Designer.cs">
       <DependentUpon>TurnoSelectorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\turnos\ReporteDeProductosEnTurno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\turnos\ReporteDeProductosEnTurno.Designer.cs">
+      <DependentUpon>ReporteDeProductosEnTurno.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\turnos\ReporteDeTurno.cs">
       <SubType>Form</SubType>
@@ -388,6 +414,7 @@
     <Compile Include="Forms\turnos\ReporteDeTurnoPorFechas.Designer.cs">
       <DependentUpon>ReporteDeTurnoPorFechas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\turnos\ReporteDeTurnoProductosModel.cs" />
     <Compile Include="Forms\turnos\ReporteVentaDetalleModel.cs" />
     <Compile Include="Forms\turnos\ReporteVentaModel.cs" />
     <Compile Include="Forms\turnos\TurnoForm.cs">
@@ -395,6 +422,12 @@
     </Compile>
     <Compile Include="Forms\turnos\TurnoForm.Designer.cs">
       <DependentUpon>TurnoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\turnos\TurnoProductosReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TurnoProductosReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Forms\turnos\TurnoReport.cs">
       <AutoGen>True</AutoGen>
@@ -422,6 +455,13 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\administracion\ReporteGananciasForm.resx">
+      <DependentUpon>ReporteGananciasForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\administracion\ReporteGananciasPorTurnoCrv.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReporteGananciasPorTurnoCrv.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\empleados\EmpleadosForm.resx">
       <DependentUpon>EmpleadosForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -500,8 +540,14 @@
     <EmbeddedResource Include="Forms\selectores\ProveedorSelectorForm.resx">
       <DependentUpon>ProveedorSelectorForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\selectores\TurnoGeneralSelector.resx">
+      <DependentUpon>TurnoGeneralSelector.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\selectores\TurnoSelectorForm.resx">
       <DependentUpon>TurnoSelectorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\turnos\ReporteDeProductosEnTurno.resx">
+      <DependentUpon>ReporteDeProductosEnTurno.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\turnos\ReporteDeTurno.resx">
       <DependentUpon>ReporteDeTurno.cs</DependentUpon>
@@ -511,6 +557,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\turnos\TurnoForm.resx">
       <DependentUpon>TurnoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\turnos\TurnoProductosReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>TurnoProductosReport.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\turnos\TurnoReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
